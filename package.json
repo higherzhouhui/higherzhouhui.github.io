@@ -1,0 +1,36 @@
+{
+  "name": "capsid-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "NODE_ENV=production next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pm2": "pm2 start npm --name 'capsid-web' -- start",
+    "build:win": "set NODE_ENV=production  && next build"
+  },
+  "dependencies": {
+    "next": "^12.1.6",
+    "react": "18.1.0",
+    "react-dom": "18.1.0",
+    "react-tsparticles": "^2.0.6",
+    "styled-components": "^5.3.5",
+    "styled-system": "^5.1.5",
+    "tsparticles": "^2.0.6"
+  },
+  "devDependencies": {
+    "@qhlab/eslint-plugin": "^1.10.0",
+    "@types/node": "17.0.31",
+    "@types/react": "18.0.9",
+    "@types/react-dom": "18.0.3",
+    "@types/styled-components": "^5.1.25",
+    "@types/styled-system": "^5.1.15",
+    "@types/webpack-env": "^1.16.3",
+    "eslint": "8.15.0",
+    "eslint-config-next": "12.1.6",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo-loader": "^3.0.0",
+    "typescript": "4.6.4"
+  }
+}
