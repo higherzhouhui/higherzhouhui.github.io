@@ -36,7 +36,7 @@
   <body>
     
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">Home</a>
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="/">首页</a>
   <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -54,44 +54,44 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link" aria-current="page" href="#ip">
               <span data-feather="home"></span>
-              常用API
+              获取IP地址
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#oss">
               <span data-feather="file"></span>
               OSS裁减
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#tianqi">
               <span data-feather="shopping-cart"></span>
-              Products
+              获取城市天气
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#gupiao">
               <span data-feather="users"></span>
-              Customers
+              股票
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#bizhi">
               <span data-feather="bar-chart-2"></span>
-              Reports
+              壁纸
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="#web3">
               <span data-feather="layers"></span>
-              Integrations
+              WEB3有关
             </a>
           </li>
         </ul>
 
-        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <!-- <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
           <span>Saved reports</span>
           <a class="link-secondary" href="#" aria-label="Add a new report">
             <span data-feather="plus-circle"></span>
@@ -122,14 +122,54 @@
               Year-end sale
             </a>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="pt-3 pb-3 mb-3">
-        <h1 class="h2 border-bottom mb-4 pb-2">IP地址</h1>
-        <h3 class="h4">搜狐接口</h3>
+        <h1 class="h2 border-bottom mb-4 pb-2">常用API</h1>
+        <a href="#" name="ip" class="h5">搜狐接口</a>
+        <p class="bg-light mt-4 mb-4 col-md-9">http://pv.sohu.com/cityjson?ie=utf-8</p>
+        <a href="#" name="oss" class="h5">OSS裁减</a>
+        <p class="bg-light mt-4 col-md-9">https://help.aliyun.com/document_detail/44693.html</p>
+        <a href="#" name="tianqi" class="h5">天气预报</a>
+        <h6>获取城市ID</h6>
+        <p class="bg-light col-md-9">http://mat1.gtimg.com/weather/index2014/wtData_v2.js</p>
+        <h6>根据城市ID获取天气</h6>
+        <p class="bg-light mt-4 col-md-9">http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100<br/>
+          http://wthrcdn.etouch.cn/WeatherApi?citykey={cityID}</p>
+        <a href="#" name="gupiao" class="h5">股票类</a>
+        <h6>上证指数</h6>
+        <p class="bg-light col-md-9">http://qt.gtimg.cn/q=s_sh000001</p>
+        <h6>道琼斯指数</h6>
+        <p class="bg-light mt-4 col-md-9">http://qt.gtimg.cn/q=s_usDJI</p>
+        <h6>腾讯济安</h6>
+        <p class="bg-light mt-4 col-md-9">http://qt.gtimg.cn/q=s_sh000847</p>
+        <h6>恒生指数</h6>
+        <p class="bg-light mt-4 col-md-9">http://qt.gtimg.cn/q=s_r_hkHSI</p>
+        <h6>个股行情</h6>
+        <p class="bg-light mt-4 col-md-9">http://sqt.gtimg.cn/q=sh600519<br/>
+          http://sqt.gtimg.cn/q={股票代码}</p>
+        <p class="bg-light mt-2 col-md-9">
+          0: 未知 1: 股票名字 2: 股票代码 3: 当前价格 4: 昨收 5: 今开 6: 成交量（手） 7: 外盘 8: 内盘 9: 买一 10: 买一量（手） 11-18: 买二 买五 19: 卖一 20: 卖一量 21-28: 卖二 卖五 29: 最近逐笔成交 30: 时间 31: 涨跌 32: 涨跌% 33: 最高 34: 最低 35: 价格/成交量（手）/成交额 36: 成交量（手） 37: 成交额（万） 38: 换手率 39: 市盈率 40: 41: 最高 42: 最低 43: 振幅 44: 流通市值 45: 总市值 46: 市净率 47: 涨停价 48: 跌停价
+        </p>
+        <a href="#" name="bizhi" class="h5">得到精美壁纸</a>
+        <p class="bg-light mt-4 mb-4 col-md-9">http://cn.bing.com/iod/1366/1024/201706221600
+          <br/>http://cn.bing.com/iod/1366/1024/{随机数}
+        </p>
+        <h6>图片转BASE64</h6>
+        <p class="bg-light mt-4 mb-4 col-md-9">https://c.runoob.com/front-end/59/</p>
+        <a href="#" name="web3" class="h5">WEB3有关</a>
+        <h6>以太坊</h6>
+        <p class="bg-light mt-4 mb-4 col-md-9">https://etherscan.io/</p>
+        <h6>领取Rinkeby链ETH</h6>
+        <p class="bg-light mt-4 mb-4 col-md-9">https://rinkebyfaucet.com/<br/>https://blog.csdn.net/m0_37257009/article/details/95979365</p>
+        <h6>NFT藏品最大的交易平台</h6>
+        <p class="bg-light mt-4 mb-4 col-md-9">https://opensea.io/</p>
+        <h6>以太坊学习资料</h6>
+        <p class="bg-light mt-4 mb-4 col-md-9">https://www.bookstack.cn/read/ethereum_book-zh/spilt.1.ee4988229e1934ea.md</p>
+
       </div>
     </main>
   </div>
