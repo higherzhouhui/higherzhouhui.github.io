@@ -58,6 +58,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#kaobei">
+                <span data-feather="home"></span>
+                浅拷贝、深拷贝
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#var">
                 <span data-feather="home"></span>
                 var && let && const
@@ -173,6 +179,21 @@
           </p>
           <p class="text-success">传送门 ☞[# JavaScript 数据类型之 Symbol、BigInt](https://juejin.cn/post/7000754813801775111)
           </p>
+          <a href="#leixing" name="leixing" class="h4">浅拷贝、深拷贝</a>
+          <h5>区别</h5>
+          <p>如何区分深拷贝与浅拷贝，简单点来说，就是假设B复制了A，当修改A时，看B是否会发生变化，如果B也跟着变了，说明这是浅拷贝；如果B没变，那就是深拷贝。
+          </p>
+          <p>基本数据类型保存在栈内存，引用类型保存在堆内存中。根本原因在于保存在栈内存的必须是大小固定的数据，引用类型的大小不固定，只能保存在堆内存中，但是可以把它的地址写在栈内存中以供我们访问。 </p>
+          <h5>浅拷贝</h5>
+          <ol>
+            <li>直接赋值</li>
+            <li>Object.Assign</li>
+          </ol>
+          <h5>深拷贝</h5>
+          <ol>
+            <li>先JSON.String然后再JSON.parse回来</li>
+            <li>使用...解构</li>
+          </ol>
           <hr />
           <a href="jiance" name="jiance" class="h4">JS中的数据类型检测方案</a>
           <h5>1.typeof</h5>
