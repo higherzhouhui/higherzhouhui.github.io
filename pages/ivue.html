@@ -58,7 +58,7 @@
             <li class="nav-item">
               <a class="nav-link h6" aria-current="page" href="#r1">
                 <span data-feather="home"></span>
-                React介绍
+                VUE介绍
               </a>
               <ul>
                 <li>
@@ -162,6 +162,7 @@
           <h6>
             `视图模型双向绑定`，是`Model-View-ViewModel`的缩写，也就是把`MVC`中的`Controller`演变成`ViewModel。Model`层代表数据模型，`View`代表UI组件，`ViewModel`是`View`和`Model`层的桥梁，数据会绑定到`viewModel`层并自动将数据渲染到页面中，视图变化的时候会通知`viewModel`层更新数据。以前是操作DOM结构更新视图，现在是`数据驱动视图`。
           </h6>
+          <h6>Vue是一个典型的MVVM框架，模型（Model）只是普通的javascript对象，修改它则试图（View）会自动更新。这种设计让状态管理变得非常简单而直观</h6>
           <h5>MVVM的优点</h5>
           <ol>
             <li>低耦合`。视图（View）可以独立于Model变化和修改，一个Model可以绑定到不同的View上，当View变化的时候Model可以不变化，当Model变化的时候View也可以不变；</li>
@@ -170,10 +171,9 @@
             <li>可测试`</li>
           </ol>
           <hr />
-          <a href="#r2" name="r2" class="h4">Vue底层实现原理</a>
-          <h6> vue.js是采用数据劫持结合发布者-订阅者模式的方式，通过Object.defineProperty()来劫持各个属性的setter和getter，在数据变动时发布消息给订阅者，触发相应的监听回调\
+          <a href="#r2" name="r2" class="h4">Vue数据双向绑定底层实现原理</a>
+          <h6> vue数据的双向绑定是通过数据劫持结合发布者-订阅者模式的方式来实现的。其核心就是通过Object.defineProperty()方法设置set和get函数来实现数据的劫持，在数据变化时发布消息给订阅者，触发相应的监听回调。也就是说数据和视图同步，数据发生变化，视图跟着变化，视图变化，数据也随之发生改变；
           </h6>
-          <h6>Vue是一个典型的MVVM框架，模型（Model）只是普通的javascript对象，修改它则试图（View）会自动更新。这种设计让状态管理变得非常简单而直观</h6>
           <h5>Observer（数据监听器）</h5>
           <h6>
             Observer的核心是通过Object.defineProprtty()来监听数据的变动，这个函数内部可以定义setter和getter，每当数据发生变化，就会触发setter。这时候Observer就要通知订阅者，订阅者就是Watcher
@@ -183,7 +183,7 @@
           <ol>
             <li>在自身实例化时往属性订阅器(dep)里面添加自己</li>
             <li>自身必须有一个update()方法</li>
-            <li> 待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调</li>
+            <li>待属性变动dep.notice()通知时，能调用自身的update()方法，并触发Compile中绑定的回调</li>
           </ol>
           <h5>Compile（指令解析器）</h5>
           <h6>Compile主要做的事情是解析模板指令，将模板中变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加鉴定数据的订阅者，一旦数据有变动，收到通知，更新试图</h6>

@@ -80,6 +80,12 @@
                   </a>
                 </li>
                 <li>
+                  <a class="nav-link" aria-current="page" href="#redux">
+                    <span data-feather="home"></span>
+                    Redux相关
+                  </a>
+                </li>
+                <li>
                   <a class="nav-link" aria-current="page" href="#r5">
                     <span data-feather="home"></span>
                     setState 既存在异步情况也存在同步情况
@@ -214,6 +220,21 @@
           <p>
             简单来说就是调用时机不同，useLayoutEffect和原来componentDidMount&componentDidUpdate一致，在react完成DOM更新后马上同步调用的代码，会阻塞页面渲染。而useEffect是会在整个页面渲染完才会调用的代码。`官方建议优先使用useEffect
           </p>
+          <hr />
+          <a href="#redux" name="redux" class="h4">Redux介绍</a>
+          <h5>什么是Redux</h5>
+          <p>redux是专门用于集中式管理状态的javascript库
+          </p>
+          <h5>Redux工作流程</h5>
+          <h6>分别为actions、store、reducers（带s的表明可能存在多个）
+          </h6>
+          <ol>
+            <li>让Action Creators创建action</li>
+            <li>通过dispatch将action分发出去</li>
+            <li>store对要使用的reducer进行绑定，然后将action分发到对应的reducer上</li>
+            <li>在reducer上进行相应的action操作并返回结果给store</li>
+            <li>组件就可以通过store的API像store进行获取操作返回的结果</li>
+          </ol>
           <hr />
           <a href="#r4" name="r4" class="h4">React 组件通信方式</a>
           <h5>react组件间通信常见的几种情况</h5>
