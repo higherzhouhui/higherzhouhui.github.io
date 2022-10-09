@@ -61,6 +61,13 @@
                 React介绍
               </a>
               <ul>
+                
+                <li>
+                  <a class="nav-link" aria-current="page" href="#hooks">
+                    <span data-feather="home"></span>
+                    Hooks的优缺点
+                  </a>
+                </li>
                 <li>
                   <a class="nav-link" aria-current="page" href="#r2">
                     <span data-feather="home"></span>
@@ -141,6 +148,20 @@
           <p class="h6">
             React可以作为MVVM中第二个V，也就是View，但是并不是MVVM框架。MVVM一个最显著的特征：双向绑定。React没有这个，它是单向数据绑定的。React是一个单向数据流的库，状态驱动视图。react整体是函数式的思想，把组件设计成纯组件，状态和逻辑通过参数传入，所以在react中，是单向数据流，推崇结合immutable来实现数据不可变。
           </p>
+          <hr />
+          <a href="#hooks" name="hooks" class="h4">Hooks的优缺点</a>
+          <h5>优点</h5>
+          <ol>
+            <li>代码的可读性强，在使用hooks之前比如发布/订阅自定义事件被挂载在componentDidMount生命周期中，然后需要在componentWillUnmount生命周期中将它清楚，这样就不便于开发者维护和迭代。在使用hooks之后，通过useEffect可以将componentDidMount生命周期、componentDidUpdate生命周期和componentWillUnmount生命周期聚合起来，方便代码的维护。</li>
+            <li>组件层级变得更浅了，在使用hooks之前通常使用高阶组件HOC的方法来复用多个组件公共的状态，增强组建的功能，这样肯定是加大了组件渲染的开销，损失了性能。但是在hooks中可以通过自定义组件useXxx()的方法将多个组件之间的共享逻辑放在自定义hook中，就可以轻松的进行数据互通。</li>
+            <li>不再需要考虑class组件中this指向的问题，hook在函数组件中不需要通过this.state或者this.fn来获取数据或者方法。 </li>
+          </ol>
+          <h5>缺点</h5>
+          <ol>
+            <li>hooks的useEffect只包括了componentDidMount、componentDidUpdate还有componentWillUnmount这三个生命周期，对于getSnapshotBeforeUpdate和componentDidCatch等其他的生命周期没有支持。</li>
+            <li>使用useEffect时候里面不能写太多依赖项，将各个不同的功能划分为多个useEffect模块，将各项功能拆开写，这是遵循了软件设计的“单一职责模式”。如果遇到状态不同步的情况，使用手动传递参数的形式。</li>
+            <li>如果业务复杂，就使用Component代替hooks，hooks的出现并不是取代了class组件，而是在函数组件的基础上可以实现一部分的类似class组件功能。</li>
+          </ol>
           <hr />
           <a href="#r2" name="r2" class="h4">聊聊react中class组件和函数组件的区别</a>
           <p>类组件是使用ES6 的 class 来定义的组件。 函数组件是接收一个单一的 `props` 对象并返回一个React元素。</p>

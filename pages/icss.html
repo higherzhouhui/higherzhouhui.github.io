@@ -267,8 +267,7 @@
           <hr />
           <a href="#bfc" name="bfc" class="h4">BFC（块级格式上下文）</a>
           <h5>BFC的概念</h5>
-          <p>`BFC` 是 ` Block Formatting Context `的缩写，即块级格式化上下文。`BFC`是CSS布局的一个概念，是一个独立的渲染区域，规定了内部box如何布局，
-            并且这个区域的子元素不会影响到外面的元素，其中比较重要的布局规则有内部 box 垂直放置，计算 BFC 的高度的时候，浮动元素也参与计算。</p>
+          <p>块级格式化上下文、独立的渲染区域、不会影响边界以外的元素</p>
           <h5>BFC的原理布局规则</h5>
           <ol>
             <li>内部的Box会在`垂直方向`，一个接一个地放置</li>
@@ -284,10 +283,9 @@
             <li>根元素，即HTML元素</li>
             <li>float的值不为none</li>
             <li>position为absolute或fixed</li>
-            <li>display的值为inline-block、table-cell、table-caption</li>
+            <li>display的值为flex、inline-block、table-cell、table-caption</li>
             <li>overflow的值不为visible</li>
           </ol>
-
           <h5>BFC的使用场景</h5>
           <ol>
             <li>去除边距重叠现象</li>
@@ -295,10 +293,8 @@
             <li>避免某元素被浮动元素覆盖</li>
             <li>避免多列布局由于宽度计算四舍五入而自动换行</li>
           </ol>
-
           <hr />
           <a href="#czjz" name="czjz" class="h4">让一个元素水平垂直居中</a>
-
           <h5>水平居中</h5>
           <p>1、对于行内元素 : </p>
           <p class="text-danger">`text-align: center`;</p>

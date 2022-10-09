@@ -141,6 +141,18 @@
                 Async/Await 如何通过同步的方式实现异步
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jieliu">
+                <span data-feather="shopping-cart"></span>
+                介绍节流防抖原理、区别以及应用
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jsyibu">
+                <span data-feather="shopping-cart"></span>
+                说一说JS实现异步的方法？
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -150,29 +162,32 @@
           <a href="#leixing" name="leixing" class="h4">JS中的8种数据类型及区别</a>
           <h6>包括值类型(基本对象类型)和引用类型(复杂对象类型)</h6>
           <ol>
-            <li>基本类型
+            <li>基本值类型
               <ol>
-                值类型
                 <li>Number(数字)</li>
                 <li>String(字符串)</li>
                 <li>Symbol(符号)</li>
+                <li>BigInt</li>
                 <li>Boolean(布尔)</li>
                 <li>null(空)</li>
                 <li>undefined(未定义)在内存中占据固定大小，保存在栈内存中</li>
               </ol>
             </li>
-            <li>引用类型
-              <ol>复杂数据类型
+            <li>引用复杂数据类型
+              <ol>
                 <li>Object(对象)</li>
                 <li>Function(函数)</li>
                 <li>Array(数组)</li>
                 <li>Date(日期)</li>
                 <li>RegExp(正则表达式)</li>
-                <li>特殊的基本包装类型(String、Number、Boolean) 以及单体内置对象(Global、Math)等 引用类型的值是对象
-                  保存在堆内存中，栈内存存储的是对象的变量标识符以及对象在堆内存中的存储地址。</li>
               </ol>
             </li>
           </ol>
+          <h5>本质区别：</h5>
+          <p>基本数据类型和引用数据类型它们在内存中的存储方式不同。<br/>
+            基本数据类型是直接存储在栈中的简单数据段，占据空间小，属于被频繁使用的数据。<br/>
+            引用数据类型是存储在堆内存中，占据空间大。引用数据类型在栈中存储了指针，该指针指向堆中该实体的起始地址，当解释器寻找引用值时，会检索其在栈中的地址，取得地址后从堆中获得实体。
+          </p>
           <h5>使用场景：</h5>
           <p class="text-danger">Symbol：使用Symbol来作为对象属性名(key) 利用该特性，把一些不需要对外操作和访问的属性使用Symbol来定义</p>
           <p class="text-danger">BigInt：由于在 Number 与 BigInt 之间进行转换会损失精度，因而建议仅在值可能大于253 时使用 BigInt 类型，并且不在两种类型之间进行相互转换。
@@ -504,10 +519,11 @@
           <h6>
             Async/Await就是一个**自执行**的generate函数。利用generate函数的特性把异步的代码写成“同步”的形式,第一个请求的返回值作为后面一个请求的参数,其中每一个参数都是一个promise对象.
           </h6>
-          <h5>介绍节流防抖原理、区别以及应用</h5>
-          <p>节流</p>
+          <hr />
+          <a href="#jieliu" name="jieliu" class="h4">介绍节流防抖原理、区别以及应用</a>
+          <h5>节流</h5>
           <p>事件触发后，规定时间内，事件处理函数不能再次被调用。也就是说在规定的时间内，函数只能被调用一次，且是最先被触发调用的那次。</p>
-          <p>防抖</p>
+          <h5>防抖</h5>
           <p>多次触发事件，事件处理函数只能执行一次，并且是在触发操作结束时执行。也就是说，当一个事件被触发准备执行事件函数前，会等待一定的时间（这时间是码农自己去定义的，比如 1
             秒），如果没有再次被触发，那么就执行，如果被触发了，那就本次作废，重新从新触发的时间开始计算，并再次等待 1 秒，直到能最终执行！</p>
           <h5>使用场景</h5>
@@ -563,6 +579,44 @@
             <br />}, 1000);
             <br /> ```
           </p>
+          <hr />
+          <a href="#jsyibu" name="jsyibu" class="h4">说一说JS实现异步的方法？</a>
+          <ol>
+            <li>回调函数</li>
+            <li>事件监听</li>
+            <li>setTimeout</li>
+            <li>Promise</li>
+            <li>生成器Generators/yield</li>
+            <li>Async/Await</li>
+          </ol>
+          <h6>回调函数</h6>
+          <p>回调函数是异步操作最基本的方法，比如AJAX回调，回调函数的优点是简单、容易理解和实现，缺点是不利于代码的阅读和维护，各个部分之间高度耦合，使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数。此外它不能使用 try catch 捕获错误，不能直接 return</p>
+          <h6>Promise</h6>
+          <p>Promise包装了一个异步调用并生成一个Promise实例，当异步调用返回的时候根据调用的结果分别调用实例化时传入的resolve 和 reject方法，then接收到对应的数据，做出相应的处理。Promise不仅能够捕获错误，而且也很好地解决了回调地狱的问题，缺点是无法取消 Promise，错误需要通过回调函数捕获。</p>
+          <h6>生成器Generators/yield</h6>
+          <p>Generator 函数是 ES6 提供的一种异步编程解决方案，Generator 函数是一个状态机，封装了多个内部状态，可暂停函数, yield可暂停，next方法可启动，每次返回的是yield后的表达式结果。优点是异步语义清晰，缺点是手动迭代`Generator` 函数很麻烦，实现逻辑有点绕</p>
+          <h6>Async/Await</h6>
+          <p>Async/Await是基于Promise实现的，Async/Await使得异步代码看起来像同步代码，所以优点是，使用方法清晰明了，缺点是awt 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 awt 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式</p>
+          <h6>总结</h6>
+          <p>JS异步编程进化史：callback -> promise -> generator/yield -> Async/Await</p>
+          <P>async/awt函数对 Generator 函数的改进，体现在以下三点： - 内置执行器。 Generator 函数的执行必须靠执行器，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。 - 更广的适用性。 yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 awt 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。 - 更好的语义。 async 和 awt，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，awt 表示紧跟在后面的表达式需要等待结果。 目前使用很广泛的就是promise和async/awt</P>
+          <hr />
+          <a href="#quchong" name="quchong" class="h4">JS数组去重的几种方式？</a>
+          <ol>
+            <li>利用Set()+Array.from()
+              <p>const result = Array.from(new Set(arr))</p>
+            </li>
+            <li>利用数组的indexOf方法(无法对NaN去重)</li>
+            <li>利用数组的includes方法</li>
+            <li>利用数组的filter()+indexOf()
+              <p>return arr.filter((item, index) => {<br/>
+                return arr.indexOf(item) === index<br/>
+                })<br/>
+              </p>
+            </li>
+            <li>利用Map()</li>
+            <li>利用对象</li>
+          </ol>
         </div>
       </main>
     </div>
