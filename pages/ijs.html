@@ -206,8 +206,21 @@
           </ol>
           <h5>深拷贝</h5>
           <ol>
+            对象深拷贝
             <li>先JSON.String然后再JSON.parse回来</li>
             <li>使用...解构</li>
+          </ol>
+          <ol>
+            数组深拷贝
+            <li>for循环实现</li>
+            <li>slice方法，将原数组中抽离部分出来形成一个新数组。我们只要设置为抽离全部<br/>
+              var arr2 = arr.slice(0)</li>
+            <li>concat方法,它是用于连接多个数组组成一个新的数组的方法。那么，我们只要连接它自己，即可完成数组的深拷贝。<br/>
+              var arr2 = arr.concat()
+            </li>
+            <li>ES6扩展运算符实现,该方法是最简单的<br/>
+              var arr2 = [...arr]
+            </li>
           </ol>
           <hr />
           <a href="jiance" name="jiance" class="h4">JS中的数据类型检测方案</a>

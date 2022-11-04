@@ -96,9 +96,29 @@
           <a href="#yyh" name="yyh" class="h4">获取文件扩展名</a>
           <p>
             function getHouZhui(fileName: string) { <br/>
-                &nbsp;&nbsp;return fileName.<br/>
+                &nbsp;&nbsp;return fileName.slice(fileName.lastIndexOf('.'))<br/>
               },<br/>
           </p>
+          <hr />
+          <a href="#yyh" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
+          <p>
+           1、function createArray(number: number) { <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const arr = [];<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [...Array(number)].map(() => arr.push(number));<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return arr;<br/>
+           }
+          </p>
+          <p>
+            2、function createArray(number: number) { <br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Array(number).fill(number)<br/>
+            }
+           </p>
+           <p>
+            3、function createArray(number: number) { <br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var kk=number.toString().repeat(number);<br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return kk.split('').map(Number);<br/>
+            }
+           </p>
         </div>
       </main>
     </div>
