@@ -1,185 +1,332 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hệ thống mật vụ</title>
-    <script type="module" crossorigin src="./assets/index.a78b18fa.js"></script>
-    <link rel="modulepreload" href="./js/@vue/@vue.ac555ff6.js">
-    <link rel="modulepreload" href="./js/lodash-es/lodash-es.b08b606b.js">
-    <link rel="modulepreload" href="./js/@element-plus/@element-plus.86c1a5c4.js">
-    <link rel="modulepreload" href="./js/@popperjs/@popperjs.f1fb8f77.js">
-    <link rel="modulepreload" href="./js/@ctrl/@ctrl.95e2c99f.js">
-    <link rel="modulepreload" href="./js/dayjs/dayjs.92e8c432.js">
-    <link rel="modulepreload" href="./js/async-validator/async-validator.21881447.js">
-    <link rel="modulepreload" href="./js/memoize-one/memoize-one.f0fba034.js">
-    <link rel="modulepreload" href="./js/escape-html/escape-html.d572c0fd.js">
-    <link rel="modulepreload" href="./js/normalize-wheel-es/normalize-wheel-es.94de1731.js">
-    <link rel="modulepreload" href="./js/@floating-ui/@floating-ui.5bbd8ca4.js">
-    <link rel="modulepreload" href="./js/element-plus/element-plus.264a2030.js">
-    <link rel="modulepreload" href="./js/vue-demi/vue-demi.4f3c4c97.js">
-    <link rel="modulepreload" href="./js/pinia/pinia.e6361111.js">
-    <link rel="modulepreload" href="./js/js-cookie/js-cookie.431252a9.js">
-    <link rel="modulepreload" href="./js/axios/axios.21f17a99.js">
-    <link rel="modulepreload" href="./js/vue-router/vue-router.7bf1a7d6.js">
-    <link rel="modulepreload" href="./js/path-to-regexp/path-to-regexp.ecb763cd.js">
-    <link rel="modulepreload" href="./js/@intlify/@intlify.f8bf6d3d.js">
-    <link rel="modulepreload" href="./js/vue-i18n/vue-i18n.d7e01f80.js">
-    <link rel="modulepreload" href="./js/mitt/mitt.fcf4f812.js">
-    <link rel="modulepreload" href="./js/path-browserify/path-browserify.3d3258d8.js">
-    <link rel="modulepreload" href="./js/@vueuse/@vueuse.f48a019e.js">
-    <link rel="modulepreload" href="./js/file-saver/file-saver.ff99116b.js">
-    <link rel="modulepreload" href="./js/has-symbols/has-symbols.37c383d9.js">
-    <link rel="modulepreload" href="./js/function-bind/function-bind.20151ab8.js">
-    <link rel="modulepreload" href="./js/has/has.21528ef4.js">
-    <link rel="modulepreload" href="./js/get-intrinsic/get-intrinsic.5afea291.js">
-    <link rel="modulepreload" href="./js/call-bind/call-bind.89d60758.js">
-    <link rel="modulepreload" href="./js/side-channel/side-channel.cd9fb761.js">
-    <link rel="modulepreload" href="./js/qs/qs.2a7d7167.js">
-    <link rel="modulepreload" href="./js/nprogress/nprogress.f1c59d51.js">
-    <link rel="modulepreload" href="./js/clipboard/clipboard.091b7d6b.js">
-    <link rel="modulepreload" href="./js/xe-utils/xe-utils.8594097a.js">
-    <link rel="modulepreload" href="./js/vxe-table/vxe-table.93a767e7.js">
-    <link rel="modulepreload" href="./js/mockjs/mockjs.c03cea25.js">
-    <link rel="modulepreload" href="./js/vite-plugin-mock/vite-plugin-mock.db0c3313.js">
-    <link rel="stylesheet" href="./assets/nprogress.4066d783.css">
-    <link rel="stylesheet" href="./assets/vxe-table.48676a1f.css">
-    <link rel="stylesheet" href="./assets/index.6148ce45.css">
-    <link rel="stylesheet" href="./assets/animate.css.73a1d2ab.css">
-  </head>
-  
-          <body>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="position: absolute; width: 0; height: 0">
-              <?xml version="1.0" encoding="UTF-8"?><symbol id="icon-com_btn_ic_authentication"    viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>com_btn_ic_authentication</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表_详情" transform="translate(-420.000000, -390.000000)" fill-rule="nonzero">            <g id="2，3" transform="translate(280.000000, 384.000000)">                <g id="详情" transform="translate(132.000000, 2.000000)">                    <g id="分组-10" transform="translate(8.000000, 3.000000)">                        <g id="com_btn_ic_authentication" transform="translate(0.000000, 1.000000)">                            <rect id="矩形" fill="#D8D8D8" opacity="0" x="0" y="0" width="14" height="14"></rect>                            <g id="盾牌(1)-(1)" transform="translate(2.000000, 1.000000)">                                <path d="M5.37988255,0.808745011 C6.04411121,1.14196788 7.2744679,1.94238456 9.49700777,2.08999223 L9.49700777,2.08999223 L10.4998189,7.50348775 C10.4934375,8.28971732 10.3146115,9.2754141 9.35654626,10.2580707 C8.62353794,11.0098936 7.45883951,11.7508639 5.63775419,12.4187377 C3.57525955,11.7606959 2.41347834,11.0337411 1.6771638,10.2923277 C0.709549592,9.31801296 0.513762249,8.33882525 0.500824193,7.55959343 L0.500824193,7.55959343 L0.500070084,2.10159205 C3.4544333,2.09259026 4.9139242,1.17538284 5.37988255,0.808745011 Z" id="路径" stroke="#6ECC94"></path>                                <path d="M2.15914559,7.00610023 L2.91630903,6.41562474 L4.43140419,7.49156942 C4.43140419,7.49156942 6.52349555,5.40845177 8.54336634,4.43640415 L8.83186443,4.74920456 C8.83186443,4.74920456 6.30721801,6.76281102 5.00878453,9.43640415 L2.15914559,7.00610023 Z" id="路径" fill="#6ECC94"></path>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-com_list_btn_ic_details"    viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 16px 16px">    <title>com_list_btn_ic_details</title>    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">        <g id="用户列表" transform="translate(-1826.000000, -328.000000)">            <g id="表格" transform="translate(280.000000, 260.000000)">                <g id="1" transform="translate(1.000000, 51.000000)">                    <g id="详情" transform="translate(1538.000000, 10.000000)">                        <g id="分组-10" transform="translate(7.000000, 5.000000)">                            <g id="com_list_btn_ic_details" transform="translate(0.000000, 2.000000)">                                <rect id="矩形" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>                                <path d="M10.6184686,1 L14,4.42258064 L14,15 L2,15 L2,1 L10.6184686,1 Z" id="矩形" stroke="#178AFF" stroke-width="2"></path>                                <rect id="矩形" x="5" y="5" width="6" height="2"></rect>                                <rect id="矩形备份-4" x="5" y="9" width="6" height="2"></rect>                            </g>                        </g>                    </g>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-com_title_ic_line"    viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>com_title_ic_line</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表_详情" transform="translate(-278.000000, -149.000000)" fill="#178AFF">            <g id="1" transform="translate(278.000000, 142.000000)">                <g id="com_title_ic_line" transform="translate(0.000000, 7.000000)">                    <polygon id="矩形" points="2 -2.83106871e-14 10 -2.83106871e-14 10 12 6.02132516 10 2 12"></polygon>                </g>            </g>        </g>    </g></symbol><symbol id="icon-hamburger"  class="icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 200 200"><path d="M423.586 436.574h479.532c4.396 0 7.992-3.597 7.992-7.993v-47.953c0-4.395-3.596-7.992-7.992-7.992H423.586c-4.395 0-7.992 3.597-7.992 7.992v47.953c0 4.396 3.597 7.993 7.992 7.993zm-7.992 205.799c0 4.395 3.597 7.992 7.992 7.992h479.532c4.396 0 7.992-3.597 7.992-7.992V594.42c0-4.396-3.596-7.993-7.992-7.993H423.586c-4.395 0-7.992 3.597-7.992 7.993v47.953zm487.524-482.53H119.883c-4.396 0-7.992 3.597-7.992 7.993v47.953c0 4.396 3.596 7.992 7.992 7.992h783.235c4.396 0 7.992-3.596 7.992-7.992v-47.953c0-4.396-3.596-7.992-7.992-7.992zm0 639.377H119.883c-4.396 0-7.992 3.596-7.992 7.992v47.953c0 4.396 3.596 7.992 7.992 7.992h783.235c4.396 0 7.992-3.596 7.992-7.992v-47.953c0-4.396-3.596-7.992-7.992-7.992zM282.424 518.333l-156.147 122.98c-5.795 4.595-14.386.5-14.386-6.894V388.46c0-7.392 8.491-11.488 14.386-6.893l156.147 122.98c4.496 3.497 4.496 10.29 0 13.787z"/></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-home_card_ic_date"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>home_card_ic_date</title>    <defs>        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">            <stop stop-color="#178AFF" stop-opacity="0" offset="0%"></stop>            <stop stop-color="#178AFF" offset="100%"></stop>        </linearGradient>    </defs>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-280.000000, -799.000000)">            <g id="1备份-3" transform="translate(280.000000, 796.000000)">                <g id="home_card_ic_date" transform="translate(0.000000, 3.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <rect id="矩形" fill="url(#linearGradient-1)" opacity="0.300000012" x="3" y="14.0329625" width="14" height="4"></rect>                    <rect id="矩形" fill="#178AFF" transform="translate(7.878680, 12.654283) rotate(-45.000000) translate(-7.878680, -12.654283) " x="6.87867966" y="10.1542829" width="2" height="5"></rect>                    <rect id="矩形" fill="#178AFF" transform="translate(11.060660, 11.593623) rotate(-45.000000) translate(-11.060660, -11.593623) " x="7.06066017" y="10.5936227" width="8" height="2"></rect>                    <polyline id="路径" stroke="#178AFF" stroke-width="2" points="14 3 17 3 17 19 3 19 3 3 6.03544907 3"></polyline>                    <rect id="矩形" stroke="#178AFF" stroke-width="2" x="7" y="1" width="6" height="4"></rect>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-home_card_ic_money"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>home_card_ic_money</title>    <defs>        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">            <stop stop-color="#178AFF" stop-opacity="0" offset="0%"></stop>            <stop stop-color="#178AFF" offset="100%"></stop>        </linearGradient>    </defs>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-280.000000, -415.000000)">            <g id="1备份" transform="translate(280.000000, 412.000000)">                <g id="home_card_ic_money" transform="translate(0.000000, 3.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <polygon id="矩形" fill="url(#linearGradient-1)" opacity="0.300000012" points="4 11 16 11 16 16 10 18.0648367 4 16"></polygon>                    <path d="M11.4142136,4.58578644 L12.8284271,6 L11.828,6.99978644 L14,7 L14,9 L11,9 L11,9.99978644 L13,10 L13,12 L11,11.9997864 L11,15 L9,15 L9,11.9997864 L7,12 L7,10 L9,9.99978644 L9,9 L6,9 L6,7 L8.171,6.99978644 L7.17157288,6 L8.58578644,4.58578644 L10,5.99978644 L11.4142136,4.58578644 Z" id="形状结合" fill="#178AFF"></path>                    <path d="M16,2 L16,15.3413696 L10.0194348,17.9120318 L4,15.3398413 L4,2 L16,2 Z" id="矩形" stroke="#178AFF" stroke-width="2"></path>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-home_card_ic_order"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>home_card_ic_order</title>    <defs>        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">            <stop stop-color="#178AFF" stop-opacity="0" offset="0%"></stop>            <stop stop-color="#178AFF" offset="100%"></stop>        </linearGradient>    </defs>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-280.000000, -607.000000)">            <g id="1备份-2" transform="translate(280.000000, 604.000000)">                <g id="home_card_ic_order" transform="translate(0.000000, 3.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M12.626386,2 L17,6.4758429 L17,18 L3,18 L3,2 L12.626386,2 Z" id="矩形" stroke="#178AFF" stroke-width="2"></path>                    <rect id="矩形" fill="url(#linearGradient-1)" opacity="0.300000012" x="4" y="13" width="12" height="4"></rect>                    <rect id="矩形" fill="#178AFF" x="6" y="7" width="8" height="2"></rect>                    <rect id="矩形备份-9" fill="#178AFF" x="6" y="11" width="8" height="2"></rect>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-home_card_ic_user"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>home_card_ic_user</title>    <defs>        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">            <stop stop-color="#178AFF" stop-opacity="0" offset="0%"></stop>            <stop stop-color="#178AFF" offset="100%"></stop>        </linearGradient>    </defs>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-280.000000, -223.000000)">            <g id="1" transform="translate(280.000000, 220.000000)">                <g id="home_card_ic_user" transform="translate(0.000000, 3.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M15,13 C16.6568542,13 18,14.3431458 18,16 L18,19 L2,19 L2,16 C2,14.3431458 3.34314575,13 5,13 L15,13 Z M15,15 L5,15 C4.48716416,15 4.06449284,15.3860402 4.00672773,15.8833789 L4,16 L4,17 L16,17 L16,16 C16,15.4871642 15.6139598,15.0644928 15.1166211,15.0067277 L15,15 Z M10.0205937,1.02824486 C13.0581598,1.02824486 15.5205937,3.49067873 15.5205937,6.52824486 C15.5205937,9.56581098 13.0581598,12.0282449 10.0205937,12.0282449 C6.98302755,12.0282449 4.52059367,9.56581098 4.52059367,6.52824486 C4.52059367,3.49067873 6.98302755,1.02824486 10.0205937,1.02824486 Z M10.0205937,3.02824486 C8.08759705,3.02824486 6.52059367,4.59524823 6.52059367,6.52824486 C6.52059367,8.46124148 8.08759705,10.0282449 10.0205937,10.0282449 C11.9535903,10.0282449 13.5205937,8.46124148 13.5205937,6.52824486 C13.5205937,4.59524823 11.9535903,3.02824486 10.0205937,3.02824486 Z" id="形状结合" fill="#178AFF"></path>                    <circle id="椭圆形" fill="url(#linearGradient-1)" opacity="0.300000012" cx="10.0201868" cy="6.53296255" r="3.5"></circle>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_btn_ic_examine"    viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_btn_ic_examine</title>    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">        <g id="用户列表" transform="translate(-306.000000, -205.000000)">            <g id="操作" transform="translate(280.000000, 142.000000)">                <g id="1备份" transform="translate(0.000000, 54.000000)">                    <g id="编组-2" transform="translate(26.000000, 6.000000)">                        <g id="user-list_btn_ic_examine" transform="translate(0.000000, 3.000000)">                            <rect id="矩形" fill="#D8D8D8" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>                            <path d="M8,1 L8,3 L3,3 L3,13 L13,13 L13,8 L15,8 L15,15 L1,15 L1,1 L8,1 Z" id="形状结合"></path>                            <path d="M13.5961941,2.6109127 L15.0104076,4.02512627 L7.93933983,11.0961941 L4.40380592,7.56066017 L5.81801948,6.14644661 L7.93880592,8.2679127 L13.5961941,2.6109127 Z" id="形状结合"></path>                        </g>                    </g>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_btn_ic_export"    viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 16px 16px">    <title>user list_btn_ic_export</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-410.000000, -205.000000)">            <g id="操作" transform="translate(280.000000, 142.000000)">                <g id="1备份-2" transform="translate(120.000000, 54.000000)">                    <g id="编组" transform="translate(10.000000, 6.000000)">                        <g id="user-list_btn_ic_export" transform="translate(0.000000, 3.000000)">                            <rect id="矩形" fill="#D8D8D8" fill-rule="nonzero" opacity="0" x="0" y="0" width="16" height="16"></rect>                            <path d="M9.9988762,0.996990556 L11.3904923,2.38860665 L15.1577457,6.15586003 L13.7435321,7.57007359 L11,4.82699056 L11,15 L1,15 L1,13 L9,12.9999906 L9,4.77899056 L6.14785161,7.63124734 L4.75623551,6.23963124 L9.9988762,0.996990556 Z" id="形状结合" fill="#FFFFFF"></path>                        </g>                    </g>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_business"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_left_ic_business</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-21.000000, -837.000000)">            <g id="4" transform="translate(0.000000, 812.000000)">                <g id="user-list_left_ic_business" transform="translate(21.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <rect id="矩形" stroke="#178AFF" stroke-width="2" x="13" y="9" width="5" height="10"></rect>                    <path d="M13,1.16561126 L13,19 L2,19 L2,2.85791896 L13,1.16561126 Z" id="矩形" stroke="#1F2028" stroke-width="2"></path>                    <rect id="矩形" fill="#178AFF" x="9" y="8" width="2" height="4"></rect>                    <rect id="矩形" fill="#178AFF" opacity="0.200000003" x="3" y="16" width="9" height="2"></rect>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_control"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>user list_left_ic_control</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-21.000000, -697.000000)">            <g id="2" transform="translate(0.000000, 672.000000)">                <g id="user-list_left_ic_control" transform="translate(21.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <rect id="矩形" stroke="#1F2028" stroke-width="2" x="2" y="3" width="16" height="12"></rect>                    <rect id="矩形" fill="#178AFF" opacity="0.200000003" x="3" y="12" width="14" height="2"></rect>                    <rect id="矩形" fill="#178AFF" x="6" y="17" width="8" height="2"></rect>                    <polyline id="路径-4" stroke="#178AFF" stroke-width="2" points="6 11 9.05339652 7.97336036 10.937659 10 14 6.93490708"></polyline>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_grade"    viewBox="0 0 20 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_left_ic_grade</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-21.000000, -767.000000)">            <g id="3" transform="translate(0.000000, 742.000000)">                <g id="user-list_left_ic_grade" transform="translate(21.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <polyline id="路径-2" stroke="#178AFF" stroke-width="2" points="5.09401588 13.0310607 4.18183515 18.6611846 10 17.1613116 15.8388165 18.6611846 15.0252063 13.0310607"></polyline>                    <path d="M13.8464993,2.15060789 C15.7462385,3.40238432 17,5.55477632 17,8 C17,11.8659932 13.8659932,15 10,15 C7.55477632,15 5.40238432,13.7462385 4.15060789,11.8464993 C5.25469354,12.5758804 6.57781755,13 8,13 C11.8659932,13 15,9.86599325 15,6 C15,4.63079406 14.6068889,3.35340413 13.9273754,2.27453889 Z" id="形状结合" fill="#178AFF" opacity="0.200000003"></path>                    <circle id="椭圆形" stroke="#1F2028" stroke-width="2" cx="10" cy="8" r="7"></circle>                    <polygon id="路径" fill="#178AFF" fill-rule="nonzero" points="9.98183166 4.91295676 10.9150992 6.8866136 13.0005242 7.20481118 11.490183 8.74172626 11.8463768 10.9129568 9.98183166 9.88765346 8.11728657 10.9129568 8.47348035 8.74172626 6.96313913 7.20481118 9.04856416 6.8866136"></polygon>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_home"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>user list_left_ic_home</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-20.000000, -127.000000)">            <g id="1备份-4" transform="translate(0.000000, 102.000000)">                <g id="user-list_left_ic_home" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M10,2.26686158 L18,8.48908381 L18,18 L13,18 L13,13 L6.99723482,13 L6.99723482,18 L2,18 L2,8.48908381 L10,2.26686158 Z" id="矩形" stroke="#1F2028" stroke-width="2"></path>                    <path d="M14,19 L12,19 L12,14 L8,14 L8,19 L6,19 L6,12 L14,12 L14,19 Z" id="形状结合" fill="#178AFF"></path>                    <rect id="矩形" fill="#178AFF" opacity="0.200000003" x="3" y="15" width="3" height="2"></rect>                    <rect id="矩形备份-3" fill="#178AFF" opacity="0.200000003" x="14" y="15" width="3" height="2"></rect>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_money"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_left_ic_money</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-20.000000, -977.000000)">            <g id="6" transform="translate(0.000000, 952.000000)">                <g id="user-list_left_ic_money" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M17.9381045,8.99998598 C17.9789561,9.32758472 18,9.66133482 18,10 C18,14.418278 14.418278,18 10,18 C5.581722,18 2,14.418278 2,10 C2,9.66133482 2.02104393,9.32758472 2.0618955,8.99998598 C2.55399981,12.9463188 5.92038718,16 10,16 C14.0014593,16 17.3167581,13.0621974 17.9066733,9.22581519 Z" id="形状结合" fill="#178AFF" opacity="0.200000003"></path>                    <path d="M10,0 C15.5228475,0 20,4.4771525 20,10 C20,15.5228475 15.5228475,20 10,20 C4.4771525,20 0,15.5228475 0,10 C0,4.4771525 4.4771525,0 10,0 Z M10,2 C5.581722,2 2,5.581722 2,10 C2,14.418278 5.581722,18 10,18 C14.418278,18 18,14.418278 18,10 C18,5.581722 14.418278,2 10,2 Z" id="形状结合" fill="#1F2028"></path>                    <path d="M12.3261129,5 L13.7403265,6.41421356 L11.522,8.631 L14.021449,8.63170625 L14.021449,10.6317063 L11,10.631 L11,11.221 L14,11.2217923 L14,13.2217923 L11,13.221 L11,15.2217923 L9,15.2217923 L9,13.221 L6,13.2217923 L6,11.2217923 L9,11.221 L9,10.631 L6.02144898,10.6317063 L6.02144898,8.63170625 L8.508,8.631 L6.29057903,6.41421356 L7.70479259,5 L10.015,7.31 L12.3261129,5 Z" id="形状结合" fill="#178AFF"></path>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_order"    viewBox="0 0 19 19" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 19px 19px">    <title>user list_left_ic_order</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-22.000000, -907.000000)">            <g id="5" transform="translate(0.000000, 882.000000)">                <g id="user-list_left_ic_order" transform="translate(22.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="19" height="19"></rect>                    <rect id="矩形" fill="#178AFF" x="5" y="0" width="9" height="3"></rect>                    <path d="M17,2 L19,19 L0,19 L0.427,15.3670295 L15.0264171,15.3680295 L13.453,1.99902948 L17,2 Z" id="形状结合" fill="#178AFF" opacity="0.200000003"></path>                    <path d="M16.1107504,3 L17.8754563,18 L1.12454369,18 L2.88924957,3 L16.1107504,3 Z" id="矩形" stroke="#1F2028" stroke-width="2"></path>                    <path d="M9.5,10 C7.18396594,10 5.2765864,8.25034205 5.02754265,6.00070744 L7.05011858,6.00053926 C7.28196209,7.14139074 8.29071157,8 9.5,8 C10.7092884,8 11.7180379,7.14139074 11.9498814,6.00053926 L13.9724574,6.00070744 C13.7234136,8.25034205 11.8160341,10 9.5,10 Z" id="形状结合" fill="#178AFF"></path>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_power"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_left_ic_power</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-20.000000, -617.000000)">            <g id="7" transform="translate(0.000000, 592.000000)">                <g id="user-list_left_ic_power" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M11,9 L11.0010775,11.2681881 C11.5982846,11.6141507 12,12.2601625 12,13 C12,14.1045695 11.1045695,15 10,15 C8.8954305,15 8,14.1045695 8,13 C8,12.2597476 8.40216612,11.6134261 8.99992752,11.2676063 L9,9 L11,9 Z" id="形状结合" fill="#178AFF"></path>                    <path d="M10,2 C7.790861,2 6,3.790861 6,6 L4,6 C4,2.6862915 6.6862915,0 10,0 C13.3137085,0 16,2.6862915 16,6 L19,6 L19,20 L1,20 L1,6 L14,6 C14,3.790861 12.209139,2 10,2 Z M17,8 L3,8 L3,18 L17,18 L17,8 Z" id="形状结合" fill="#1F2028"></path>                    <rect id="矩形" fill="#C9E2FB" x="3" y="16" width="14" height="2"></rect>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_setup"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>user list_left_ic_setup</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-20.000000, -1047.000000)">            <g id="7" transform="translate(0.000000, 1022.000000)">                <g id="user-list_left_ic_setup" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M3.32378779,5.34114573 C6.27206919,5.79966458 8.49747326,6.02892401 10,6.02892401 C11.5025267,6.02892401 13.7509064,5.79966458 16.7451389,5.34114573 L13,3.30099986 L10.0344633,1.0403035 L8.85279079,1.52996719 L5.80833705,4.07329586 L3.32378779,5.34114573 Z" id="路径-5" fill="#178AFF" opacity="0.200000003"></path>                    <path d="M11.4918731,1 C11.6860162,1.81448833 12.112805,2.54009837 12.7026044,3.10883356 C13.5128306,3.89012311 14.6327174,4.375 15.875,4.375 C16.32113,4.375 16.767901,4.30073635 17.185817,4.17885924 L17.185817,4.17885924 L18.6889377,6.78954257 C18.3704925,7.08314555 18.0905179,7.42584722 17.8647292,7.80484966 C17.4777303,8.4544551 17.25,9.20856891 17.25,10 C17.25,11.2675602 17.7888687,12.3938324 18.6891802,13.2100361 L18.6891802,13.2100361 L17.185817,15.8211408 C16.767901,15.6992637 16.32113,15.625 15.875,15.625 C14.6327174,15.625 13.5128306,16.1098769 12.7026044,16.8911664 C12.112805,17.4599016 11.6860162,18.1855117 11.4918731,19 L11.4918731,19 L8.50812692,19 C8.31398382,18.1855117 7.88719501,17.4599016 7.29739555,16.8911664 C6.48716936,16.1098769 5.3672826,15.625 4.125,15.625 C3.67886995,15.625 3.23209898,15.6992637 2.81418303,15.8211408 L2.81418303,15.8211408 L1.31990843,13.2258217 C1.64094275,12.9370028 1.91664827,12.6007877 2.13789187,12.2294145 C2.52903277,11.5728566 2.75,10.8065624 2.75,10 C2.75,8.73243976 2.21113134,7.60616756 1.31081976,6.78996387 L1.31081976,6.78996387 L2.81418303,4.17885924 C3.23209898,4.30073635 3.67886995,4.375 4.125,4.375 C5.3672826,4.375 6.48716936,3.89012311 7.29739555,3.10883356 C7.88719501,2.54009837 8.31398382,1.81448833 8.50812692,1 L8.50812692,1 Z" id="路径" stroke="#1F2028" stroke-width="2" fill-rule="nonzero"></path>                    <circle id="椭圆形" stroke="#178AFF" stroke-width="2" cx="10" cy="10" r="2"></circle>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_transaction"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    <title>user list_left_ic_transaction</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="首页" transform="translate(-20.000000, -687.000000)">            <g id="8" transform="translate(0.000000, 662.000000)">                <g id="user-list_left_ic_transaction" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M20,2 L20,18 L0,18 L0,2 L20,2 Z M18,4 L2,4 L2,16 L18,16 L18,4 Z" id="形状结合" fill="#1F2028"></path>                    <rect id="矩形" fill="#C9E2FB" x="2" y="4" width="2" height="12"></rect>                    <path d="M18,6 L18,8 L14,8 C12.8954305,8 12,8.8954305 12,10 C12,11.0543618 12.8158778,11.9181651 13.8507377,11.9945143 L14,12 L18,12 L18,14 L14,14 C11.790861,14 10,12.209139 10,10 C10,7.790861 11.790861,6 14,6 L18,6 Z M14,9 C14.5522847,9 15,9.44771525 15,10 C15,10.5522847 14.5522847,11 14,11 C13.4477153,11 13,10.5522847 13,10 C13,9.44771525 13.4477153,9 14,9 Z" id="形状结合" fill="#178AFF"></path>                </g>            </g>        </g>    </g></symbol><?xml version="1.0" encoding="UTF-8"?><symbol id="icon-list_left_ic_user"    viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"viewBox="0 0 20px 20px">    <title>user list_left_ic_user</title>    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">        <g id="用户列表" transform="translate(-20.000000, -127.000000)">            <g id="1" transform="translate(0.000000, 102.000000)">                <g id="user-list_left_ic_user" transform="translate(20.000000, 25.000000)">                    <rect id="Rectangle-4" fill="#C84040" opacity="0" x="0" y="0" width="20" height="20"></rect>                    <path d="M11.7439108,4.99991345 C11.9097576,5.4691063 12,5.97401452 12,6.5 C12,8.98528137 9.98528137,11 7.5,11 C5.01471863,11 3,8.98528137 3,6.5 C3,5.97401452 3.09024243,5.4691063 3.25608915,4.99991345 C3.87413002,6.74802658 5.54085798,8 7.5,8 C9.41721706,8 11.0544013,6.80103683 11.7026635,5.1119996 Z" id="形状结合" fill="#178AFF" opacity="0.200000003"></path>                    <path d="M7.5,1 C10.5375661,1 13,3.46243388 13,6.5 C13,9.53756612 10.5375661,12 7.5,12 C4.46243388,12 2,9.53756612 2,6.5 C2,3.46243388 4.46243388,1 7.5,1 Z M7.5,3 C5.56700338,3 4,4.56700338 4,6.5 C4,8.43299662 5.56700338,10 7.5,10 C9.43299662,10 11,8.43299662 11,6.5 C11,4.56700338 9.43299662,3 7.5,3 Z M15,19 L0,19 L0,16 C-2.02906125e-16,14.3431458 1.34314575,13 3,13 L12,13 C13.6568542,13 15,14.3431458 15,16 L15,19 Z M12,15 L3,15 C2.48716416,15 2.06449284,15.3860402 2.00672773,15.8833789 L2,16 L2,17 L13,17 L13,16 C13,15.4871642 12.6139598,15.0644928 12.1166211,15.0067277 L12,15 Z" id="形状结合" fill="#1F2028"></path>                    <path d="M18.0004758,7.47256844 C18.0004758,8.40224777 17.7185534,9.26608058 17.2355369,9.9832385 C18.7823791,10.1013853 20.0004758,11.394726 20.0004758,12.9725684 L20.0004758,14.9725684 L18.0004758,14.9725684 L18.0004758,12.9725684 C18.0004758,12.4597326 17.6144356,12.0370613 17.1170969,11.9792962 L17.0004758,11.9725684 L14,11.972 L14,9.92265591 C15.1413572,9.69120464 16.0004758,8.68221549 16.0004758,7.47256844 C16.0004758,6.26292138 15.1413572,5.25393223 14,5.02248096 L14.0001788,3 C16.250297,3.24858708 18.0004758,5.15618968 18.0004758,7.47256844 Z" id="形状结合" fill="#178AFF"></path>                </g>            </g>        </g>    </g></symbol>
-            </svg>
-        
-    <div id="app">
-      <style>
-        @keyframes gradient{50%{background-position:100% 0}}
-        @keyframes img {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(-360deg);
-          }
-        }
-        @keyframes spin {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(360deg);
-          }
-        }
-        @keyframes spin-reverse {
-          0% {
-            transform: rotate(0deg);
-          }
-          100% {
-            transform: rotate(-360deg);
-          }
-        }
-        #loader-wrapper {
-          background-image: linear-gradient(45deg, rgb(90, 54, 148) 0%, rgb(19, 189, 206) 33%, rgb(0, 148, 217) 66%, rgb(111, 199, 181) 100%);
-          background-size: 400%;
-          background-position: 0% 100%;
-          animation: gradient 7.5s ease-in-out infinite;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 10;
-          overflow: hidden;
-        }
-        #loader {
-          display: flex;
-          position: relative;
-          left: 50%;
-          top: 50%;
-          width: 150px;
-          height: 150px;
-          margin: -75px 0 0 -75px;
-          border-radius: 50%;
-          border: 3px solid transparent;
-          border-top-color: #fff;
-          animation: spin 1.7s linear infinite;
-          z-index: 11;
-        }
-        #loader:before {
-          content: "";
-          position: absolute;
-          top: 5px;
-          left: 5px;
-          right: 5px;
-          bottom: 5px;
-          border-radius: 50%;
-          border: 3px solid transparent;
-          border-top-color: #fff;
-          animation: spin-reverse .6s linear infinite;
-        }
-        #loader:after {
-          content: "";
-          position: absolute;
-          top: 15px;
-          left: 15px;
-          right: 15px;
-          bottom: 15px;
-          border-radius: 50%;
-          border: 3px solid transparent;
-          border-top-color: #fff;
-          animation: spin 1s linear infinite;
-        }
-        #loader img {
-          margin: auto;
-          align-items: center;
-          display: table-cell;
-          vertical-align: middle;
-          text-align: center;
-          animation: img 1.7s linear infinite;
-        }
-        .loader{top: 76%;left:50%;-mos-transform:translate(-50%,-50%);transform:translate(-50%,-50%);text-align:center;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;cursor:default;width: 100%;max-width: 990px;overflow:visible;z-index: 99;}
-        .loader,.loader div{position:absolute;height:36px}
-        .loader div{width:30px;margin: 0 20px;opacity:0;animation:move 2s linear infinite;-o-animation:move 2s linear infinite;-moz-animation:move 2s linear infinite;-webkit-animation:move 2s linear infinite;transform:rotate(180deg);-o-transform:rotate(180deg);-moz-transform:rotate(180deg);-webkit-transform:rotate(180deg);color:#fff;font-size: 2em;}
-        .loader div:nth-child(8):before{background: #ffffff;}
-        .loader div:nth-child(8):before,.loader div:nth-child(9):before{content:'';position:absolute;bottom: 0px;left:0;width: 10px;height: 10px;border-radius:100%;}
-        .loader div:nth-child(9):before{background:#f2f2f2}
-        .loader div:nth-child(10):before{bottom:-15px;height: 10px;background: #ffffff;}
-        .loader div:after,.loader div:nth-child(10):before{content:'';position:absolute;left:0;width: 10px;border-radius:100%;}
-        .loader div:after{bottom:-40px;height:5px;background: rgba(255,255,255,.1);}
-        .loader div:nth-child(2){animation-delay:.2s;-o-animation-delay:.2s;-moz-animation-delay:.2s;-webkit-animation-delay:.2s}
-        .loader div:nth-child(3){animation-delay:.4s;-o-animation-delay:.4s;-webkit-animation-delay:.4s}
-        .loader div:nth-child(4){animation-delay:.6s;-o-animation-delay:.6s;-moz-animation-delay:.6s;-webkit-animation-delay:.6s}
-        .loader div:nth-child(5){animation-delay:.8s;-o-animation-delay:.8s;-moz-animation-delay:.8s;-webkit-animation-delay:.8s}
-        .loader div:nth-child(6){animation-delay:1s;-o-animation-delay:1s;-moz-animation-delay:1s;-webkit-animation-delay:1s}
-        .loader div:nth-child(7){animation-delay:1.2s;-o-animation-delay:1.2s;-moz-animation-delay:1.2s;-webkit-animation-delay:1.2s}
-        .loader div:nth-child(8){animation-delay:1.4s;-o-animation-delay:1.4s;-moz-animation-delay:1.4s;-webkit-animation-delay:1.4s}
-        .loader div:nth-child(9){animation-delay:1.6s;-o-animation-delay:1.6s;-moz-animation-delay:1.6s;-webkit-animation-delay:1.6s}
-        .loader div:nth-child(10){animation-delay:1.8s;-o-animation-delay:1.8s;-moz-animation-delay:1.8s;-webkit-animation-delay:1.8s}
-        @keyframes move{0%{right:0;opacity:0}35%{right:41%}35%,65%{transform:rotate(0);opacity:1}65%{right:59%}to{right:100%;transform:rotate(-180deg)}}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>风中追风的博客</title>
 
-      </style>
-      <!-- <div id="loader-wrapper">
-        <div id="loader"><img src="/static/loading.png"></div>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/blog/">
+    <link href="./favicon.ico" rel="icon">
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./css/blog.css" rel="stylesheet">
+  </head>
+  <body>
+    
+<div class="container header">
+  <header class="blog-header py-3">
+    <div class="row flex-nowrap justify-content-between align-items-center">
+      <div class="col-4 pt-1">
+        <a class="link-secondary" href="/" aria-label="home">
+          Home
+        </a>
       </div>
-      <div class="loader">
-        <div> L </div>
-        <div> O </div>
-        <div> A </div>
-        <div> D </div>
-        <div> I </div>
-        <div> N </div>
-        <div> G </div>
-        <div> </div>
-        <div> </div>
-        <div> </div>
-      </div> -->
-      
+      <div class="col-4 text-center">
+        <img src="./image/logo.png" alt="logo" width="120px" height="40px"/>
+      </div>
+      <div class="col-4 d-flex justify-content-end align-items-center">
+        <a class="link-secondary" href="/" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+          </svg>
+          Refresh
+        </a>
+      </div>
     </div>
-    <script>
-    </script>
+  </header>
+
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="/pages/ihtml.html">HTML</a>
+      <a class="p-2 link-secondary" href="/pages/ijs.html">JavaScript</a>
+      <a class="p-2 link-secondary" href="/pages/icss.html">CSS</a>
+      <a class="p-2 link-secondary" href="/pages/api.html">API</a>
+      <a class="p-2 link-secondary" href="/pages/searchWork.html">面试题</a>
+      <a class="p-2 link-secondary" href="/pages/workhelp.html">常用函数</a>
+      <a class="p-2 link-secondary" href="#">日记</a>
+      <a class="p-2 link-secondary" href="#">股票</a>
+      <a class="p-2 link-secondary" href="#">游戏</a>
+      <a class="p-2 link-secondary" href="#">旅行</a>
+      <a class="p-2 link-secondary" href="#">生活</a>
+      <a class="p-2 link-secondary" href="#">(>^ω^<)喵</a>
+    </nav>
+  </div>
+</div>
+
+<main class="container">
+  <div class="p-4 p-md-5 mb-4 text-white rounded bgurl">
+    <div class="col-md-7 px-0">
+      <h1 class="display-4 fst-italic fw-bold">致力于技术分享与生活的记录</h1>
+      <p class="lead my-3">我原要昂扬独步天下，奈何却忍辱藏于污泥；我梦在叱咤风云，却无奈苦候时机；难道登峰造极，途中遍是荆棘……</p>
+      <p class="lead mb-0"><a href="/more.html" class="text-white fw-bold">查看更多</a></p>
+    </div>
+  </div>
+
+  <div class="row mb-2">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">HTML5</strong>
+          <h3 class="mb-0">超文本标记语言用于创建网页的标准标记语言</h3>
+          <p class="card-text mb-auto mt-2">您可以使用 HTML 来建立自己的 WEB 站点，HTML 运行在浏览器上，由浏览器来解析</p>
+          <a href="/pages/ihtml.html" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="https://www.runoob.com/wp-content/uploads/2013/06/image-icon.png" width="250" height="250"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">JavaScript</strong>
+          <h3 class="mb-0">JavaScript是Web的编程语言</h3>
+          <p class="mb-auto  mt-2">JavaScript 是互联网上最流行的脚本语言，广泛用于服务器、PC、笔记本电脑、平板电脑和智能手机等设备</p>
+          <a href="/pages/ijs.html" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="https://www.runoob.com/wp-content/uploads/2013/07/js-logo.png" width="250" height="250"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">React</strong>
+          <h3 class="mb-0">React就是Facebook的一个开源JS框架，专注的层面为View层</h3>
+          <p class="mb-auto  mt-2">React认为一切页面元 素都可以抽象成组件</p>
+          <a href="/pages/ireact.html" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K" width="250" height="250"/>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Vue</strong>
+          <h3 class="mb-0">渐进式JavaScript 框架 易学易用，性能出色，适用场景丰富的 Web 前端框架。</h3>
+          <p class="mb-auto  mt-2">丰富的、可渐进式集成的生态系统，可以根据应用规模在库和框架间切换自如。</p>
+          <a href="/pages/ivue.html" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img src="https://tangjiusheng.com/d/file/image/20200715/1594805355828805.jpg" width="250" height="250"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row g-5">
+    <div class="col-md-8">
+      <article class="blog-post">
+        <h2 class="blog-post-title">简介</h2>
+        <hr>
+        <h3>个人信息</h3>
+        <p class="blog-post-meta">github主页：<a href="https://github.com/higherzhouhui" target="_blank">高山流水</a></p>
+        <p>就读院校：<a target="_blank" href="https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E9%99%95%E8%A5%BF%E7%A7%91%E6%8A%80%E5%A4%A7%E5%AD%A6&fenlei=256&rsv_pq=dbca74e000004fb9&rsv_t=6a4atQAdJIkRcPry5HQ4qO0Mxqc3Go7ZhyY9e7YHxdAFjRIKkLBVIDbuWkk&rqlang=cn&rsv_dl=tb&rsv_enter=1&rsv_sug3=12&rsv_sug2=0&rsv_btype=i&inputT=2278&rsv_sug4=2278"><img src="https://t15.baidu.com/it/u=3131109370,288598635&fm=179&app=42&size=w54&n=0&f=JPEG&fmt=auto?s=8080D5125AB1E3E70B8B21D7030010AA&sec=1662829200&t=afaf2877f3c38e9f7c873d941e6611a3" style="margin-right: 15px;"/>陕西科技大学</a></p>
+        <p>所属专业：电气自动化与人工智能学院——>计算机系——>物联网工程</p>
+        <p>曾工作单位：上海博达数据通信有限公司（2016.9-2018.5）、上海红星美凯龙设计云信息有限公司（2018.5-2020.4）、华夏云融信息科技有限公司（2020.4-2022.3）、上海治泓信息科技有限公司（2022.3-2022.9）</p>
+        <h3 class="pb-4 mb-4 fst-italic border-bottom">
+          项目列表
+        </h3>
+        <p>
+          <ul>
+            <li>博达官网：<a href="http://www.bdcom.com.cn/" target="_blank">http://www.bdcom.com.cn/</a></li>
+            <li>全景云设计服务平台：<a href="https://www.mshejiyun.com/" target="_blank">https://www.mshejiyun.com/</a></li>
+            <li>治泓capsid官网：<a href="https://www.capsid.one/" target="_blank">https://www.capsid.one/</a></li>
+            <li>NFT(Non-Fungible Token)交易平台：<a href="https://www.pd-1st.com/" target="_blank">https://www.pd-1st.com/</a></li>
+            <li>NFR(Non-Fungible Right)交易平台：<a href="https://nfr.capsid.one/" target="_blank">https://nfr.capsid.one/</a></li>
+            <li>Wings-NFT穿搭设计：<a href="https://wings.capsid.one/" target="_blank">https://wings.capsid.one/</a></li>
+            <li>生物医学工程文献检索引擎：<a href="https://pubmed.ncbi.nlm.nih.gov/" target="_blank">https://pubmed.ncbi.nlm.nih.gov/</a></li>
+            <li>X-因子文献检索引擎：<a href="https://www.x-scientist.cn/" target="_blank">https://www.x-scientist.cn/</a></li>
+            <li>各类中后台管理：<a href="https://wings-dashboard.capsid.one/" target="_blank">https://wings-dashboard.capsid.one/</a></li>
+          </ul>
+        </p>
+        <h2>掌握技能</h2>
+        <p>React、Ant-Design、Vue2、Vue3、Next、BootStrap、JQuery、Styled-Components、Angular、Ext、Lua、Django、Uni-App</p>
+        <blockquote class="blockquote">
+          <p>开发工具</p>
+        </blockquote>
+        <p>Visual Studio、GitHub、Chrome、PhotoShop、TeamBition、Npm、Node</p>
+        <!-- <h3>Example lists</h3>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout. This is an example unordered list:</p>
+        <ul>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ul>
+        <p>And this is an ordered list:</p>
+        <ol>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ol>
+        <p>And this is a definition list:</p>
+        <dl>
+          <dt>HyperText Markup Language (HTML)</dt>
+          <dd>The language used to describe and define the content of a Web page</dd>
+          <dt>Cascading Style Sheets (CSS)</dt>
+          <dd>Used to describe the appearance of Web content</dd>
+          <dt>JavaScript (JS)</dt>
+          <dd>The programming language used to build advanced Web sites and applications</dd>
+        </dl>
+        <h2>Inline HTML elements</h2>
+        <p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+        <ul>
+          <li><strong>To bold text</strong>, use <code class="language-plaintext highlighter-rouge">&lt;strong&gt;</code>.</li>
+          <li><em>To italicize text</em>, use <code class="language-plaintext highlighter-rouge">&lt;em&gt;</code>.</li>
+          <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="language-plaintext highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="language-plaintext highlighter-rouge">title</code> attribute for the full phrase.</li>
+          <li>Citations, like <cite>— Mark Otto</cite>, should use <code class="language-plaintext highlighter-rouge">&lt;cite&gt;</code>.</li>
+          <li><del>Deleted</del> text should use <code class="language-plaintext highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="language-plaintext highlighter-rouge">&lt;ins&gt;</code>.</li>
+          <li>Superscript <sup>text</sup> uses <code class="language-plaintext highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="language-plaintext highlighter-rouge">&lt;sub&gt;</code>.</li>
+        </ul>
+        <p>Most of these elements are styled by browsers with few modifications on our part.</p>
+        <h2>Heading</h2>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h3>Sub-heading</h3>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <pre><code>Example code block</code></pre>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">Another blog post</h2>
+        <p class="blog-post-meta">December 23, 2020 by <a href="#">Jacob</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <blockquote>
+          <p>Longer quote goes here, maybe with some <strong>emphasized text</strong> in the middle of it.</p>
+        </blockquote>
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <h3>Example table</h3>
+        <p>And don't forget about tables in these posts:</p>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Upvotes</th>
+              <th>Downvotes</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Alice</td>
+              <td>10</td>
+              <td>11</td>
+            </tr>
+            <tr>
+              <td>Bob</td>
+              <td>4</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>Charlie</td>
+              <td>7</td>
+              <td>9</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td>Totals</td>
+              <td>21</td>
+              <td>23</td>
+            </tr>
+          </tfoot>
+        </table>
+
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+
+      <article class="blog-post">
+        <h2 class="blog-post-title">New feature</h2>
+        <p class="blog-post-meta">December 14, 2020 by <a href="#">Chris</a></p>
+
+        <p>This is some additional paragraph placeholder content. It has been written to fill the available space and show how a longer snippet of text affects the surrounding content. We'll repeat it often to keep the demonstration flowing, so be on the lookout for this exact same string of text.</p>
+        <ul>
+          <li>First list item</li>
+          <li>Second list item with a longer description</li>
+          <li>Third list item to close it out</li>
+        </ul>
+        <p>This is some additional paragraph placeholder content. It's a slightly shorter version of the other highly repetitive body text used throughout.</p>
+      </article>
+
+      <nav class="blog-pagination" aria-label="Pagination">
+        <a class="btn btn-outline-primary" href="#">Older</a>
+        <a class="btn btn-outline-secondary disabled">Newer</a>
+      </nav> -->
+
+    </div>
+
+    <div class="col-md-4">
+      <div class="position-sticky" style="top: 2rem;">
+        <div class="p-4 mb-3 bg-light rounded">
+          <h4 class="fst-italic">About</h4>
+          <p class="mb-0">世界经济史是一部基于假象和谎言的连续剧。要获得财富，做法就是认清其假象，投入其中，然后在假象被公众认识之前退出游戏！</p>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">Archives</h4>
+          <ol class="list-unstyled mb-0">
+            <li>全国计算机二级</li>
+            <li>大学英语四级</li>
+            <li>学士学位</li>
+            <li>软件工程师</li>
+            <li>3D算法工程师</li>
+            <li>初级前端开发工程师</li>
+            <li>中级Web前端开发工程师</li>
+          </ol>
+        </div>
+
+        <div class="p-4">
+          <h4 class="fst-italic">contact</h4>
+          <ol class="list-unstyled">
+            <li>QQ:<a href="#">782492184</a></li>
+            <li>Email:<a href="#">782492184@qq.com</a></li>
+            <li>微信号:<a href="#">P0refect</a></li>
+            <li>手机号:<a href="#">185-1601-0812</a></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<footer class="blog-footer">
+  <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/huizhou23236640">@higherzhouhui</a>.</p>
+  <p>
+    <a href="#">Back to top</a>
+  </p>
+</footer>
+
+
     
   </body>
 </html>
