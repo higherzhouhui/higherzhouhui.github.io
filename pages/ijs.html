@@ -532,6 +532,31 @@
           <h6>
             Async/Await就是一个**自执行**的generate函数。利用generate函数的特性把异步的代码写成“同步”的形式,第一个请求的返回值作为后面一个请求的参数,其中每一个参数都是一个promise对象.
           </h6>
+          <h5>
+            async/await语法糖使用起来非常简单，只需要在函数前面加上async关键字，并在需要等待异步操作完成的地方使用await关键字即可。例如，下面是一个使用Promise对象的异步操作：
+          </h5>
+            <p>
+              function getData() { <br/>
+                &nbsp;&nbsp;return new Promise((resolve, reject) => { <br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => { <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve('data'); <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}, 1000);<br/>
+                    &nbsp;&nbsp;});<br/>
+                  }
+
+            </p>
+            <p>
+              getData().then((data) => { <br/>
+                &nbsp;&nbsp;console.log(data); <br/>
+              })
+            </p>
+            <p>使用async/await语法糖可改写如下代码：</p>
+            <p>
+              async function fetchData() {<br/>
+                &nbsp;&nbsp;const data = await getData();<br/>
+                &nbsp;&nbsp;console.log(data);<br/>
+              }
+            </p>
           <hr />
           <a href="#jieliu" name="jieliu" class="h4">介绍节流防抖原理、区别以及应用</a>
           <h5>节流</h5>
@@ -618,6 +643,16 @@
           <ol>
             <li>利用Set()+Array.from()
               <p>const result = Array.from(new Set(arr))</p>
+              <p>这种方式不仅可以用于数组去重，也可以用于对象去重</p>
+              <p>const arr = [{ id: 1 }, { id: 2 }, { id: 1 }, { id: 3 }];
+              </p>
+              <p>
+                const set = new Set(arr.map(item => item.id));
+              </p>
+              <p>const uniqueArr = Array.from(set, id => ({ id }));
+              </p>
+              <p>console.log(uniqueArr); // [{ id: 1 }, { id: 2 }, { id: 3 }]
+              </p>
             </li>
             <li>利用数组的indexOf方法(无法对NaN去重)</li>
             <li>利用数组的includes方法</li>
