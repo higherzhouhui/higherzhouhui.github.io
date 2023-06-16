@@ -58,31 +58,31 @@
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#gn">
                 <span data-feather="home"></span>
-                千分位分隔符，格式化价格
+                概念
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#yyh">
                 <span data-feather="home"></span>
-                验证手机号码是否有效
+                语义化标签
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#new">
                 <span data-feather="home"></span>
-                获取文件扩展名
+                新特性
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#fhsz">
-                <span data-feather="home"></span>
-                返回一个长度为参数值并且每项都为参数值的数组
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#zczc">
+              <a class="nav-link" aria-current="page" href="#lxzc">
                 <span data-feather="home"></span>
                 获取两个字符串的最长连续子串
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#zzwen">
+                <span data-feather="home"></span>
+                VScode匹配中文做国际化,找到项目的中文
               </a>
             </li>
           </ul>
@@ -93,7 +93,11 @@
           <h1 class="h2 border-bottom mb-4 pb-2">常用函数</h1>
           <a href="#gn" name="gn" class="h4">千分位分隔符，格式化价格</a>
           <p>
-            str.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
+           <ol>
+            <li> str.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')</li>
+            <li> Number(str).toLocaleString()
+            </li>
+           </ol>
           </p>
           <hr />
           <a href="#yyh" name="yyh" class="h4">验证手机号码是否有效</a>
@@ -112,7 +116,7 @@
               },<br/>
           </p>
           <hr />
-          <a href="#fhsz" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
+          <a href="#yyh" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
           <p>
            1、function createArray(number: number) { <br/>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const arr = [];<br/>
@@ -132,7 +136,7 @@
             }
            </p>
            <hr />
-           <a href="#zczc" name="zczc" class="h4">获取两个字符串的最长连续子串</a>
+           <a href="#lxzc" name="lxzc" class="h4">获取两个字符串的最长连续子串</a>
            <h5>思路：</h5>
            <p>传入两个字符串，先比较谁长谁短，遍历短的字符串，两个for循环，外层循环从最大长度开始遍历，长度逐个递减，内层循环从短字符串的最左边开始截取最大长度的字符串，检查截取的字符串是否在长的字符串里面，  直到找到匹配的字符串</p>
            <h6>代码</h6>
@@ -162,12 +166,11 @@
                       &nbsp;&nbsp;&nbsp;&nbsp;return ''<br/>
                       &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
            </p>
+           <hr />
+           <a href="#zzwen" name="zzwen" class="h4">VScode匹配中文做国际化,找到项目的中文</a>
+           <p>(".*[\u4E00-\u9FA5]+)|([\u4E00-\u9FA5]+.*") </p>
           </div>
       </main>
-      <div>
-        <h1>VScode匹配中文做国际化</h1>
-        <p>(".*[\u4E00-\u9FA5]+)|([\u4E00-\u9FA5]+.*") </p>
-      </div>
     </div>
   </div>
 </body>

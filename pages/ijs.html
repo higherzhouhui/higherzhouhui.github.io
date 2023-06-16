@@ -114,7 +114,7 @@
             <li class="nav-item">
               <a class="nav-link" href="#bevent">
                 <span data-feather="shopping-cart"></span>
-                浏览器中的事件环（Event Loop)
+                浏览器中的事件循环（Event Loop)
               </a>
             </li>
             <li class="nav-item">
@@ -153,6 +153,18 @@
                 说一说JS实现异步的方法？
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quchong">
+                <span data-feather="shopping-cart"></span>
+                JS数组去重的几种方式？
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#arraymethod">
+                <span data-feather="shopping-cart"></span>
+                数组常用增删改方法有哪些？
+              </a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -180,6 +192,7 @@
                 <li>Array(数组)</li>
                 <li>Date(日期)</li>
                 <li>RegExp(正则表达式)</li>
+                <li>Map(键控集合)</li>
               </ol>
             </li>
           </ol>
@@ -190,7 +203,7 @@
           </p>
           <h5>使用场景：</h5>
           <p class="text-danger">Symbol：使用Symbol来作为对象属性名(key) 利用该特性，把一些不需要对外操作和访问的属性使用Symbol来定义</p>
-          <p class="text-danger">BigInt：由于在 Number 与 BigInt 之间进行转换会损失精度，因而建议仅在值可能大于253 时使用 BigInt 类型，并且不在两种类型之间进行相互转换。
+          <p class="text-danger">BigInt：由于在 Number 与 BigInt 之间进行转换会损失精度，因而建议仅在值可能大于2的253次方 时使用 BigInt 类型，并且不在两种类型之间进行相互转换。
           </p>
           <p class="text-success">传送门 ☞[# JavaScript 数据类型之 Symbol、BigInt](https://juejin.cn/post/7000754813801775111)
           </p>
@@ -202,13 +215,13 @@
           <h5>浅拷贝</h5>
           <ol>
             <li>直接赋值</li>
-            <li>Object.Assign</li>
           </ol>
           <h5>深拷贝</h5>
           <ol>
             对象深拷贝
-            <li>先JSON.String然后再JSON.parse回来</li>
-            <li>使用...解构</li>
+            <li>先JSON.String然后再JSON.parse回来(没法拷贝内部函数)</li>
+            <li>Object.Assign(对象的属性值为基本数据类型)</li>
+            <li>使用...解构(es6的展开语法只针对第一层，对多层还是浅拷贝方式)</li>
           </ol>
           <ol>
             数组深拷贝
@@ -218,10 +231,29 @@
             <li>concat方法,它是用于连接多个数组组成一个新的数组的方法。那么，我们只要连接它自己，即可完成数组的深拷贝。<br/>
               var arr2 = arr.concat()
             </li>
-            <li>ES6扩展运算符实现,该方法是最简单的<br/>
+            <li>ES6扩展运算符实现,该方法是最简单的（es6的展开语法只针对第一层，对多层还是浅拷贝方式）<br/>
               var arr2 = [...arr]
             </li>
           </ol>
+          <p>
+            <h6>对象或数组，使用递归函数实现深拷贝</h6>
+            function deepCopy(obj) {<br/>
+              &nbsp;&nbsp;let newObj = Array.isArray(obj) ? [] : {};<br/>
+              <br/>
+              &nbsp;&nbsp;for (let key in obj) {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;if (typeof obj[key] === "object") {<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newObj[key] = deepCopy(obj[key]);<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;} else {<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newObj[key] = obj[key];<br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                    &nbsp;&nbsp;}<br/>
+              <br/>
+              &nbsp;&nbsp;return newObj;<br/>
+            }<br/>
+            
+            const obj = { a: 1, b: { c: 2 } };<br/>
+            const obj2 = deepCopy(obj);<br/>
+          </p>
           <hr />
           <a href="jiance" name="jiance" class="h4">JS中的数据类型检测方案</a>
           <h5>1.typeof</h5>
@@ -229,7 +261,7 @@
             <li>console.log(typeof 1); // number</li>
             <li>console.log(typeof true); // boolean</li>
             <li>console.log(typeof 'mc'); // string</li>
-            <li>console.log(typeof Symbol) // function</li>
+            <li>console.log(typeof Symbol()) // symbol</li>
             <li>console.log(typeof function(){}); // function</li>
             <li>console.log(typeof console.log()); // function</li>
             <li>console.log(typeof []); // object </li>
@@ -440,8 +472,8 @@
             当主程结束，先执行准备好微任务，然后再执行准备好的宏任务，一个轮询结束。
           </p>
           <hr />
-          <a href="#bevent" name="bevent" class="h4">浏览器中的事件环（Event Loop)</a>
-          <h5>事件环的运行机制</h5>
+          <a href="#bevent" name="bevent" class="h4">浏览器中的事件循环（Event Loop)</a>
+          <h5>事件循环的运行机制</h5>
           <p>先会执行栈中的内容，栈中的内容执行后执行微任务，微任务清空后再执行宏任务，先取出一个宏任务，再去执行微任务，然后在取宏任务清微任务这样不停的循环。</p>
           <h5>eventLoop 是由JS的宿主环境（浏览器）来实现的；</h5>
           <h6>事件循环可以简单的描述为以下四个步骤:</h6>
@@ -532,6 +564,31 @@
           <h6>
             Async/Await就是一个**自执行**的generate函数。利用generate函数的特性把异步的代码写成“同步”的形式,第一个请求的返回值作为后面一个请求的参数,其中每一个参数都是一个promise对象.
           </h6>
+          <h5>
+            async/await语法糖使用起来非常简单，只需要在函数前面加上async关键字，并在需要等待异步操作完成的地方使用await关键字即可。例如，下面是一个使用Promise对象的异步操作：
+          </h5>
+            <p>
+              function getData() { <br/>
+                &nbsp;&nbsp;return new Promise((resolve, reject) => { <br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;setTimeout(() => { <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;resolve('data'); <br/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;}, 1000);<br/>
+                    &nbsp;&nbsp;});<br/>
+                  }
+
+            </p>
+            <p>
+              getData().then((data) => { <br/>
+                &nbsp;&nbsp;console.log(data); <br/>
+              })
+            </p>
+            <p>使用async/await语法糖可改写如下代码：</p>
+            <p>
+              async function fetchData() {<br/>
+                &nbsp;&nbsp;const data = await getData();<br/>
+                &nbsp;&nbsp;console.log(data);<br/>
+              }
+            </p>
           <hr />
           <a href="#jieliu" name="jieliu" class="h4">介绍节流防抖原理、区别以及应用</a>
           <h5>节流</h5>
@@ -618,6 +675,16 @@
           <ol>
             <li>利用Set()+Array.from()
               <p>const result = Array.from(new Set(arr))</p>
+              <p>这种方式不仅可以用于数组去重，也可以用于对象去重</p>
+              <p>const arr = [{ id: 1 }, { id: 2 }, { id: 1 }, { id: 3 }];
+              </p>
+              <p>
+                const set = new Set(arr.map(item => item.id));
+              </p>
+              <p>const uniqueArr = Array.from(set, id => ({ id }));
+              </p>
+              <p>console.log(uniqueArr); // [{ id: 1 }, { id: 2 }, { id: 3 }]
+              </p>
             </li>
             <li>利用数组的indexOf方法(无法对NaN去重)</li>
             <li>利用数组的includes方法</li>
@@ -629,6 +696,29 @@
             </li>
             <li>利用Map()</li>
             <li>利用对象</li>
+          </ol>
+          <hr />
+          <a href="#arraymethod" name="arraymethod" class="h4">数组常用增删改方法有哪些？</a>
+          <p>
+            <img src="../image/array.png" alt="array">
+          </p>
+          <ol>
+            <li>forEach是对数组的每一个元素执行一次给定的函数。
+            </li>
+            <li>map是创建一个新数组,该新数组由原数组的每个元素都调用一次提供的函数返回的值。
+            </li>
+            <li>pop():删除数组后面的最后一个元素,返回值为被删除的那个元素。
+            </li>
+            <li>push():将一个元素或多个元素添加到数组末尾，并返回新的长度。
+            </li>
+            <li>shift():删除数组中的第一个元素，并返回被删除元素的值。
+            </li>
+            <li>unshift():将一个或多个元素添加到数组的开头，并返回该数组的新长度。
+            </li>
+            <li>splice():通过删除或替换现有元素或者原地添加新的元素来修改数组，并以数组形式返回被修改的内容。
+            </li>
+            <li>reverse(): 反转数组。返回反转后的数组
+            </li>
           </ol>
         </div>
       </main>
