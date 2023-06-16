@@ -52,25 +52,37 @@
             <li class="nav-item">
               <a class="nav-link h4" aria-current="page" href="/">
                 <span data-feather="home"></span>
-                首页->HTML
+                首页->常用函数
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#gn">
                 <span data-feather="home"></span>
-                概念
+                千分位分隔符，格式化价格
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#yyh">
                 <span data-feather="home"></span>
-                语义化标签
+                验证手机号码是否有效
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#new">
                 <span data-feather="home"></span>
-                新特性
+                获取文件扩展名
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#fhsz">
+                <span data-feather="home"></span>
+                返回一个长度为参数值并且每项都为参数值的数组
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#zczc">
+                <span data-feather="home"></span>
+                获取两个字符串的最长连续子串
               </a>
             </li>
           </ul>
@@ -100,7 +112,7 @@
               },<br/>
           </p>
           <hr />
-          <a href="#yyh" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
+          <a href="#fhsz" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
           <p>
            1、function createArray(number: number) { <br/>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const arr = [];<br/>
@@ -120,7 +132,7 @@
             }
            </p>
            <hr />
-           <a href="#yyh" name="yyh" class="h4">获取两个字符串的最长连续子串</a>
+           <a href="#zczc" name="zczc" class="h4">获取两个字符串的最长连续子串</a>
            <h5>思路：</h5>
            <p>传入两个字符串，先比较谁长谁短，遍历短的字符串，两个for循环，外层循环从最大长度开始遍历，长度逐个递减，内层循环从短字符串的最左边开始截取最大长度的字符串，检查截取的字符串是否在长的字符串里面，  直到找到匹配的字符串</p>
            <h6>代码</h6>
