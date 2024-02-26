@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study New</title>
+<style>
+.printer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 50px auto;
+}
+
+.paper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #000;
+}
+
+.printer-body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  width: 60%;
+  height: 100px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+}
+
+.printer::after {
+  content: "";
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  width: 10px;
+  height: 50px;
+  margin-left: -5px;
+  background-color: #000;
+  border-radius: 0 0 6px 6px;
+}
+
+.paper p {
+  font-size: 24px;
+  white-space: pre;
+  overflow: hidden;
+  border-right: 3px solid #000;
+  margin: 0;
+  animation: typing 2s steps(20);
+}
+
+.paper p::before {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 35px;
+  vertical-align: bottom;
+  margin-right: -3px;
+  border-right: 3px solid #000;
+  animation: typing 2s steps(20) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+    <div class="printer">
+        <div class="paper">
+          <p>Printing</p>
+        </div>
+        <div class="printer-body"></div>
+      </div>
+</body>
+<script>
+    const paper = document.querySelector(".paper");
+const message = "This is a printer animation!"; //这里可以替换成你要打印的文本
+
+function print(message) {
+  paper.classList.add("print"); //添加打印动画的class
+  paper.querySelector("p").textContent = message; //将要打印的文本填入元素中
+
+  setTimeout(function() {
+    paper.classList.remove("print"); //移除打印动画的class
+  }, 2000); //根据打印文字的长度，可调整时间间隔
+}
+
+print(message); //开始打印
+</script>
+</html>

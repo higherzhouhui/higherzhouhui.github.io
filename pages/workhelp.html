@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.88.1">
+  <title>HTML5</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+
+  <!-- Bootstrap core CSS -->
+  <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+    a {
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    p {
+        margin: 12px 0;
+        font-size: 1.3rem;
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="../css/dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link h4" aria-current="page" href="/">
+                <span data-feather="home"></span>
+                首页->常用函数
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#gn">
+                <span data-feather="home"></span>
+                概念
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#yyh">
+                <span data-feather="home"></span>
+                语义化标签
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#new">
+                <span data-feather="home"></span>
+                新特性
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#lxzc">
+                <span data-feather="home"></span>
+                获取两个字符串的最长连续子串
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#zzwen">
+                <span data-feather="home"></span>
+                VScode匹配中文做国际化,找到项目的中文
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div class="pt-3 pb-3 mb-3">
+          <h1 class="h2 border-bottom mb-4 pb-2">常用函数</h1>
+          <a href="#gn" name="gn" class="h4">千分位分隔符，格式化价格</a>
+          <p>
+           <ol>
+            <li> str.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')</li>
+            <li> Number(str).toLocaleString()
+            </li>
+           </ol>
+          </p>
+          <hr />
+          <a href="#yyh" name="yyh" class="h4">验证手机号码是否有效</a>
+          <p>
+            function validPhone(phone: string) { <br/>
+                &nbsp;&nbsp;var reg='^((13[0-9])|(14[5,7])|(15[0-3,5-9])|(17[0,3,5-9])|(18[0-9])|166|198|199|191|(147))\\d{8}$';<br/>
+                &nbsp;&nbsp;var regExp=new RegExp(reg);<br/>
+                &nbsp;&nbsp;return regExp.test(phone);<br/>
+              },<br/>
+          </p>
+          <hr />
+          <a href="#yyh" name="yyh" class="h4">获取文件扩展名</a>
+          <p>
+            function getHouZhui(fileName: string) { <br/>
+                &nbsp;&nbsp;return fileName.slice(fileName.lastIndexOf('.'))<br/>
+              },<br/>
+          </p>
+          <hr />
+          <a href="#yyh" name="yyh" class="h4">返回一个长度为参数值并且每项都为参数值的数组</a>
+          <p>
+           1、function createArray(number: number) { <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; const arr = [];<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [...Array(number)].map(() => arr.push(number));<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return arr;<br/>
+           }
+          </p>
+          <p>
+            2、function createArray(number: number) { <br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return Array(number).fill(number)<br/>
+            }
+           </p>
+           <p>
+            3、function createArray(number: number) { <br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var kk=number.toString().repeat(number);<br/>
+               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return kk.split('').map(Number);<br/>
+            }
+           </p>
+           <hr />
+           <a href="#lxzc" name="lxzc" class="h4">获取两个字符串的最长连续子串</a>
+           <h5>思路：</h5>
+           <p>传入两个字符串，先比较谁长谁短，遍历短的字符串，两个for循环，外层循环从最大长度开始遍历，长度逐个递减，内层循环从短字符串的最左边开始截取最大长度的字符串，检查截取的字符串是否在长的字符串里面，  直到找到匹配的字符串</p>
+           <h6>代码</h6>
+           <p>
+            &nbsp;&nbsp;function findLongestCommonStr(s1, s2) { <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;var commonStr = '', L1 = s1.length, L2 = s2.length;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// 比较s1,s2的长度，看谁长谁短<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;var shortStr = L1>L2 ? s2 : s1;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;var longStr = L1>L2 ? s1 : s2;<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// 短的字符串的长度<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;var strLen = shortStr.length;<br/>
+              <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// 遍历短的字符串，从大到小递减<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;for (let j = strLen; j > 0; j--) {<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 不同的长度有总共有i个可能，从做到右遍历<br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for (let i = 0; i <= strLen - j; i++) {<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 截取出短字符串的部分字符串<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; commonStr = shortStr.substr(i, j);<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 为了便于观测运行的过程，打印看一下会直观很多<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log('commonStr:',commonStr,'i:',i,'j:',j);<br/>
+                      <br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// 放在长字符串里看看有没有匹配的，如果有直接返回<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (longStr.indexOf(commonStr) >= 0) return commonStr<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;// 没有的话返回空字符串<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;return ''<br/>
+                      &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+           </p>
+           <hr />
+           <a href="#zzwen" name="zzwen" class="h4">VScode匹配中文做国际化,找到项目的中文</a>
+           <p>(".*[\u4E00-\u9FA5]+)|([\u4E00-\u9FA5]+.*") </p>
+          </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
