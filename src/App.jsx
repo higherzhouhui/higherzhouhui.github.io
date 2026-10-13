@@ -19,7 +19,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LegacyPage html={homeHtml} title="风中追风的博客" />} />
+        <Route path="/" element={<LegacyPage html={homeHtml} title="风中追风" />} />
         <Route path="/pages/ihtml.html" element={<LegacyPage html={ihtmlHtml} title="HTML5" />} />
         <Route path="/pages/ijs.html" element={<LegacyPage html={ijsHtml} title="JavaScript" />} />
         <Route path="/pages/icss.html" element={<LegacyPage html={icssHtml} title="CSS" />} />
