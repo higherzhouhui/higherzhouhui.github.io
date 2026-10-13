@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import LegacyPage from './components/LegacyPage.jsx'
 import StudyTest from './pages/StudyTest.jsx'
 import TextScroll from './pages/TextScroll.jsx'
+import DiaryIndex from './pages/Diary/index.jsx'
 import apiHtml from './legacy/api.html?raw'
 import cssAnimationHtml from './legacy/cssanimation.html?raw'
 import engineeringHtml from './legacy/engineering.html?raw'
@@ -33,6 +34,7 @@ export default function App() {
         <Route path="/pages/cssanimation/waterCss.html" element={<LegacyPage html={waterCssHtml} title="水滴" />} />
         <Route path="/pages/cssanimation/textScroll.html" element={<TextScroll />} />
         <Route path="/pages/studytest.html" element={<StudyTest />} />
+        <Route path="/diary/*" element={<DiaryIndex />} />
       </Routes>
     </BrowserRouter>
   )
