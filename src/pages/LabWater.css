@@ -1,0 +1,148 @@
+.lab-water {
+  display: grid;
+  place-items: center;
+  min-height: 62vh;
+  overflow: hidden;
+}
+
+.lab-water .drop {
+  position: relative;
+  width: min(400px, 88vw);
+  height: min(400px, 88vw);
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--elevated) 82%, var(--gold) 18%);
+  box-shadow:
+    inset 15px 10px 40px color-mix(in oklab, var(--ink) 18%, transparent),
+    10px 10px 28px var(--glow),
+    inset -10px -10px 20px color-mix(in oklab, white 35%, transparent);
+  animation: lab-water-morph 6s linear infinite;
+}
+
+.lab-water .drop::after,
+.lab-water .drop::before {
+  position: absolute;
+  content: '';
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.lab-water .drop::after {
+  width: 40px;
+  height: 40px;
+  background: color-mix(in oklab, white 55%, transparent);
+  left: 80px;
+  top: 80px;
+  animation: lab-water-hi 6s linear infinite;
+}
+
+.lab-water .drop::before {
+  width: 20px;
+  height: 20px;
+  background: color-mix(in oklab, white 45%, transparent);
+  left: 130px;
+  top: 70px;
+  animation: lab-water-lo 6s linear infinite;
+}
+
+.lab-water form {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 14px;
+  padding: 88px 72px 0;
+  text-align: center;
+}
+
+.lab-water label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.lab-water .field {
+  height: 40px;
+  width: 160px;
+  margin: 0 auto;
+  padding: 0 18px;
+  border: none;
+  border-radius: 50px;
+  color: var(--ink);
+  background: color-mix(in oklab, var(--elevated) 80%, white 20%);
+  box-shadow:
+    inset 4px 4px 10px color-mix(in oklab, var(--ink) 18%, transparent),
+    4px 4px 10px color-mix(in oklab, var(--gold) 16%, transparent);
+  outline: none;
+}
+
+.lab-water .remember {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.lab-water button[type='submit'] {
+  width: 110px;
+  height: 40px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--page, var(--bg));
+  background: var(--gold);
+}
+
+.lab-water .hint {
+  font-size: 13px;
+  color: var(--dim);
+}
+
+.lab-water .hint a {
+  color: var(--gold);
+}
+
+@keyframes lab-water-morph {
+  25% {
+    border-radius: 52% 48% 59% 41% / 43% 49% 51% 57%;
+  }
+  50% {
+    border-radius: 42% 58% 49% 51% / 52% 36% 64% 48%;
+  }
+  75% {
+    border-radius: 52% 48% 49% 51% / 43% 49% 51% 57%;
+  }
+}
+
+@keyframes lab-water-hi {
+  25% {
+    left: 80px;
+    top: 110px;
+  }
+  50% {
+    left: 50px;
+    top: 80px;
+  }
+  75% {
+    left: 80px;
+    top: 120px;
+  }
+}
+
+@keyframes lab-water-lo {
+  25% {
+    left: 100px;
+    top: 90px;
+  }
+  50% {
+    left: 110px;
+    top: 75px;
+  }
+  75% {
+    left: 130px;
+    top: 100px;
+  }
+}

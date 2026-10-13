@@ -1,0 +1,38 @@
+export default {
+  quote: '世界经济史是一部基于假象和谎言的连续剧。要获得财富，做法就是认清其假象，投入其中，然后在假象被公众认识之前退出游戏。',
+  bio: {
+    school: '陕西科技大学 · 物联网工程',
+    github: 'https://github.com/higherzhouhui',
+    githubName: '高山流水',
+    work: '上海博达（2016.9-2018.5）、红星美凯龙设计云（2018.5-2020.4）、华夏云融（2020.4-2022.3）、上海治泓（2022.3-2022.9）、重庆团望（2022.9-2023.9）',
+  },
+  projects: [
+    { name: '博达官网', href: 'http://www.bdcom.com.cn/' },
+    { name: '全景云设计服务平台', href: 'https://www.mshejiyun.com/' },
+    { name: '动态壁纸官网', href: 'https://www.dynamicwallpaperengine.com/' },
+    { name: '极造极官网', href: 'https://www.jizaoji.top/' },
+    { name: 'NFR 交易平台', href: 'https://nfr.capsid.one/' },
+    { name: 'Wings-NFT 穿搭设计', href: 'https://wings.capsid.one/' },
+    { name: '生物医学文献检索', href: 'https://pubmed.ncbi.nlm.nih.gov/' },
+    { name: 'X-因子文献引擎', href: 'https://www.x-scientist.cn/' },
+    { name: '中后台管理', href: 'https://wings-dashboard.capsid.one/' },
+    { name: 'FBS Live Agent', href: 'http://agent.fbslive.com/' },
+  ],
+  skills: 'React、Ant Design、Vue2 / Vue3、Next、Bootstrap、jQuery、Styled-Components、Angular、Ext、Lua、Django、Uni-App',
+  tools: 'Visual Studio、GitHub、Chrome、Photoshop、TeamBition、Npm、Node',
+  archives: ['全国计算机二级', '大学英语四级', '学士学位', '软件工程师', '3D 算法工程师', '初级前端', '中级 Web 前端'],
+  contact: [
+    { label: 'QQ', value: '782492184' },
+    { label: 'Email', value: '782492184@qq.com' },
+    { label: '微信', value: 'P0refect' },
+    { label: '手机', value: '185-1601-0812' },
+  ],
+  cards: [
+    { key: 'html', to: '/html', tag: 'HTML5', title: '语义化是结构的第一口呼吸', desc: '正确的标签做正确的事。机器、爬虫与大模型都先读结构。' },
+    { key: 'js', to: '/js', tag: 'JavaScript', title: '语言仍是运行时的心脏', desc: '类型、闭包、事件循环——生成代码之前，先能解释它。' },
+    { key: 'react', to: '/react', tag: 'React', title: '视图是函数，状态单向流动', desc: '从 class 走到 Hooks，再走到可中断的 Fiber。' },
+    { key: 'vue', to: '/vue', tag: 'Vue', title: '数据驱动，不必亲手搬 DOM', desc: 'MVVM 把控制器收成 ViewModel，响应式仍是核心。' },
+    { key: 'css', to: '/css', tag: 'CSS', title: '布局是空间的算法', desc: 'BFC、Flex、层叠与适配，视觉工程的底层协议。' },
+    { key: 'interview', to: '/interview', tag: '面试', title: '网络与浏览器的全链路', desc: '从 URL 到像素，从 TCP 到缓存，把常问题织成地图。' },
+  ],
+}

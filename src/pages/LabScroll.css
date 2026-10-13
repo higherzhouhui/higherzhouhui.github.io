@@ -1,0 +1,23 @@
+.lab-scroll {
+  display: grid;
+  place-items: center;
+  min-height: 48vh;
+}
+
+.lab-scroll .stage {
+  width: min(640px, 100%);
+  overflow: hidden;
+  white-space: nowrap;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px 0;
+}
+
+.lab-scroll .begin,
+.lab-scroll .end {
+  display: inline;
+}

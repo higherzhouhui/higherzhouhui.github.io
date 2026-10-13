@@ -1,0 +1,38 @@
+export default {
+  quote: 'Economic history is a serial of illusions. Fortune is seeing the illusion, entering it, and leaving before the crowd does.',
+  bio: {
+    school: 'Shaanxi University of Science & Technology · IoT Engineering',
+    github: 'https://github.com/higherzhouhui',
+    githubName: 'higherzhouhui',
+    work: 'BDCOM (2016.9-2018.5), HomeKoo Design Cloud (2018.5-2020.4), Huaxia Yunrong (2020.4-2022.3), Shanghai Zhihong (2022.3-2022.9), Chongqing Tuanwang (2022.9-2023.9)',
+  },
+  projects: [
+    { name: 'BDCOM site', href: 'http://www.bdcom.com.cn/' },
+    { name: 'Panorama design cloud', href: 'https://www.mshejiyun.com/' },
+    { name: 'Dynamic wallpaper', href: 'https://www.dynamicwallpaperengine.com/' },
+    { name: 'Jizaoji', href: 'https://www.jizaoji.top/' },
+    { name: 'NFR exchange', href: 'https://nfr.capsid.one/' },
+    { name: 'Wings NFT', href: 'https://wings.capsid.one/' },
+    { name: 'PubMed', href: 'https://pubmed.ncbi.nlm.nih.gov/' },
+    { name: 'X-Scientist', href: 'https://www.x-scientist.cn/' },
+    { name: 'Admin consoles', href: 'https://wings-dashboard.capsid.one/' },
+    { name: 'FBS Live Agent', href: 'http://agent.fbslive.com/' },
+  ],
+  skills: 'React, Ant Design, Vue 2 / 3, Next, Bootstrap, jQuery, Styled-Components, Angular, Ext, Lua, Django, Uni-App',
+  tools: 'Visual Studio, GitHub, Chrome, Photoshop, TeamBition, npm, Node',
+  archives: ['NCRE-2', 'CET-4', 'Bachelor', 'Software engineer', '3D algorithm', 'Junior frontend', 'Mid-level web'],
+  contact: [
+    { label: 'QQ', value: '782492184' },
+    { label: 'Email', value: '782492184@qq.com' },
+    { label: 'WeChat', value: 'P0refect' },
+    { label: 'Phone', value: '185-1601-0812' },
+  ],
+  cards: [
+    { key: 'html', to: '/html', tag: 'HTML5', title: 'Semantics is the first breath of structure', desc: 'The right tag for the right job. Crawlers and models read structure first.' },
+    { key: 'js', to: '/js', tag: 'JavaScript', title: 'The language is still the heart of runtime', desc: 'Types, closures, the event loop — explain it before you generate it.' },
+    { key: 'react', to: '/react', tag: 'React', title: 'View as function, data one way', desc: 'From classes to Hooks, then to interruptible Fiber.' },
+    { key: 'vue', to: '/vue', tag: 'Vue', title: 'Data drives the view', desc: 'MVVM folds the controller into a ViewModel. Reactivity remains the core.' },
+    { key: 'css', to: '/css', tag: 'CSS', title: 'Layout is an algorithm of space', desc: 'BFC, Flex, stacking and adapters — the low-level protocol of vision.' },
+    { key: 'interview', to: '/interview', tag: 'Interview', title: 'The full path of net and browser', desc: 'From URL to pixels, TCP to cache: a map of the usual questions.' },
+  ],
+}

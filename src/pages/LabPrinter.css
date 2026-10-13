@@ -1,0 +1,71 @@
+.lab-printer {
+  display: grid;
+  place-items: center;
+  min-height: 52vh;
+}
+
+.lab-printer .machine {
+  position: relative;
+  width: 300px;
+  height: 220px;
+}
+
+.lab-printer .paper {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  width: 80%;
+  padding: 20px;
+  transform: translate(-50%, -50%);
+  background: #fffaf0;
+  color: #1c1408;
+  border: 1px solid var(--gold);
+  box-shadow: 0 12px 40px var(--glow);
+}
+
+.lab-printer .paper p {
+  margin: 0;
+  font-size: 22px;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  border-right: 3px solid #1c1408;
+}
+
+.lab-printer .paper.print p {
+  animation: lab-print 2s steps(28) forwards;
+}
+
+.lab-printer .body {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 62%;
+  height: 100px;
+  transform: translateX(-50%);
+  border-radius: 10px;
+  background: var(--elevated);
+  border: 1px solid var(--line);
+}
+
+.lab-printer .machine::after {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: 50%;
+  width: 10px;
+  height: 50px;
+  margin-left: -5px;
+  background: var(--gold);
+  border-radius: 0 0 6px 6px;
+}
+
+@keyframes lab-print {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

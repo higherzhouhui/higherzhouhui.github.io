@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-page: var(--bg);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-ink: var(--ink);
+  --color-dim: var(--dim);
+  --color-gold: var(--gold);
+  --color-accent: var(--accent);
+  --color-line: var(--line);
+  --color-glow: var(--glow);
+  --font-sans: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+:root,
+html[data-theme="obsidian"] {
+  --bg: #07070a;
+  --surface: #111118;
+  --elevated: #1a1a24;
+  --ink: #f4ead2;
+  --dim: #9a9078;
+  --gold: #d4af37;
+  --accent: #f0d78c;
+  --line: rgba(212, 175, 55, 0.28);
+  --glow: rgba(212, 175, 55, 0.18);
+  color-scheme: dark;
+}
+
+html[data-theme="aurora"] {
+  --bg: #050816;
+  --surface: #0c1226;
+  --elevated: #151d38;
+  --ink: #e8f4ff;
+  --dim: #8aa0c2;
+  --gold: #5ce1e6;
+  --accent: #b388ff;
+  --line: rgba(92, 225, 230, 0.32);
+  --glow: rgba(179, 136, 255, 0.22);
+  color-scheme: dark;
+}
+
+html[data-theme="ivory"] {
+  --bg: #f6f1e6;
+  --surface: #fffaf0;
+  --elevated: #efe6d4;
+  --ink: #1c1408;
+  --dim: #6b5c3e;
+  --gold: #8a6914;
+  --accent: #2f5d50;
+  --line: rgba(138, 105, 20, 0.28);
+  --glow: rgba(138, 105, 20, 0.12);
+  color-scheme: light;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--gold) 45%, transparent);
+  color: var(--ink);
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(18px, -24px, 0);
+  }
+}
+
+.lab-scroll-track {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.lab-printer p {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 2s steps(28);
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
