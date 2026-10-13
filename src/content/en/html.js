@@ -8,23 +8,50 @@ export default {
       title: 'Idea',
       blocks: [
         { type: 'callout', text: 'In the AI era HTML is still the skeleton: messy semantics collapses a11y, SEO, and later automation together.' },
-        'HTML5 semantics means building structure with the right tags. Even without CSS, the outline should be readable.',
+        'HTML5 semantics means building structure with the right tags. Even without CSS, the outline should be readable. Parsing grows both a DOM and an accessibility tree; screen readers walk the latter.',
       ],
     },
     {
       id: 'yyh',
       title: 'Semantic tags',
       blocks: [
-        { type: 'ul', items: ['header', 'nav', 'main', 'article', 'section', 'aside', 'footer'] },
-        { type: 'h', text: 'Why it matters' },
+        { type: 'ul', items: ['header → banner (document level)', 'nav → navigation', 'main → one per page', 'article as a unit', 'section becomes a region only when named', 'aside → complementary', 'footer → contentinfo (document level)'] },
+        { type: 'callout', text: 'From web.dev: landmarks are scarce on purpose. Too many navs become noise.' },
+      ],
+    },
+    {
+      id: 'heading',
+      title: 'Heading outline',
+      blocks: [
+        'h1–h6 is the skeleton. Users of assistive tech often explore a new page by jumping headings. Do not skip levels for visual size — CSS handles size, headings handle structure.',
+      ],
+    },
+    {
+      id: 'skip',
+      title: 'Skip links and aria-current',
+      blocks: [
+        'Put a “skip to content” link first in the body. Hide it visually, show it on focus. Mark the current nav item with aria-current="page". Name multiple navs; do not repeat the word “navigation” in the label.',
+      ],
+    },
+    {
+      id: 'form',
+      title: 'Forms as interaction semantics',
+      blocks: [
+        'Every control needs a real label. Placeholders are not labels. Pair errors with aria-describedby. Prefer the dialog element over a homemade modal.',
+      ],
+    },
+    {
+      id: 'media',
+      title: 'Pictures and media',
+      blocks: [
+        'alt is required: empty for decoration, a sentence for information. Use picture / srcset instead of one 4K file.',
         {
-          type: 'ol',
-          items: [
-            'The page still shows a skeleton without CSS',
-            'Code is easier to read and maintain',
-            'Assistive tech can speak by meaning',
-            'Search engines weight tags differently (SEO)',
-          ],
+          type: 'code',
+          lang: 'html',
+          code: `<picture>
+  <source type="image/avif" srcset="hero.avif" />
+  <img src="hero.jpg" alt="Night console" width="1200" height="630" />
+</picture>`,
         },
       ],
     },
@@ -35,19 +62,20 @@ export default {
         {
           type: 'ol',
           items: [
-            'Semantic tags',
-            'Audio / video APIs',
+            'Landmarks',
+            'Audio / video',
             'canvas / WebGL',
             'Drag and drop',
             'History API',
-            'requestAnimationFrame',
+            'rAF',
             'Geolocation',
             'WebSocket',
-            'Web storage: localStorage, sessionStorage',
-            'Form controls: date, email, url, search',
+            'Web storage',
+            'Form types',
+            'dialog / template / slot',
+            'details / summary',
           ],
         },
-        { type: 'callout', text: 'Frameworks wrap these APIs now, but interviews and debugging still land on native tags.' },
       ],
     },
   ],

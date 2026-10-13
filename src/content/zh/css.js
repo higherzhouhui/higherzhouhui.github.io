@@ -119,5 +119,88 @@ export default {
         },
       ],
     },
+    {
+      id: 'flex-deep',
+      title: 'Flexbox 真正要记的轴',
+      blocks: [
+        { type: 'callout', text: '参考 CSS-Tricks《A Complete Guide to Flexbox》：先定主轴，再谈分配剩余空间。' },
+        'flex-direction 决定主轴。justify-content 管主轴，align-items 管交叉轴，align-self 覆盖单个项目。flex-wrap: wrap 之后，align-content 才有意义——它管多行之间的空隙。',
+        { type: 'ul', items: ['flex-grow：剩余空间怎么分', 'flex-shrink：不够时谁被挤', 'flex-basis：分配前的初始主尺寸，auto 常看 width/height', 'min-width: auto 会挡住收缩，溢出时给子项 min-width: 0', 'gap 比 margin 更干净'] },
+        {
+          type: 'code',
+          lang: 'css',
+          code: `.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.row > .grow { flex: 1 1 0; min-width: 0; }`,
+        },
+        '口诀：一行导航用 flex；二维杂志排版用 grid。两者可以嵌套，不要用 flex 硬模拟十二栅。',
+      ],
+    },
+    {
+      id: 'grid',
+      title: 'Grid：轨道、区域、minmax',
+      blocks: [
+        'grid-template-columns: 200px 1fr 1fr 定义三条轨道。fr 是剩余空间的份。repeat(auto-fit, minmax(16rem, 1fr)) 是响应式卡片墙的最短写法。',
+        'grid-template-areas 用名字拼版面，header / nav / main / footer 一眼能读。子项 grid-column: 1 / -1 拉满整行。subgrid（逐步可用）让子网格继承父轨道，对齐跨组件的列。',
+        {
+          type: 'code',
+          lang: 'css',
+          code: `.page {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  grid-template-areas:
+    "nav main"
+    "nav footer";
+}
+@media (max-width: 800px) {
+  .page { grid-template-columns: 1fr; grid-template-areas: "nav" "main" "footer"; }
+}`,
+        },
+      ],
+    },
+    {
+      id: 'cq',
+      title: '容器查询，不再只问视口',
+      blocks: [
+        { type: 'callout', text: 'web.dev 把 container queries 当作组件级响应式：卡片在侧栏里该变窄，不该问整窗宽度。' },
+        '给容器 container-type: inline-size（或 container-name），子元素用 @container (min-width: 24rem)。组件从侧栏拖到主栏，自己换布局，媒体查询做不到这一点。',
+        {
+          type: 'code',
+          lang: 'css',
+          code: `.card-wrap { container-type: inline-size; }
+@container (min-width: 28rem) {
+  .card { display: grid; grid-template-columns: 120px 1fr; }
+}`,
+        },
+        'cqw / cqi 单位相对容器而非视口。和 :has() 搭配，父级可以根据「内部有没有图」换排版。',
+      ],
+    },
+    {
+      id: 'content-vis',
+      title: 'content-visibility 与 contain',
+      blocks: [
+        '长列表里屏幕外的块不必算样式和布局。content-visibility: auto 让浏览器跳过屏幕外渲染，记得配 contain-intrinsic-size 以免滚动条乱跳。',
+        'contain: layout style paint 告诉引擎「这里的变化出不去」。动画优先 transform / opacity，它们走合成线程，不触发重排。will-change 只给真正会变的元素，滥用会吃内存。',
+      ],
+    },
+    {
+      id: 'stacking',
+      title: '层叠上下文',
+      blocks: [
+        'z-index 只在同一个层叠上下文里比大小。position 非 static 且 z-index 非 auto、opacity < 1、transform、filter、isolation: isolate 都会开新上下文。模态框被挡住，多半是祖先已经新开了一层。',
+        '调试：从目标往上找「谁建立了上下文」，而不是给元素加 z-index: 99999。',
+      ],
+    },
+    {
+      id: 'logical',
+      title: '逻辑属性与 :has / :focus-visible',
+      blocks: [
+        'margin-inline-start 比 margin-left 更适合 RTL。inset: 0 是上下左右归零。:focus-visible 让键盘看见焦点、鼠标点击不必画圈。:has(> img) 让父级根据子树选择自己——这是 CSS 等了很久的父选择器。',
+        'color-scheme 与 light-dark() 让原生控件跟随主题。本站三套主题走的是 html[data-theme] 变量，和这套原生能力可以并存。',
+      ],
+    },
   ],
 }

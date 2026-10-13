@@ -144,5 +144,84 @@ console.log('end')
         'Second argument is a whitelist or replacer; third is indent. toJSON is honored; cycles throw.',
       ],
     },
+    {
+      id: 'loop-deep',
+      title: 'The event loop, one more pass',
+      blocks: [
+        { type: 'callout', text: 'After javascript.info: drain microtasks after every macrotask, then render or the next macro.' },
+        'The browser main thread also styles, lays out, and paints. Macrotasks: script, timers, I/O, UI events. Microtasks: Promise then/catch/finally, queueMicrotask, MutationObserver.',
+        'queueMicrotask(fn) is clearer than Promise.resolve().then(fn). Code after await is a microtask too. Microtasks that enqueue more microtasks starve paint.',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `queueMicrotask(() => console.log('micro 1'))
+Promise.resolve().then(() => {
+  console.log('micro 2')
+  queueMicrotask(() => console.log('micro 3'))
+})
+setTimeout(() => console.log('macro'))
+// micro 1 → micro 2 → micro 3 → macro`,
+        },
+        'Node phases are finer. Interview intuition is enough: micros sit between macros. rAF is before paint — not setTimeout(0).',
+      ],
+    },
+    {
+      id: 'weakmap',
+      title: 'WeakMap / WeakSet / WeakRef',
+      blocks: [
+        'Map keys pin objects. WeakMap keys must be objects and are weak: when the object goes, the entry goes. Handy metadata on DOM nodes without manual delete.',
+        { type: 'ul', items: ['WeakMap: object → value, not enumerable, no size', 'WeakSet: weak object membership', 'WeakRef: deref() may be undefined', 'FinalizationRegistry: not a destructor'] },
+      ],
+    },
+    {
+      id: 'abort',
+      title: 'AbortController and fetch',
+      blocks: [
+        'Each keystroke should cancel the last search. Pass signal to fetch; abort() fails with AbortError. Abort in a React effect cleanup to avoid races.',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const ac = new AbortController()
+fetch('/api/search?q=' + q, { signal: ac.signal })
+  .then((r) => r.json())
+  .catch((err) => {
+    if (err.name === 'AbortError') return
+    throw err
+  })`,
+        },
+        'One signal can cover several fetches and listeners. AbortSignal.timeout(ms) exists in newer engines.',
+      ],
+    },
+    {
+      id: 'fetch-http',
+      title: 'fetch has more layers',
+      blocks: [
+        { type: 'ul', items: ['Cookies need credentials: "include"', 'CORS preflight is not fetch’s fault', 'response.ok is 200–299; 4xx does not reject', 'body is one-shot; clone if you must reread', 'stream with getReader()'] },
+        'Upload progress still wants XHR or a ReadableStream. Network failures reject; business failures live in status.',
+      ],
+    },
+    {
+      id: 'proxy',
+      title: 'Proxy and Reflect',
+      blocks: [
+        'Proxy traps get/set/has/delete/apply. Vue 3 collects deps here. Reflect mirrors the default operation so this and the boolean result stay correct.',
+        'for...in does not hit get. An array’s length and indexes are separate keys. A proxy is not === the target.',
+      ],
+    },
+    {
+      id: 'iterator',
+      title: 'Iterators, generators, for await',
+      blocks: [
+        'Iterable means [Symbol.iterator]() returning { next() }. for...of, spread, Array.from all honor it. function* yields an iterator. Async iteration uses for await...of.',
+      ],
+    },
+    {
+      id: 'esm-cjs',
+      title: 'ESM at runtime',
+      blocks: [
+        'import is static, hoisted, and a live binding. import() is dynamic and returns a Promise. CJS exports a snapshot.',
+        { type: 'ul', items: ['Cycles still hit the TDZ', 'default is a binding named default', 'Node needs .mjs or "type": "module"', 'tree-shaking needs static shape'] },
+      ],
+    },
   ],
 }

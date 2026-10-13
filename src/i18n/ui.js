@@ -18,7 +18,7 @@ export const ui = {
     heroKicker: 'SYSTEM ONLINE  ·  MODEL YEAR 2026',
     heroTitle: 'AI 已经来到。',
     heroLead:
-      '我原要昂扬独步天下，奈何却忍辱藏于污泥。笔记还在，工具换代了——把前端基本功放进黑金控制台，让模型和人一起读。',
+      '我原要昂扬独步天下，奈何却忍辱藏于污泥。',
     ctaNotes: '进入知识库',
     ctaLab: '打开实验室',
     sections: '知识阵列',
@@ -74,7 +74,7 @@ export const ui = {
     heroKicker: 'SYSTEM ONLINE  ·  MODEL YEAR 2026',
     heroTitle: 'AI has arrived.',
     heroLead:
-      'I meant to walk the world alone, yet learned to wait in the mud. The notes remain; the toolchain changed. Drop frontend fundamentals into a black-gold console so humans and models can read together.',
+      'I meant to walk the world alone, yet learned to wait in the mud.',
     ctaNotes: 'Open the library',
     ctaLab: 'Enter the lab',
     sections: 'Knowledge grid',

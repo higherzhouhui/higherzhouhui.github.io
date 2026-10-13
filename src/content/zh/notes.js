@@ -1,7 +1,7 @@
 export default {
   kicker: 'FIELD NOTES  ·  FROM MYBLOG',
   title: '前线笔记：从 WebSocket 到远程人生',
-  lead: '从 myBlog 迁来的二十篇现场记录。框架会过期，握手、性能指标和部署流水线不会。把它们放进同一张控制台，继续生长。',
+  lead: '从 myBlog 迁来的现场记录，再叠一层公开长文的改写。框架会过期，握手、性能指标和部署流水线不会。把它们放进同一张控制台，继续生长。',
   sections: [
     {
       id: 'ws',
@@ -175,6 +175,65 @@ JSON.stringify(payload, (key, value) => (key === 'password' ? undefined : value)
       title: '工作的意义',
       blocks: [
         '先换面包，再换意义。格雷伯说富裕国家里大量「狗屁工作」脱离真实需要。远程、坐班、兼职、自研产品只是容器——要问的是：这活是否在减少真实摩擦。',
+      ],
+    },
+    {
+      id: 'loop-note',
+      title: '把事件循环讲给下一班的自己',
+      blocks: [
+        { type: 'callout', text: 'javascript.info 把循环画成「执行一宏 → 抽干微任务 → 渲染」。面试时用这张图，比背 Node 十个 phase 更不容易忘。' },
+        'setTimeout(0) 不是立刻。await 后面那一行是微任务。微任务套微任务会饿死绘制——动画卡顿时先查这里。queueMicrotask 比空 Promise 更直白。',
+      ],
+    },
+    {
+      id: 'flex-note',
+      title: 'Flex 溢出时先给 min-width: 0',
+      blocks: [
+        'CSS-Tricks 指南里最贵的一行不是 justify-content，而是子项默认 min-width: auto。文字和代码块不肯收缩，整行就被撑破。给 flex 子项 min-width: 0 或 overflow: hidden，再谈省略号。',
+        '一行用 flex，两维用 grid，容器变宽用 @container。三种工具叠在一起，比一份 800 行媒体查询好维护。',
+      ],
+    },
+    {
+      id: 'inp-note',
+      title: 'INP：点下去到下一帧',
+      blocks: [
+        'FID 只看第一次；INP 看整页最差的几次交互。50ms 以上的长任务要切开。输入框的 setState 不要跟过滤一万行抢同一优先级——startTransition 就是干这个的。',
+        '实验室绿分、真实用户红，以 RUM 为准。web-vitals 库三行就能上报。',
+      ],
+    },
+    {
+      id: 'cq-note',
+      title: '容器查询让组件自己长大',
+      blocks: [
+        '卡片在侧栏是纵向，在主栏是横向，这不该问 window.innerWidth。container-type: inline-size 后，@container 按组件宽度换布局。设计系统一旦组件化，这是媒体查询做不到的一层。',
+      ],
+    },
+    {
+      id: 'abort-note',
+      title: '每次搜索都要能反悔',
+      blocks: [
+        'AbortController 是 fetch 的刹车。React effect 的 return 里 abort，Strict Mode 双调用也不会把旧请求的结果写进新 state。超时用 AbortSignal.timeout 或自己的 timer。',
+      ],
+    },
+    {
+      id: 'csp-note',
+      title: 'CSP 比转义多一层闸',
+      blocks: [
+        '转义防的是「字符变成代码」；CSP 防的是「就算变成代码也加载不了」。nonce + strict-dynamic 是现在比较可维护的 script-src。先 report-only，再 enforce，否则第一次上线会把统计脚本一起打死。',
+      ],
+    },
+    {
+      id: 'comp-note',
+      title: 'Composable 是 Vue 的自定义 Hook',
+      blocks: [
+        'useXxx 返回状态与方法，单元测试不必挂组件。Pinia 的 store 其实就是带 devtools 的 composable。别把 API 请求写进组件 options 的四面八方，收到一个模块里。',
+      ],
+    },
+    {
+      id: 'a11y-note',
+      title: '无障碍不是加分项',
+      blocks: [
+        'web.dev 语义文的结论很硬：地标、标题层级、label、跳过链接，是读屏用户的导航。Lighthouse 的 a11y 项能抓到一半低级错误。键盘走一遍主流程，比再画一个主题更接近「这个站能用」。',
       ],
     },
   ],

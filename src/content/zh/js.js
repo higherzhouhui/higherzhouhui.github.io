@@ -167,5 +167,119 @@ JSON.stringify(data, (k, v) => (k === 'password' ? undefined : v))`,
         },
       ],
     },
+    {
+      id: 'loop-deep',
+      title: '事件循环再走一圈',
+      blocks: [
+        { type: 'callout', text: '参考 javascript.info《Event loop》：一次 macrotask 结束后，引擎会把微任务队列抽干，再去做渲染或下一宏任务。' },
+        '浏览器主线程同时跑 JS、样式计算、布局和绘制。宏任务来源包括 script、setTimeout、setInterval、I/O、UI 事件。微任务来源是 Promise.then / catch / finally、queueMicrotask、MutationObserver。',
+        'queueMicrotask(fn) 比 Promise.resolve().then(fn) 更直白：不造多余 Promise。await 之后的代码也是微任务。如果微任务里再 enqueue 微任务，本轮会一直跑到队列空——这就是「饿死渲染」的常见写法。',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `queueMicrotask(() => console.log('micro 1'))
+Promise.resolve().then(() => {
+  console.log('micro 2')
+  queueMicrotask(() => console.log('micro 3'))
+})
+setTimeout(() => console.log('macro'))
+// micro 1 → micro 2 → micro 3 → macro`,
+        },
+        'Node 的 phases（timers、poll、check）更细，但面试用「宏任务之间夹一层微任务」足够。requestAnimationFrame 挂在绘制前，不要把它和 setTimeout(0) 当成一回事。',
+      ],
+    },
+    {
+      id: 'weakmap',
+      title: 'WeakMap / WeakSet / WeakRef',
+      blocks: [
+        'Map 的键会挡住 GC。WeakMap 的键必须是对象，且是弱引用：对象没人要时，条目一起走。适合在 DOM 节点上挂私有元数据，组件卸掉节点时不必手动 delete。',
+        { type: 'ul', items: ['WeakMap：对象 → 任意值，不可枚举、没有 size', 'WeakSet：只存对象弱引用', 'WeakRef：显式弱引用，deref() 可能得到 undefined', 'FinalizationRegistry：对象被收时跑回调，不要当析构函数用'] },
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const meta = new WeakMap()
+export function tag(el, info) {
+  meta.set(el, info)
+}
+export function read(el) {
+  return meta.get(el)
+}`,
+        },
+      ],
+    },
+    {
+      id: 'abort',
+      title: 'AbortController 取消 fetch',
+      blocks: [
+        '搜索框每敲一次就发请求，上一次必须能停。AbortController 给出 signal，传给 fetch；abort() 之后该请求以 AbortError 失败。React 18 的 effect 清理函数里 abort，是避免竞态的标准姿势。',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const ac = new AbortController()
+fetch('/api/search?q=' + q, { signal: ac.signal })
+  .then((r) => r.json())
+  .catch((err) => {
+    if (err.name === 'AbortError') return
+    throw err
+  })
+// 下一次输入：ac.abort()`,
+        },
+        '同一个 signal 可以挂到多个 fetch 和 addEventListener 上，组件卸载时一次 abort 清干净。超时用 AbortSignal.timeout(ms)（较新浏览器）或自己 setTimeout 调 abort。',
+      ],
+    },
+    {
+      id: 'fetch-http',
+      title: 'fetch 比看起来多几层',
+      blocks: [
+        { type: 'ul', items: ['默认不带 cookie：要 credentials: "include"', '跨域预检由 CORS 决定，不是 fetch 自己的锅', 'response.ok 只看 200–299，4xx 不会进 catch', 'body 只能读一次，要克隆用 response.clone()', '流式用 response.body.getReader()'] },
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const res = await fetch('/api/me', { credentials: 'include' })
+if (!res.ok) throw new Error(res.status)
+const data = await res.json()`,
+        },
+        '上传进度仍要 XMLHttpRequest 或底层 ReadableStream；fetch 目前对上传进度支持不齐。错误分类：网络失败进 catch，业务失败看 status。',
+      ],
+    },
+    {
+      id: 'proxy',
+      title: 'Proxy 与 Reflect',
+      blocks: [
+        'Proxy 拦 get / set / has / deleteProperty / apply。Vue 3 的响应式就是在这层做依赖收集。Reflect 提供与拦截器同名的默认行为，return Reflect.set(...) 能把赋值结果和 this 传对。',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const state = new Proxy({ n: 0 }, {
+  get(t, k, r) {
+    track(k)
+    return Reflect.get(t, k, r)
+  },
+  set(t, k, v, r) {
+    const ok = Reflect.set(t, k, v, r)
+    trigger(k)
+    return ok
+  },
+})`,
+        },
+        '陷阱：for...in 不会触发 get；数组 length 与索引是两套键；代理不等于原对象（=== 为 false），Map 里当键会分家。',
+      ],
+    },
+    {
+      id: 'iterator',
+      title: '迭代器、生成器与 for await',
+      blocks: [
+        '可迭代对象实现 [Symbol.iterator]()，返回 { next() { return { value, done } } }。for...of、展开、Array.from 都认这个协议。生成器函数 function* 自动交出迭代器，yield 暂停。',
+        '异步迭代器用 [Symbol.asyncIterator] 和 for await...of，适合一行行读流。别在生成器里混用太多副作用，它首先是控制流工具。',
+      ],
+    },
+    {
+      id: 'esm-cjs',
+      title: 'ESM 在运行时的形状',
+      blocks: [
+        'import 是静态的、提升的、只读绑定（live binding：导出方改值，导入方下一拍能看到）。import() 才是动态、返回 Promise。CommonJS 的 module.exports 是值拷贝快照。',
+        { type: 'ul', items: ['循环依赖时 ESM 先执行依赖图，TDZ 仍会炸', '默认导出是名叫 default 的绑定', 'Node 里 .mjs / "type": "module" 才按 ESM 解析', 'tree-shaking 依赖静态结构，别写成 import(\'./mod\') 再取属性还指望摇掉'] },
+      ],
+    },
   ],
 }

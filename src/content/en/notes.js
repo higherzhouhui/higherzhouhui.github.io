@@ -1,7 +1,7 @@
 export default {
   kicker: 'FIELD NOTES  ·  FROM MYBLOG',
   title: 'Field notes: from WebSocket to a remote life',
-  lead: 'Twenty dispatches migrated from myBlog. Frameworks expire; handshakes, vitals, and pipelines do not. One console, still growing.',
+  lead: 'Dispatches migrated from myBlog, plus rewritten notes from public long-form. Frameworks expire; handshakes, vitals, and pipelines do not. One console, still growing.',
   sections: [
     {
       id: 'ws',
@@ -159,6 +159,65 @@ JSON.stringify(payload, (key, value) => (key === 'password' ? undefined : value)
       title: 'What work is for',
       blocks: [
         'Bread first, meaning second. Graeber’s “bullshit jobs” are labor detached from real need. Remote, office, side gigs, own products are containers. Ask whether the work removes real friction.',
+      ],
+    },
+    {
+      id: 'loop-note',
+      title: 'Explain the event loop to next-year you',
+      blocks: [
+        { type: 'callout', text: 'javascript.info draws one picture: run a macro, drain micros, then render. That sketch survives interviews better than Node’s ten phases.' },
+        'setTimeout(0) is not now. The line after await is a microtask. Nested micros starve paint. queueMicrotask is clearer than an empty Promise.',
+      ],
+    },
+    {
+      id: 'flex-note',
+      title: 'When flex overflows, set min-width: 0',
+      blocks: [
+        'The expensive line in the CSS-Tricks guide is not justify-content — it is the default min-width: auto. Text and code blocks refuse to shrink. Set min-width: 0, then ellipsis.',
+        'One axis: flex. Two axes: grid. Growing components: @container. Three tools beat 800 lines of media queries.',
+      ],
+    },
+    {
+      id: 'inp-note',
+      title: 'INP: from tap to the next frame',
+      blocks: [
+        'FID watched the first input. INP watches the worst interactions on the page. Split 50ms tasks. Do not let filtering ten thousand rows share priority with the caret — that is startTransition.',
+        'Green lab, red field: trust RUM. web-vitals reports in a few lines.',
+      ],
+    },
+    {
+      id: 'cq-note',
+      title: 'Container queries let components grow up',
+      blocks: [
+        'A card stacked in the sidebar and split in the main column should not ask window.innerWidth. container-type: inline-size, then @container. Design systems that are actually componentized need this layer.',
+      ],
+    },
+    {
+      id: 'abort-note',
+      title: 'Every search must be able to recant',
+      blocks: [
+        'AbortController is the brake on fetch. Abort in the React effect cleanup so Strict Mode’s double invoke cannot write a stale result. Time out with AbortSignal.timeout or your own timer.',
+      ],
+    },
+    {
+      id: 'csp-note',
+      title: 'CSP is a second gate beyond escaping',
+      blocks: [
+        'Escaping stops characters becoming code. CSP stops code from loading even if it appears. nonce + strict-dynamic is a maintainable script-src. Report-only first, or analytics dies on day one.',
+      ],
+    },
+    {
+      id: 'comp-note',
+      title: 'Composables are Vue’s custom hooks',
+      blocks: [
+        'useXxx returns state and methods; tests need no mount. A Pinia store is a composable with devtools. Do not scatter fetches across options fields — one module.',
+      ],
+    },
+    {
+      id: 'a11y-note',
+      title: 'Accessibility is not extra credit',
+      blocks: [
+        'web.dev’s semantic HTML piece is blunt: landmarks, heading levels, labels, skip links are how screen-reader users navigate. Lighthouse catches half the cheap mistakes. Tab through the main flow once.',
       ],
     },
   ],

@@ -43,5 +43,47 @@ export default {
       title: 'TLS with acme.sh',
       blocks: ['Install, HTTP or DNS challenge, copy into Nginx, renew on cron.'],
     },
+    {
+      id: 'treeshake',
+      title: 'What tree-shaking needs',
+      blocks: [
+        'Bundlers drop exports they can prove unused. Side effects, dynamic paths, and CJS block that. sideEffects: false is a promise — lie and you shake out CSS. Prefer named ESM, lodash-es, and route-level splits for heavy widgets.',
+      ],
+    },
+    {
+      id: 'sourcemap',
+      title: 'Source maps in production',
+      blocks: [
+        'Always on in dev. Public .map files leak sources. Prefer hidden-source-map uploaded to Sentry. cheap-module maps skip columns. Without a map, minified stacks are noise.',
+      ],
+    },
+    {
+      id: 'pnpm',
+      title: 'Why pnpm saves disk',
+      blocks: [
+        'Content-addressable store plus hard links. Phantom deps fail — that is the point. Workspaces in pnpm-workspace.yaml. Commit the lockfile; CI uses --frozen-lockfile.',
+      ],
+    },
+    {
+      id: 'split',
+      title: 'Code splitting',
+      blocks: [
+        'manualChunks for stable vendor. Lazy routes so the first paint does not pay for hidden pages. import() paths must be static. HTTP/2 makes “too many tiny files” a pessimization — split by change rate.',
+      ],
+    },
+    {
+      id: 'vite-vs',
+      title: 'Vite vs webpack',
+      blocks: [
+        'Dev: native ESM, compile on demand. Prod: Rollup. webpack still wins federation, odd loaders, and history. This site is Vite 7 on GitHub Actions — static files only.',
+      ],
+    },
+    {
+      id: 'monorepo',
+      title: 'Monorepo hygiene',
+      blocks: [
+        'Cut packages by publish unit. workspace: protocol internally. CI filters by affected graph. Pick independent or unified versions and write it down. Apps may be loose; libraries must emit d.ts.',
+      ],
+    },
   ],
 }

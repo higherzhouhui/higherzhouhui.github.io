@@ -4,6 +4,30 @@ export default {
   lead: 'A wall of endpoints I reach for. Some URLs rot — treat them as an index, not a contract.',
   sections: [
     {
+      id: 'docs',
+      title: 'Docs opened daily',
+      blocks: [
+        { type: 'ul', items: ['MDN https://developer.mozilla.org/', 'Can I use https://caniuse.com/', 'TC39 proposals', 'WHATWG specs https://spec.whatwg.org/'] },
+        { type: 'callout', text: 'MDN for edges, blogs for intuition — in that order.' },
+      ],
+    },
+    {
+      id: 'vitals',
+      title: 'Performance and support',
+      blocks: [
+        { type: 'ul', items: ['web-vitals https://github.com/GoogleChrome/web-vitals', 'PageSpeed / CrUX', 'HTTP Archive', 'Web Almanac'] },
+        'Field INP/LCP/CLS beats a lab score. Wire RUM to real routes, not only the home page.',
+      ],
+    },
+    {
+      id: 'cdn',
+      title: 'CDNs and packages',
+      blocks: [
+        { type: 'ul', items: ['unpkg', 'jsDelivr', 'esm.sh', 'npmjs.com'] },
+        'Pin versions in production. esm.sh is for demos; real builds still go through your bundler.',
+      ],
+    },
+    {
       id: 'ip',
       title: 'IP and OSS',
       blocks: [
@@ -14,7 +38,11 @@ export default {
     {
       id: 'tianqi',
       title: 'Weather',
-      blocks: ['City IDs: http://mat1.gtimg.com/weather/index2014/wtData_v2.js', 'Forecast: http://wthrcdn.etouch.cn/WeatherApi?citykey={cityID}'],
+      blocks: [
+        'City IDs: http://mat1.gtimg.com/weather/index2014/wtData_v2.js',
+        'Forecast: http://wthrcdn.etouch.cn/WeatherApi?citykey={cityID}',
+        'These free endpoints die without notice. Newer work uses Open-Meteo and a fallback string.',
+      ],
     },
     {
       id: 'gupiao',
@@ -32,8 +60,16 @@ export default {
       id: 'web3',
       title: 'Web3 doors',
       blocks: [
-        { type: 'ul', items: ['Etherscan', 'Rinkeby faucet', 'OpenSea', 'Ethereum bookstack'] },
+        { type: 'ul', items: ['Etherscan', 'Sepolia faucet (they move)', 'OpenSea', 'Ethereum bookstack'] },
         { type: 'callout', text: 'Faucets move. Reading the chain beats rushing it.' },
+      ],
+    },
+    {
+      id: 'ai-tools',
+      title: 'Human indexes in the model era',
+      blocks: [
+        { type: 'ul', items: ['react.dev', 'vuejs.org', 'nodejs.org/docs', 'vite.dev', 'WCAG 2.2 quickref'] },
+        'Models invent APIs. Grounding in official docs is cheaper than another prompt.',
       ],
     },
   ],

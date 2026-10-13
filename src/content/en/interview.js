@@ -70,5 +70,48 @@ export default {
         'Split bundles, modern images, cache headers, critical CSS, SSR/streaming. Generated pages fail LCP and CLS first.',
       ],
     },
+    {
+      id: 'preflight',
+      title: 'What a CORS preflight asks',
+      blocks: [
+        'Simple requests go out; missing Allow-Origin fails the read. PUT, JSON content-type, custom headers send OPTIONS first. Credited requests cannot use *. Cache preflight with Max-Age. JSONP is not a 2026 answer. Hide CORS behind a Vite proxy in dev.',
+      ],
+    },
+    {
+      id: 'http2',
+      title: 'HTTP/2 and HTTP/3',
+      blocks: [
+        'HTTP/2 multiplexes streams on one TCP; head-of-line blocking moves to packet loss. HPACK compresses headers. HTTP/3 is QUIC over UDP. Sprites matter less; cache headers still do.',
+      ],
+    },
+    {
+      id: 'inp',
+      title: 'INP replaced FID',
+      blocks: [
+        { type: 'callout', text: 'web.dev: INP watches the worst interactions across the page life, not only the first.' },
+        'Split tasks over 50ms, keep input urgent, parse JSON off the hot path, yield with startTransition. Measure with web-vitals and CrUX, not only Lighthouse.',
+      ],
+    },
+    {
+      id: 'csp',
+      title: 'CSP and Trusted Types',
+      blocks: [
+        'Whitelist script origins with nonce or strict-dynamic. Ban eval and inline. Report-only first. Trusted Types make innerHTML demand a sanitized object.',
+      ],
+    },
+    {
+      id: 'samesite',
+      title: 'SameSite cookies',
+      blocks: [
+        'Lax is the usual default: top-level GETs send the cookie, cross-site POST and iframes do not. None requires Secure. Third-party cookies are leaving — first-party sessions beat implicit identity in embeds.',
+      ],
+    },
+    {
+      id: 'sw',
+      title: 'Service Worker in interviews',
+      blocks: [
+        'Install, activate, then fetch. Cache First for static, Network First for APIs, Stale-While-Revalidate for lists that can be briefly stale. skipWaiting has a cost. The web app manifest is a separate file.',
+      ],
+    },
   ],
 }

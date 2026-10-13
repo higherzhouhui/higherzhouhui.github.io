@@ -59,5 +59,43 @@ export default {
         'Templates earn their keep by welding file routes, auto-import, PWA, and vw layout first.',
       ],
     },
+    {
+      id: 'composition',
+      title: 'Why Composition API splits logic',
+      blocks: [
+        'Options API slices by data/methods/computed. setup groups by feature: useUser() brings state, fetch, and cleanup home.',
+        { type: 'ul', items: ['ref unwraps in templates; .value in script', 'reactive objects lose the proxy if you destructure — toRefs', 'computed is a cached derivation', 'watch is precise; watchEffect runs immediately'] },
+        'Lifecycles become onMounted / onUnmounted. Composables replace mixin name clashes.',
+      ],
+    },
+    {
+      id: 'pinia',
+      title: 'Why Pinia replaced Vuex',
+      blocks: [
+        'No mutations layer. Actions may be async. Stores are typed modules, composed instead of nested namespaces. Call useStore() after pinia is installed. SSR needs a fresh pinia per request.',
+      ],
+    },
+    {
+      id: 'teleport',
+      title: 'Teleport, Suspense, builtins',
+      blocks: [
+        'Teleport to="body" escapes overflow:hidden — same job as Portals. Suspense waits on async setup. KeepAlive caches instances (activated / deactivated). Transition owns class timing; do not fight it in JS hooks.',
+      ],
+    },
+    {
+      id: 'v3diff',
+      title: 'Vue 2 → 3 traps',
+      blocks: [
+        { type: 'ul', items: ['filters gone', 'v-model is modelValue / update:modelValue', '$listeners merged into $attrs', 'unmounted', 'app.use / app.component', 'keyCode modifiers removed'] },
+        '@vue/compat can mix versions; do not keep the compat layer forever.',
+      ],
+    },
+    {
+      id: 'slots',
+      title: 'Slots and scoped slots',
+      blocks: [
+        'Default, named, and scoped (child passes data out). #header="{ user }" is sugar. Table cell templates are the textbook case. Prefer emit over stuffing callbacks into slots.',
+      ],
+    },
   ],
 }

@@ -61,5 +61,49 @@ export default {
       title: 'Portals and lazy',
       blocks: ['Portals mount outside the parent DOM (modals). Large routes use React.lazy + Suspense. Events still delegate — stop bubbling on the synthetic event.'],
     },
+    {
+      id: 'concurrent',
+      title: 'Concurrent render and startTransition',
+      blocks: [
+        { type: 'callout', text: 'React 18 splits urgent updates from interruptible ones. Typing is urgent; filtering a huge list can sit in startTransition.' },
+        'useTransition returns [isPending, startTransition]. useDeferredValue lags a value by a frame. Suspense may show fallback more than once.',
+        'The scheduler used to slice work with MessageChannel. You still owe INP: long tasks must be split.',
+      ],
+    },
+    {
+      id: 'keys',
+      title: 'key is identity',
+      blocks: [
+        'key tells the reconciler “this is the same item”. Index keys mis-attach state when the list inserts or sorts. Changing a key remounts: state, effects, and focus reset. That is a feature for forms.',
+      ],
+    },
+    {
+      id: 'batch18',
+      title: 'Batching in React 18',
+      blocks: [
+        'Before 18, timeouts and native listeners often flushed once per setState. 18 batches by default. Need a frame in between? flushSync. Functional updates still compose in order.',
+      ],
+    },
+    {
+      id: 'memo',
+      title: 'When memo pays',
+      blocks: [
+        'React.memo shallow-compares props. useMemo caches work; useCallback keeps a function identity so memo children do not churn. Profile first. A fresh Context object busts every consumer — split or memo the value.',
+      ],
+    },
+    {
+      id: 'error-b',
+      title: 'Error boundaries and Strict Mode',
+      blocks: [
+        'Boundaries are class-only and miss event handlers and async. Strict Mode double-invokes effects in dev so subscriptions are repeatable. Do not disable it — fix the cleanup.',
+      ],
+    },
+    {
+      id: 'rsc',
+      title: 'RSC vs this static host',
+      blocks: [
+        'App Router defaults to Server Components. Push "use client" to the leaves. GitHub Pages cannot run that runtime; this site stays a CSR SPA. Stream HTML on a Node host when you need it.',
+      ],
+    },
   ],
 }

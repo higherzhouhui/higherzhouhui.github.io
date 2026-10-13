@@ -95,5 +95,51 @@ export default {
         },
       ],
     },
+    {
+      id: 'flex-deep',
+      title: 'Flexbox: the axis that matters',
+      blocks: [
+        { type: 'callout', text: 'From CSS-Tricks’ Flexbox guide: name the main axis before you split leftover space.' },
+        'flex-direction sets the main axis. justify-content is main; align-items is cross; align-self overrides one item. align-content only matters after wrap.',
+        { type: 'ul', items: ['grow / shrink / basis', 'min-width: auto blocks shrink — set min-width: 0 on overflowing children', 'gap beats margin hacks'] },
+        'Nav bars are flex. Magazines are grid. Nest them; do not fake twelve columns in flex.',
+      ],
+    },
+    {
+      id: 'grid',
+      title: 'Grid: tracks, areas, minmax',
+      blocks: [
+        'fr shares leftover space. repeat(auto-fit, minmax(16rem, 1fr)) is the shortest responsive card wall. Named areas make header/nav/main/footer readable. grid-column: 1 / -1 spans the row. subgrid inherits parent tracks.',
+      ],
+    },
+    {
+      id: 'cq',
+      title: 'Container queries',
+      blocks: [
+        { type: 'callout', text: 'web.dev: query the component, not only the viewport.' },
+        'container-type: inline-size on the parent; @container (min-width: 24rem) on children. A card can change layout when it moves from sidebar to main. cqw / cqi units are relative to the container. Pair with :has().',
+      ],
+    },
+    {
+      id: 'content-vis',
+      title: 'content-visibility and contain',
+      blocks: [
+        'Skip off-screen work with content-visibility: auto; set contain-intrinsic-size so the scrollbar stays honest. contain tells the engine changes stay inside. Animate transform/opacity. will-change is a scalpel.',
+      ],
+    },
+    {
+      id: 'stacking',
+      title: 'Stacking contexts',
+      blocks: [
+        'z-index only compares inside one context. Positioned z-index, opacity < 1, transform, filter, isolation: isolate all create one. A modal “under” something usually has an isolating ancestor. Walk up; do not sprinkle 99999.',
+      ],
+    },
+    {
+      id: 'logical',
+      title: 'Logical properties, :has, :focus-visible',
+      blocks: [
+        'margin-inline-start survives RTL. :focus-visible shows rings for keyboards, not every click. :has(> img) is the parent selector CSS waited for. color-scheme and light-dark() can sit beside html[data-theme].',
+      ],
+    },
   ],
 }
