@@ -9,6 +9,7 @@ export const NAV_ITEMS = [
   { to: '/utils', key: 'utils' },
   { to: '/engineering', key: 'engineering' },
   { to: '/notes', key: 'notes' },
+  { to: '/diary', key: 'diary' },
   { to: '/lab', key: 'lab' },
 ]
 

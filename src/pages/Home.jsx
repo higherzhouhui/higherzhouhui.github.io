@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, GitFork, Sparkles } from 'lucide-react'
+import { ArrowRight, BookLock, GitFork, Sparkles } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import Reveal from '../components/motion/Reveal.jsx'
@@ -43,6 +43,13 @@ export default function Home() {
           >
             <Sparkles size={16} />
             {t.ctaLab}
+          </Link>
+          <Link
+            to="/diary"
+            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-ink transition hover:border-gold hover:text-gold"
+          >
+            <BookLock size={16} />
+            {t.ctaDiary}
           </Link>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">

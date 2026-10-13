@@ -96,5 +96,6 @@ export default {
     { key: 'vue', to: '/vue', tag: 'Vue', title: '数据驱动，不必亲手搬 DOM', desc: 'MVVM 加上 Vite / Pinia / pnpm 这一整条生态。' },
     { key: 'engineering', to: '/engineering', tag: '工程化', title: '从模块规范到 Actions', desc: 'Webpack 骨架、Prisma、微前端、一键部署。' },
     { key: 'notes', to: '/notes', tag: '笔记', title: '前线笔记继续长', desc: '性能、SSL、事件循环、INP、无障碍，以及 30+ 的出路。' },
+    { key: 'diary', to: '/diary', tag: '日记', title: '加密日记本', desc: 'AES 加密存放，解锁后才能读。只记重要的事。' },
   ],
 }
