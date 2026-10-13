@@ -1,3 +1,5 @@
+# Pages source must stay "GitHub Actions". Deploy-from-branch serves the Vite
+# source index.html and will 404. Keep the repo public on the free plan.
 name: Deploy GitHub Pages
 
 on:
@@ -21,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - run: npm ci
       - run: npm run build

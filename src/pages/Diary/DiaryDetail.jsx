@@ -1,143 +1,130 @@
-import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { decryptText, decryptImage } from '../../utils/crypto';
-import './DiaryDetail.css';
+import { useEffect, useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import { decryptText, decryptImage } from '../../utils/crypto'
+import { useI18n } from '../../i18n/I18nProvider.jsx'
+import './DiaryDetail.css'
 
 export default function DiaryDetail({ password }) {
-  const { date } = useParams();
-  const navigate = useNavigate();
-  const [diary, setDiary] = useState(null);
-  const [images, setImages] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
+  const { date } = useParams()
+  const navigate = useNavigate()
+  const { t, lang } = useI18n()
+  const copy = t.diary
+  const [diary, setDiary] = useState(null)
+  const [images, setImages] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState('')
 
   useEffect(() => {
-    loadDiary();
-  }, [date, password]);
+    loadDiary()
+  }, [date, password])
 
   const loadDiary = async () => {
     try {
-      setLoading(true);
-      setError('');
+      setLoading(true)
+      setError('')
 
-      // 加载日记数据
-      const response = await fetch(`/diary/data/${date}.json`);
-      if (!response.ok) {
-        throw new Error('日记不存在');
-      }
+      const response = await fetch(`/diary/data/${date}.json`)
+      if (!response.ok) throw new Error(copy.missing)
 
-      const encryptedData = await response.json();
-      const decryptedText = await decryptText(encryptedData.encrypted, password);
-      const diaryData = JSON.parse(decryptedText);
+      const encryptedData = await response.json()
+      const decryptedText = await decryptText(encryptedData.encrypted, password)
+      const diaryData = JSON.parse(decryptedText)
+      setDiary(diaryData)
 
-      setDiary(diaryData);
-
-      // 加载图片
-      if (diaryData.images && diaryData.images.length > 0) {
-        const loadedImages = [];
+      if (diaryData.images?.length) {
+        const loadedImages = []
         for (const imageName of diaryData.images) {
           try {
-            const imgResponse = await fetch(`/diary/images/${imageName}`);
+            const imgResponse = await fetch(`/diary/images/${imageName}`)
             if (imgResponse.ok) {
-              const imgData = await imgResponse.json();
-              const decryptedImageBuffer = await decryptImage(imgData.encrypted, password);
-              const blob = new Blob([decryptedImageBuffer]);
-              const url = URL.createObjectURL(blob);
-              loadedImages.push(url);
+              const imgData = await imgResponse.json()
+              const decryptedImageBuffer = await decryptImage(imgData.encrypted, password)
+              const blob = new Blob([decryptedImageBuffer])
+              loadedImages.push(URL.createObjectURL(blob))
             }
           } catch (err) {
-            console.error('加载图片失败:', imageName, err);
+            console.error('加载图片失败:', imageName, err)
           }
         }
-        setImages(loadedImages);
+        setImages(loadedImages)
       }
     } catch (err) {
-      setError(err.message || '加载日记失败');
+      setError(err.message || copy.missing)
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
 
   const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
-    const weekday = weekdays[date.getDay()];
-    
-    return `${year}年${month}月${day}日 星期${weekday}`;
-  };
+    const value = new Date(`${dateStr}T00:00:00`)
+    if (lang === 'en') {
+      return value.toLocaleDateString('en', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
+    }
+    const weekdays = ['日', '一', '二', '三', '四', '五', '六']
+    return `${value.getFullYear()}年${value.getMonth() + 1}月${value.getDate()}日 星期${weekdays[value.getDay()]}`
+  }
 
   if (loading) {
     return (
-      <div className="diary-detail-container">
-        <div className="loading-spinner">
-          <div className="spinner"></div>
-          <p>解密中...</p>
-        </div>
+      <div className="diary-detail-container diary-state">
+        <p>{copy.decrypting}</p>
       </div>
-    );
+    )
   }
 
   if (error) {
     return (
-      <div className="diary-detail-container">
-        <div className="error-message">
-          <p>❌ {error}</p>
-          <button onClick={() => navigate('/diary')} className="btn-back">
-            返回列表
-          </button>
-        </div>
+      <div className="diary-detail-container diary-state">
+        <p>{error}</p>
+        <button type="button" onClick={() => navigate('/diary')} className="btn-back">
+          {copy.back}
+        </button>
       </div>
-    );
+    )
   }
 
   return (
     <div className="diary-detail-container">
-      <div className="diary-detail-header">
-        <button onClick={() => navigate('/diary')} className="btn-back-header">
-          ← 返回
-        </button>
-      </div>
+      <button type="button" onClick={() => navigate('/diary')} className="btn-back-header">
+        {copy.back}
+      </button>
 
-      <div className="diary-detail-content">
-        <article className="diary-article">
-          <header className="diary-article-header">
-            <h1>📔 日记</h1>
-            <time>{formatDate(diary.date)}</time>
-          </header>
+      <article className="diary-article">
+        <header className="diary-article-header">
+          <p className="diary-kicker">{copy.kicker}</p>
+          <h1>{diary.title || copy.theDay}</h1>
+          <time>{formatDate(diary.date)}</time>
+        </header>
 
+        <section className="diary-section">
+          <h2>{copy.about}</h2>
+          <div className="diary-text">
+            {diary.userProfile.split('\n').map((line, i) => (
+              <p key={i}>{line || '\u00a0'}</p>
+            ))}
+          </div>
+        </section>
+
+        <section className="diary-section">
+          <h2>{copy.theDay}</h2>
+          <div className="diary-text">
+            {diary.events.split('\n').map((line, i) => (
+              <p key={i}>{line || '\u00a0'}</p>
+            ))}
+          </div>
+        </section>
+
+        {images.length > 0 ? (
           <section className="diary-section">
-            <h2>👤 用户画像</h2>
-            <div className="diary-text">
-              {diary.userProfile.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
+            <h2>{copy.photos}</h2>
+            <div className="diary-images">
+              {images.map((url, i) => (
+                <img key={url} src={url} alt="" />
               ))}
             </div>
           </section>
-
-          <section className="diary-section">
-            <h2>📝 今天的重要事项</h2>
-            <div className="diary-text">
-              {diary.events.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
-              ))}
-            </div>
-          </section>
-
-          {images.length > 0 && (
-            <section className="diary-section">
-              <h2>📷 图片</h2>
-              <div className="diary-images">
-                {images.map((url, i) => (
-                  <img key={i} src={url} alt={`日记图片 ${i + 1}`} />
-                ))}
-              </div>
-            </section>
-          )}
-        </article>
-      </div>
+        ) : null}
+      </article>
     </div>
-  );
+  )
 }

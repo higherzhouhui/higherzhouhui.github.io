@@ -9,6 +9,7 @@ import DiaryIndex from './pages/Diary/index.jsx'
 import LabPrinter from './pages/LabPrinter.jsx'
 import LabScroll from './pages/LabScroll.jsx'
 import LabWater from './pages/LabWater.jsx'
+import NotFound from './pages/NotFound.jsx'
 import { ThemeProvider } from './theme/ThemeProvider.jsx'
 
 export default function App() {
@@ -33,6 +34,7 @@ export default function App() {
               <Route path="/pages/cssanimation/textScroll.html" element={<LabScroll />} />
               <Route path="/lab/printer" element={<LabPrinter />} />
               <Route path="/pages/studytest.html" element={<LabPrinter />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Shell>
         </BrowserRouter>

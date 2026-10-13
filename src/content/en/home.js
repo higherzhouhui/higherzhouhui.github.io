@@ -96,6 +96,6 @@ export default {
     { key: 'vue', to: '/vue', tag: 'Vue', title: 'Data drives the view', desc: 'MVVM plus the Vite / Pinia / pnpm toolchain.' },
     { key: 'engineering', to: '/engineering', tag: 'Engineering', title: 'From module specs to Actions', desc: 'Webpack skeleton, Prisma, microfrontends, push-to-deploy.' },
     { key: 'notes', to: '/notes', tag: 'Notes', title: 'Field notes, still growing', desc: 'Vitals, TLS, the event loop, INP, a11y, and paths after thirty.' },
-    { key: 'diary', to: '/diary', tag: 'Diary', title: 'Encrypted journal', desc: 'AES-locked notes. Unlock to read. Only what matters.' },
+    { key: 'diary', to: '/diary', tag: 'Diary', title: 'A notebook that stays shut', desc: 'Only what took up real room that day. Once recognized, ten days without knocking.' },
   ],
 }

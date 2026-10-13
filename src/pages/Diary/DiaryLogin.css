@@ -1,140 +1,111 @@
 .diary-login-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  display: grid;
+  min-height: 60vh;
+  place-items: center;
+  padding: 1.5rem 0 3rem;
 }
 
 .diary-login-box {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  max-width: 400px;
-  width: 100%;
-  padding: 40px;
-  animation: slideUp 0.5s ease-out;
+  width: min(26rem, 100%);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: color-mix(in oklab, var(--surface) 86%, transparent);
+  padding: 2.25rem 1.75rem;
+  backdrop-filter: blur(16px);
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.diary-login-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.diary-login-header h2 {
-  margin: 0 0 8px 0;
-  color: #333;
-  font-size: 28px;
-}
-
-.diary-login-header p {
+.diary-kicker {
   margin: 0;
-  color: #666;
-  font-size: 14px;
+  font-size: 11px;
+  letter-spacing: 0.32em;
+  color: var(--gold);
+}
+
+.diary-login-box h2 {
+  margin: 0.85rem 0 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.diary-login-lead {
+  margin: 0.75rem 0 1.75rem;
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--dim);
 }
 
 .diary-login-form {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.form-group {
-  margin-bottom: 0;
+  gap: 0.85rem;
 }
 
 .form-control {
   width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s;
   box-sizing: border-box;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--elevated);
+  padding: 0.75rem 1.15rem;
+  color: var(--ink);
+  font-size: 0.95rem;
 }
 
 .form-control:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px var(--glow);
 }
 
 .form-control:disabled {
-  background-color: #f5f5f5;
-  cursor: not-allowed;
-}
-
-.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
-  text-align: center;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-}
-
-.btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
-}
-
-.btn-primary:disabled {
   opacity: 0.6;
-  cursor: not-allowed;
 }
 
-.btn-block {
+.btn-unlock {
   width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  padding: 0.75rem 1.25rem;
+  color: var(--bg);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
 }
 
-.alert {
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 14px;
+.btn-unlock:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.btn-unlock:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.diary-alert {
   margin: 0;
+  border-radius: 0.75rem;
+  border: 1px solid color-mix(in oklab, #e07070 45%, var(--line));
+  background: color-mix(in oklab, #e07070 12%, var(--surface));
+  padding: 0.65rem 0.9rem;
+  color: var(--accent);
+  font-size: 0.85rem;
 }
 
-.alert-danger {
-  background-color: #fee;
-  color: #c33;
-  border: 1px solid #fcc;
-}
-
-.diary-login-footer {
+.diary-login-hint {
+  margin: 0.2rem 0 0;
   text-align: center;
-  margin-top: 8px;
+  color: var(--dim);
+  font-size: 0.75rem;
 }
 
-.diary-login-footer small {
-  color: #999;
-  font-size: 12px;
-}
-
-@media (max-width: 480px) {
-  .diary-login-box {
-    padding: 30px 20px;
-  }
-  
-  .diary-login-header h2 {
-    font-size: 24px;
-  }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }

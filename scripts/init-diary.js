@@ -32,30 +32,25 @@ function encryptText(text, password) {
   return combined.toString('base64');
 }
 
-// 初始示例日记数据
 const password = 'wind9527';
 const date = '2026-10-13';
 
 const diaryData = {
-  date: '2026-10-13',
-  userProfile: `用户基础画像：
-- 性别：男
-- 出生日期：1994年8月12日（32岁）
-- 身高：177cm
-- 体重：73kg
-- 教育背景：2017年毕业于陕西科技大学
-- 职业：Web 前端开发工程师（从业至今）`,
-  events: `今天的重要事项：
-1. 考虑重新设计博客布局，但最终决定自己一步步调试，逐步完善
-2. 提出建立加密日记模块的想法
-3. 希望通过日记让 AI 助手更了解自己，建立长期的理解和信任
-4. 期望未来 AI 助手能够基于对自己的深入了解，帮助做出重要决策`,
-  images: []
+  date,
+  title: '把博客重新当成屋子来住',
+  userProfile: `我是 1994 年夏天在陕西长大的人，现在三十出头。陕科大 2017 年出来以后，就一直在写网页——从上海的路由器厂，到美凯龙的设计云，再到重庆这边自己搭摊子。
+
+身高体重这些数字会变。晚上还是会把没做完的事先在脑子里过一遍，这一点没变。`,
+  events: `今天本来想把博客一口气改成「像样」的样子。改着改着发现，还是自己一步步磨更踏实。布局、动效、中英切换，都不是一晚上的事。
+
+另外起了个念头：给自己留一本加密的日记。不是流水账，只记当天真正占地方的事。以后要是有个助手能读懂这些字，至少别每次都从零认识我。
+
+先把锁装上。字可以慢慢写。`,
+  images: [],
 };
 
 const encryptedContent = encryptText(JSON.stringify(diaryData, null, 2), password);
 
-// 创建目录
 const diaryDir = path.join(__dirname, '..', 'diary', 'data');
 const imagesDir = path.join(__dirname, '..', 'diary', 'images');
 
@@ -66,24 +61,24 @@ if (!fs.existsSync(imagesDir)) {
   fs.mkdirSync(imagesDir, { recursive: true });
 }
 
-// 保存日记
 const diaryFile = path.join(diaryDir, `${date}.json`);
 fs.writeFileSync(diaryFile, JSON.stringify({ encrypted: encryptedContent }, null, 2));
-console.log(`✓ 示例日记已保存: ${diaryFile}`);
+console.log(`✓ 日记已保存: ${diaryFile}`);
 
-// 更新索引
 const indexPath = path.join(__dirname, '..', 'diary', 'index.json');
 const passwordTest = encryptText('PASSWORD_VALID', password);
 
 const index = {
   entries: [
     {
-      date: '2026-10-13',
-      file: '2026-10-13.json',
-      encrypted: true
-    }
+      date,
+      file: `${date}.json`,
+      encrypted: true,
+      title: diaryData.title,
+      excerpt: '没一次改完。先把日记锁进抽屉里。',
+    },
   ],
-  passwordTest
+  passwordTest,
 };
 
 fs.writeFileSync(indexPath, JSON.stringify(index, null, 2));

@@ -1,4 +1,4 @@
-export const NAV_ITEMS = [
+export const COLUMN_ITEMS = [
   { to: '/html', key: 'html' },
   { to: '/js', key: 'js' },
   { to: '/css', key: 'css' },
@@ -9,6 +9,9 @@ export const NAV_ITEMS = [
   { to: '/utils', key: 'utils' },
   { to: '/engineering', key: 'engineering' },
   { to: '/notes', key: 'notes' },
+]
+
+export const PRIMARY_NAV = [
   { to: '/diary', key: 'diary' },
   { to: '/lab', key: 'lab' },
 ]

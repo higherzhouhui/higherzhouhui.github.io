@@ -1,87 +1,87 @@
-import { Link } from 'react-router-dom';
-import { clearAuth, getRemainingDays } from '../../utils/auth';
-import './DiaryList.css';
+import { Link } from 'react-router-dom'
+import { clearAuth, getRemainingDays } from '../../utils/auth'
+import { useI18n } from '../../i18n/I18nProvider.jsx'
+import './DiaryList.css'
 
 export default function DiaryList({ entries }) {
-  const remainingDays = getRemainingDays();
+  const { t, lang } = useI18n()
+  const copy = t.diary
+  const remainingDays = getRemainingDays()
 
   const handleLogout = () => {
-    if (confirm('确定要退出登录吗？')) {
-      clearAuth();
-      window.location.reload();
+    if (confirm(copy.logoutConfirm)) {
+      clearAuth()
+      window.location.reload()
     }
-  };
+  }
 
   const formatDate = (dateStr) => {
-    const date = new Date(dateStr);
-    const year = date.getFullYear();
-    const month = date.getMonth() + 1;
-    const day = date.getDate();
-    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
-    const weekday = weekdays[date.getDay()];
-    
+    const date = new Date(`${dateStr}T00:00:00`)
+    const weekdays = lang === 'en'
+      ? ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+      : ['日', '一', '二', '三', '四', '五', '六']
+    if (lang === 'en') {
+      return {
+        monthDay: date.toLocaleString('en', { month: 'short', day: 'numeric' }),
+        year: String(date.getFullYear()),
+        weekday: weekdays[date.getDay()],
+      }
+    }
     return {
-      year,
-      monthDay: `${month}月${day}日`,
-      weekday: `星期${weekday}`
-    };
-  };
+      monthDay: `${date.getMonth() + 1}月${date.getDate()}日`,
+      year: String(date.getFullYear()),
+      weekday: `星期${weekdays[date.getDay()]}`,
+    }
+  }
 
   return (
     <div className="diary-list-container">
-      <div className="diary-header">
-        <div className="diary-header-content">
-          <div>
-            <h1>📔 我的日记</h1>
-            <p className="diary-subtitle">记录生活，了解自己</p>
-          </div>
-          <div className="diary-header-actions">
-            <span className="auth-status">
-              🔓 已解锁 · 剩余 {remainingDays} 天
-            </span>
-            <button onClick={handleLogout} className="btn-logout">
-              退出
-            </button>
-          </div>
+      <header className="diary-header">
+        <div>
+          <p className="diary-kicker">{copy.kicker}</p>
+          <h1>{copy.listTitle}</h1>
+          <p className="diary-subtitle">{copy.listLead}</p>
         </div>
-      </div>
+        <div className="diary-header-actions">
+          <span className="auth-status">
+            {copy.unlocked} · {copy.daysLeft.replace('{n}', String(remainingDays))}
+          </span>
+          <button type="button" onClick={handleLogout} className="btn-logout">
+            {copy.logout}
+          </button>
+        </div>
+      </header>
 
-      <div className="diary-content">
-        <div className="timeline">
-          {entries.map((entry) => {
-            const dateInfo = formatDate(entry.date);
-            return (
-              <Link 
-                to={`/diary/${entry.date}`} 
-                key={entry.date}
-                className="timeline-item"
-              >
-                <div className="timeline-marker"></div>
-                <div className="timeline-card">
-                  <div className="timeline-date">
-                    <div className="date-large">{dateInfo.monthDay}</div>
-                    <div className="date-small">
-                      <span>{dateInfo.year}</span>
-                      <span>{dateInfo.weekday}</span>
-                    </div>
-                  </div>
-                  <div className="timeline-content">
-                    <h3>日记</h3>
-                    <p>点击查看详情 →</p>
+      <div className="timeline">
+        {entries.map((entry) => {
+          const dateInfo = formatDate(entry.date)
+          return (
+            <Link to={`/diary/${entry.date}`} key={entry.date} className="timeline-item">
+              <div className="timeline-marker" />
+              <div className="timeline-card">
+                <div className="timeline-date">
+                  <div className="date-large">{dateInfo.monthDay}</div>
+                  <div className="date-small">
+                    <span>{dateInfo.year}</span>
+                    <span>{dateInfo.weekday}</span>
                   </div>
                 </div>
-              </Link>
-            );
-          })}
-        </div>
-
-        {entries.length === 0 && (
-          <div className="empty-state">
-            <p>📝 还没有日记</p>
-            <small>开始记录你的生活吧</small>
-          </div>
-        )}
+                <div className="timeline-content">
+                  <h3>{entry.title || dateInfo.monthDay}</h3>
+                  <p>{entry.excerpt || copy.theDay}</p>
+                </div>
+              </div>
+            </Link>
+          )
+        })}
       </div>
+
+      {entries.length === 0 ? (
+        <div className="empty-state">
+          <p>{copy.empty}</p>
+          <small>{copy.emptyHint}</small>
+        </div>
+      ) : null}
     </div>
-  );
+  )
 }
