@@ -1,17 +1,20 @@
 {
-  "name": "download",
+  "name": "higherzhouhui-blog",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node build.js"
+    "dev": "vite",
+    "build": "vite build && node scripts/copy-404.js",
+    "preview": "vite preview"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "live-server": "^1.2.2",
-    "mysql": "^2.18.1"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "vite": "^7.1.9"
   }
 }

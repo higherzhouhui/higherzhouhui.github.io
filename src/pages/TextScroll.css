@@ -1,0 +1,21 @@
+#scroll_div {
+  z-index: 999;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  border: 1px solid;
+  transform: translateY(-50%);
+  overflow: hidden;
+  white-space: nowrap;
+  width: 500px;
+  background-color: #fff;
+  color: #333;
+  font-size: 0.84rem;
+}
+
+#scroll_begin,
+#scroll_end {
+  display: inline;
+  font-size: 16px;
+  font-weight: bold;
+}
