@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MODULES  ·  PIPELINES',
+  kicker: 'Pipeline',
   title: 'Frontend engineering',
   lead: 'Module specs decide how files meet. Vite and GitHub Actions only pushed those specs onto a conveyor.',
   sections: [

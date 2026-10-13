@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MARKUP  ·  STRUCTURE FIRST',
+  kicker: 'Markup',
   title: 'HTML5 semantics and new power',
   lead: 'Semantics is not decoration. It lets browsers, crawlers, screen readers, and models share one structural map. The right tag for the right job.',
   sections: [

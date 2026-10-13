@@ -1,5 +1,5 @@
 export default {
-  kicker: 'SNIPPETS  ·  HAND TOOLS',
+  kicker: 'Hand tools',
   title: 'Utility drawer',
   lead: 'Small tools that interviews and tickets reopen. Check edges before you paste: regexes age, algorithms fear empty strings.',
   sections: [

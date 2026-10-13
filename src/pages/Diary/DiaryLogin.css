@@ -8,7 +8,7 @@
 .diary-login-box {
   width: min(26rem, 100%);
   border: 1px solid var(--line);
-  border-radius: 1.5rem;
+  border-radius: 0;
   background: color-mix(in oklab, var(--surface) 86%, transparent);
   padding: 2.25rem 1.75rem;
   backdrop-filter: blur(16px);
@@ -17,14 +17,15 @@
 .diary-kicker {
   margin: 0;
   font-size: 11px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.18em;
   color: var(--gold);
 }
 
 .diary-login-box h2 {
   margin: 0.85rem 0 0;
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 700;
   font-weight: 500;
   line-height: 1.2;
   color: var(--ink);
@@ -47,7 +48,7 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--elevated);
   padding: 0.75rem 1.15rem;
   color: var(--ink);
@@ -67,7 +68,7 @@
 .btn-unlock {
   width: 100%;
   border: none;
-  border-radius: 999px;
+  border-radius: 0;
   background: var(--gold);
   padding: 0.75rem 1.25rem;
   color: var(--bg);
@@ -87,7 +88,7 @@
 
 .diary-alert {
   margin: 0;
-  border-radius: 0.75rem;
+  border-radius: 0;
   border: 1px solid color-mix(in oklab, #e07070 45%, var(--line));
   background: color-mix(in oklab, #e07070 12%, var(--surface));
   padding: 0.65rem 0.9rem;

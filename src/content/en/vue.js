@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MVVM  ·  REACTIVE',
+  kicker: 'Data',
   title: 'Vue: a reactive bridge',
   lead: 'The model is a plain object, the view is UI, the ViewModel welds them. Change data, change the view — that certainty is what Vue sells.',
   sections: [

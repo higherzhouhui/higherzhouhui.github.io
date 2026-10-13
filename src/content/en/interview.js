@@ -1,5 +1,5 @@
 export default {
-  kicker: 'PROTOCOL  ·  BROWSER',
+  kicker: 'Interview',
   title: 'Interview map: from packets to pixels',
   lead: 'Network, browser, TypeScript on one table. Models can recite; interviews still want the causal chain from a handshake to a 304.',
   sections: [

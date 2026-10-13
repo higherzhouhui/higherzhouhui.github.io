@@ -1,5 +1,5 @@
 export default {
-  kicker: 'VIEW  ·  UNIDIRECTIONAL',
+  kicker: '视图',
   title: 'React：函数视图与可中断渲染',
   lead: 'React 只管 View。状态向下流，事件向上报。Hooks 让函数组件拥有记忆，Fiber 让那次更新可以被打断。',
   sections: [

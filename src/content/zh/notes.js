@@ -1,7 +1,7 @@
 export default {
-  kicker: 'FIELD NOTES  ·  FROM MYBLOG',
-  title: '前线笔记：从 WebSocket 到远程人生',
-  lead: '从 myBlog 迁来的现场记录，再叠一层公开长文的改写。框架会过期，握手、性能指标和部署流水线不会。把它们放进同一张控制台，继续生长。',
+  kicker: '笔记',
+  title: '写给还要翻回来的自己',
+  lead: '从旧博客迁过来，又改过一遍。框架会过期，握手、性能和部署不会。不写课程腔。',
   sections: [
     {
       id: 'ws',

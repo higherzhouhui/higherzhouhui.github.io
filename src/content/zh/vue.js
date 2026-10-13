@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MVVM  ·  REACTIVE',
+  kicker: '数据',
   title: 'Vue：数据驱动的桥梁',
   lead: 'Model 是普通对象，View 是 UI，ViewModel 把两边焊在一起。改数据即改视图——这是 Vue 一直在卖的确定性。',
   sections: [

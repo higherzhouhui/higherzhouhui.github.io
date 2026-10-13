@@ -1,5 +1,5 @@
 export default {
-  kicker: 'ENDPOINTS  ·  TOOLING',
+  kicker: 'Endpoints',
   title: 'APIs and tool shelves',
   lead: 'A wall of endpoints I reach for. Some URLs rot — treat them as an index, not a contract.',
   sections: [

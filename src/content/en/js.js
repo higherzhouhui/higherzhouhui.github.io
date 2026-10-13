@@ -1,5 +1,5 @@
 export default {
-  kicker: 'RUNTIME  ·  SINGLE THREAD',
+  kicker: 'Runtime',
   title: 'JavaScript runtime notes',
   lead: 'Generating code is easy; explaining a closure and one event-loop turn is harder. Put types, copies, this, and async back onto stack and heap.',
   sections: [

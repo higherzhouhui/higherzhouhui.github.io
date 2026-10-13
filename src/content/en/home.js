@@ -1,7 +1,7 @@
 export default {
-  quote: 'I have stood on peaks and walked through valleys. Both paid me. The climb is long; the view is worth it. Failure remains the best tutor — steer fate, or it steers you.',
-  quoteAlt: 'Economic history is a serial of illusions. Fortune is seeing the illusion, entering it, and leaving before the crowd does.',
-  role: 'Full-stack builder · note-taker · lifelong student',
+  quote: 'I am not here to stage a showroom. A page you can read, a build that ships, a pit you can revisit — those three beat any slogan.',
+  quoteAlt: 'Remote is not a filter. Time zones, clients, contracts, and commits share one desk.',
+  role: 'Full stack. Chongqing. Code, notes, the occasional job.',
   bio: {
     school: 'Shaanxi University of Science & Technology · IoT Engineering (2013–2017)',
     github: 'https://github.com/higherzhouhui',
@@ -11,10 +11,10 @@ export default {
     work: 'BDCOM → HomeKoo Design Cloud → Huaxia Yunrong → Tuanwang → Jizaoji (partner)',
   },
   stats: [
-    { value: '8+', label: 'years on the line' },
-    { value: '100k+', label: 'DAU shipped' },
-    { value: '25', label: 'field notes' },
-    { value: '3', label: 'live themes' },
+    { value: '8+', label: 'years on the floor' },
+    { value: '100k+', label: 'DAU that shipped' },
+    { value: '25', label: 'notes I wrote' },
+    { value: '3', label: 'themes, switched freely' },
   ],
   tags: ['Frontend', '8y+', '100k DAU', 'WEB3', 'Digital nomad', 'Dapp', 'UniApp', 'Mini programs', 'Full stack', 'Remote'],
   skillChips: [
@@ -90,12 +90,12 @@ export default {
     { label: 'Telegram', value: '@cloudljj' },
   ],
   cards: [
-    { key: 'html', to: '/html', tag: 'HTML5', title: 'Semantics is the first breath of structure', desc: 'The right tag for the right job. Crawlers and models read structure first.' },
-    { key: 'js', to: '/js', tag: 'JavaScript', title: 'The language is still the heart of runtime', desc: 'Types, closures, the event loop, WebSocket — explain it before you generate it.' },
-    { key: 'react', to: '/react', tag: 'React', title: 'View as function, data one way', desc: 'From classes to Hooks, then to interruptible Fiber.' },
-    { key: 'vue', to: '/vue', tag: 'Vue', title: 'Data drives the view', desc: 'MVVM plus the Vite / Pinia / pnpm toolchain.' },
-    { key: 'engineering', to: '/engineering', tag: 'Engineering', title: 'From module specs to Actions', desc: 'Webpack skeleton, Prisma, microfrontends, push-to-deploy.' },
-    { key: 'notes', to: '/notes', tag: 'Notes', title: 'Field notes, still growing', desc: 'Vitals, TLS, the event loop, INP, a11y, and paths after thirty.' },
-    { key: 'diary', to: '/diary', tag: 'Diary', title: 'A notebook that stays shut', desc: 'Only what took up real room that day. Once recognized, ten days without knocking.' },
+    { key: 'html', to: '/html', tag: 'HTML5', title: 'Structure stands first', desc: 'The right tag for the right job. People and machines both read structure first.' },
+    { key: 'js', to: '/js', tag: 'JavaScript', title: 'The runtime is still this language', desc: 'Closures, the event loop, WebSocket. Explain it before you generate it.' },
+    { key: 'react', to: '/react', tag: 'React', title: 'A view is a function', desc: 'State goes one way. Do not wrestle the DOM.' },
+    { key: 'vue', to: '/vue', tag: 'Vue', title: 'Data moves, the view follows', desc: 'Vite, Pinia, pnpm. That is the kit I actually work in.' },
+    { key: 'engineering', to: '/engineering', tag: 'Engineering', title: 'From the bundle to production', desc: 'Pipelines are not romantic. They let me sleep.' },
+    { key: 'notes', to: '/notes', tag: 'Notes', title: 'For the self who comes back', desc: 'Vitals, deploys, the event loop. Still readable three months later.' },
+    { key: 'diary', to: '/diary', tag: 'Diary', title: 'Shut unless it is unlocked', desc: 'Only what took up real room that day. Once recognized, ten days without knocking.' },
   ],
 }

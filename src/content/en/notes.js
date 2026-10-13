@@ -1,7 +1,7 @@
 export default {
-  kicker: 'FIELD NOTES  ·  FROM MYBLOG',
-  title: 'Field notes: from WebSocket to a remote life',
-  lead: 'Dispatches migrated from myBlog, plus rewritten notes from public long-form. Frameworks expire; handshakes, vitals, and pipelines do not. One console, still growing.',
+  kicker: 'Notes',
+  title: 'For the self who comes back',
+  lead: 'Migrated from the old blog and rewritten. Frameworks expire. Handshakes, vitals, and deploys do not. No syllabus voice.',
   sections: [
     {
       id: 'ws',

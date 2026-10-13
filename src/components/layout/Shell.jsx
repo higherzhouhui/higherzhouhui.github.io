@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import ScrollProgress from '../motion/ScrollProgress.jsx'
@@ -8,6 +8,7 @@ import Header from './Header.jsx'
 
 export default function Shell({ children }) {
   const location = useLocation()
+  const reduce = useReducedMotion()
 
   useEffect(() => {
     if (!location.hash) window.scrollTo(0, 0)
@@ -17,7 +18,11 @@ export default function Shell({ children }) {
     if (!location.hash) return
     const id = decodeURIComponent(location.hash.slice(1))
     const timer = window.setTimeout(() => {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      document.getElementById(id)?.scrollIntoView({
+        behavior: reduceMotion ? 'auto' : 'smooth',
+        block: 'start',
+      })
     }, 80)
     return () => window.clearTimeout(timer)
   }, [location.hash, location.pathname])
@@ -27,14 +32,14 @@ export default function Shell({ children }) {
       <ScrollProgress />
       <Atmosphere />
       <Header />
-      <main className="mx-auto w-full max-w-7xl px-5 py-10">
+      <main className="mx-auto w-full max-w-[90rem] px-5 py-8 md:px-8 md:py-12">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
-            initial={{ opacity: 0, y: 32, filter: 'blur(8px)' }}
-            animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, y: -24, filter: 'blur(8px)' }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            initial={reduce ? false : { opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={reduce ? { opacity: 1 } : { opacity: 0, y: -10 }}
+            transition={reduce ? { duration: 0 } : { duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             {children}
           </motion.div>

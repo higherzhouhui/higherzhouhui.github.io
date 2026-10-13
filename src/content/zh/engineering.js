@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MODULES  ·  PIPELINES',
+  kicker: '流水线',
   title: '前端工程化',
   lead: '模块规范决定文件如何相遇。今天的 Vite 与 GitHub Actions，不过是把那些规范推进了流水线。',
   sections: [

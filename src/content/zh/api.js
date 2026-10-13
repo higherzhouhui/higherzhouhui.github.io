@@ -1,5 +1,5 @@
 export default {
-  kicker: 'ENDPOINTS  ·  TOOLING',
+  kicker: '接口',
   title: '常用 API 与工具址',
   lead: '把经常随手查的接口放在同一面墙上。有些地址会过期，把它们当成索引而不是契约。',
   sections: [

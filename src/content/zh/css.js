@@ -1,5 +1,5 @@
 export default {
-  kicker: 'LAYOUT  ·  PAINT',
+  kicker: '画面',
   title: 'CSS 选择、盒子与布局',
   lead: '样式表是空间协议。先搞清优先级和盒子，再谈居中、BFC 与移动端适配。生成式 UI 仍会写错这两层。',
   sections: [

@@ -1,9 +1,9 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
 export const THEMES = [
-  { id: 'obsidian', label: { zh: '黑金', en: 'Obsidian' }, swatch: '#d4af37' },
-  { id: 'aurora', label: { zh: '极光', en: 'Aurora' }, swatch: '#5ce1e6' },
-  { id: 'ivory', label: { zh: '象牙', en: 'Ivory' }, swatch: '#efe6d4' },
+  { id: 'obsidian', label: { zh: '夜墨', en: 'Night' }, swatch: '#ff3b1f' },
+  { id: 'aurora', label: { zh: '酸绿', en: 'Acid' }, swatch: '#d6ff3f' },
+  { id: 'ivory', label: { zh: '纸本', en: 'Paper' }, swatch: '#14120e' },
 ]
 
 const ThemeContext = createContext(null)

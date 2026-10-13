@@ -6,20 +6,18 @@ export default function ThemeSwitch() {
   const { lang } = useI18n()
 
   return (
-    <div className="flex items-center gap-1 rounded-full border border-line p-1">
+    <div className="flex items-center gap-1.5">
       {themes.map((item) => (
         <button
           key={item.id}
           type="button"
           title={item.label[lang]}
           aria-label={item.label[lang]}
+          aria-pressed={theme === item.id}
           onClick={() => setTheme(item.id)}
-          className={`grid h-6 w-6 place-items-center rounded-full transition ${
-            theme === item.id ? 'ring-2 ring-gold ring-offset-1 ring-offset-page' : 'opacity-70 hover:opacity-100'
-          }`}
-        >
-          <span className="block h-3.5 w-3.5 rounded-full" style={{ background: item.swatch }} />
-        </button>
+          className={`h-3.5 w-3.5 border border-ink/50 transition ${theme === item.id ? 'outline outline-2 outline-offset-2 outline-gold' : 'opacity-80 hover:opacity-100'}`}
+          style={{ background: item.swatch }}
+        />
       ))}
     </div>
   )

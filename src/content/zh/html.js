@@ -1,5 +1,5 @@
 export default {
-  kicker: 'MARKUP  ·  STRUCTURE FIRST',
+  kicker: '标记',
   title: 'HTML5 语义化与新能力',
   lead: '语义化不是为了好看，是为了让浏览器、爬虫、读屏器和现在的模型，都站在同一张结构图上。正确的标签做正确的事。',
   sections: [

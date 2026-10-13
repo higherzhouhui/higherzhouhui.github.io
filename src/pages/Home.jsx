@@ -1,235 +1,264 @@
-import { motion } from 'framer-motion'
-import { ArrowRight, BookLock, GitFork, Sparkles } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import Reveal from '../components/motion/Reveal.jsx'
 import { getHome } from '../content/index.js'
 import { useI18n } from '../i18n/I18nProvider.jsx'
 
+const CARD_LAYOUT = {
+  notes: 'md:col-span-4',
+  html: 'md:col-span-2 md:mt-16',
+  js: 'md:col-span-3',
+  react: 'md:col-span-3 md:-mt-8',
+  vue: 'md:col-span-2',
+  engineering: 'md:col-span-2 md:mt-10',
+  diary: 'md:col-span-2',
+}
+
+function pad(index) {
+  return String(index + 1).padStart(2, '0')
+}
+
+function Marquee({ items }) {
+  const loop = [...items, ...items]
+  return (
+    <div className="marquee border-y border-line py-4">
+      <div className="marquee-track items-center">
+        {loop.map((item, index) => (
+          <span
+            key={`${item}-${index}`}
+            aria-hidden={index >= items.length ? true : undefined}
+            className="px-4 font-display text-2xl md:text-3xl"
+          >
+            {item}
+            <span className="px-4 text-gold">/</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const { lang, t } = useI18n()
   const home = getHome(lang)
+  const reduce = useReducedMotion()
 
   useEffect(() => {
     document.title = t.brand
   }, [t.brand])
 
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 md:space-y-32">
       <motion.section
-        initial={{ opacity: 0, y: 28, filter: 'blur(10px)' }}
-        animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="relative pt-6 md:pt-16"
+        initial={reduce ? false : { opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={reduce ? { duration: 0 } : { duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="relative overflow-hidden"
       >
-        <p className="text-[11px] tracking-[0.42em] text-gold">{t.heroKicker}</p>
-        <p className="mt-4 text-sm tracking-[0.2em] text-dim">{home.role}</p>
-        <h1 className="mt-4 max-w-4xl font-display text-6xl leading-[0.95] md:text-8xl">
+        <span
+          aria-hidden
+          className="watermark-drift pointer-events-none absolute -right-[8vw] -top-8 select-none font-display text-[38vw] leading-none text-ink/[0.07] md:text-[26vw]"
+        >
+          风
+        </span>
+        <div className="relative flex items-start justify-between gap-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-gold">{t.heroKicker}</p>
+          <span className="grid h-16 w-16 shrink-0 rotate-[-8deg] place-items-center border border-gold text-center font-display text-sm leading-tight text-gold">
+            重庆
+            <br />
+            现场
+          </span>
+        </div>
+        <h1 className="relative mt-6 max-w-[12ch] font-display text-[clamp(3.4rem,8.4vw,7.5rem)] font-bold leading-[0.9] tracking-tight">
           {t.heroTitle}
-          <span className="ml-2 inline-block h-[0.72em] w-[3px] animate-pulse bg-gold align-middle" />
+          <span className={`mt-1 block text-gold ${lang === 'en' ? 'font-latin text-[0.78em] font-normal italic' : ''}`}>
+            {t.heroTitleEm}
+          </span>
         </h1>
-        <p className="mt-8 max-w-2xl text-lg leading-8 text-dim">{t.heroLead}</p>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link
-            to="/notes"
-            className="inline-flex items-center gap-2 rounded-full bg-gold px-5 py-2.5 text-sm font-medium text-page transition hover:opacity-90"
-          >
-            {t.ctaNotes}
-            <ArrowRight size={16} />
-          </Link>
-          <Link
-            to="/lab"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-ink transition hover:border-gold hover:text-gold"
-          >
-            <Sparkles size={16} />
-            {t.ctaLab}
-          </Link>
-          <Link
-            to="/diary"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-ink transition hover:border-gold hover:text-gold"
-          >
-            <BookLock size={16} />
-            {t.ctaDiary}
-          </Link>
+        <div className="relative mt-10 grid items-end gap-8 md:grid-cols-[minmax(0,1.15fr)_minmax(14rem,0.7fr)]">
+          <p className="max-w-xl text-lg leading-8 text-dim md:text-xl md:leading-9">{t.heroLead}</p>
+          <div className="flex flex-col items-start gap-2">
+            {[
+              [t.ctaNotes, '/notes'],
+              [t.ctaLab, '/lab'],
+              [t.ctaDiary, '/diary'],
+            ].map(([label, to]) => (
+              <Link key={to} to={to} className="group inline-flex items-baseline gap-3 font-display text-3xl leading-tight md:text-4xl">
+                <span className="link-draw">{label}</span>
+                <span aria-hidden className="font-mono text-sm text-gold transition duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {home.stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.15 + index * 0.08 }}
-              className="rounded-2xl border border-line bg-surface/50 px-4 py-4"
-            >
-              <p className="font-mono text-3xl text-gold">{stat.value}</p>
-              <p className="mt-1 text-xs tracking-wide text-dim">{stat.label}</p>
-            </motion.div>
+        <dl className="relative mt-12 grid grid-cols-2 gap-x-6 gap-y-8 border-t border-line pt-6 md:grid-cols-4">
+          {home.stats.map((stat) => (
+            <div key={stat.label}>
+              <dt className="font-latin text-5xl leading-none text-ink md:text-6xl">{stat.value}</dt>
+              <dd className="mt-2 text-sm text-dim">{stat.label}</dd>
+            </div>
           ))}
-        </div>
+        </dl>
       </motion.section>
 
-      <Reveal>
-        <div className="flex flex-wrap gap-2">
-          {home.tags.map((tag) => (
-            <span key={tag} className="rounded-full border border-line px-3 py-1 text-[11px] tracking-wide text-dim">
-              {tag}
-            </span>
-          ))}
-        </div>
-      </Reveal>
+      <Marquee items={home.tags} />
 
-      <Reveal>
-        <h2 className="font-display text-4xl">{t.sections}</h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <section>
+        <div className="mb-8 flex items-end justify-between gap-4">
+          <h2 className="font-display text-4xl font-bold leading-none md:text-6xl">{t.sections}</h2>
+          <span className="font-mono text-xs text-dim">02</span>
+        </div>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:items-start md:gap-5">
           {home.cards.map((card, index) => (
-            <Reveal key={card.key} delay={index * 0.05}>
+            <Reveal key={card.key} delay={index * 0.04} className={CARD_LAYOUT[card.key] || ''}>
               <Link
                 to={card.to}
-                className="group block h-full rounded-2xl border border-line bg-surface/70 p-6 backdrop-blur transition hover:border-gold hover:bg-elevated hover:-translate-y-1"
+                className={`group flex h-full min-h-44 flex-col justify-between border border-line p-5 transition duration-300 hover:bg-ink hover:text-page md:p-6 ${
+                  card.key === 'diary' ? 'border-l-4 border-l-gold' : ''
+                } ${card.key === 'notes' ? 'md:min-h-72' : ''}`}
               >
-                <p className="text-[11px] tracking-[0.28em] text-gold">{card.tag}</p>
-                <h3 className="mt-3 font-display text-2xl leading-snug">{card.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-dim">{card.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-xs tracking-wide text-gold opacity-0 transition group-hover:opacity-100">
-                  {t.read} <ArrowRight size={12} />
-                </span>
+                <div className="flex items-center justify-between font-mono text-[11px] text-gold">
+                  <span>{pad(index)}</span>
+                  <span className="tracking-[0.14em]">{card.tag}</span>
+                </div>
+                <div className="mt-8">
+                  <h3 className={`font-display font-bold leading-tight ${card.key === 'notes' ? 'text-4xl md:text-5xl' : 'text-3xl'}`}>
+                    {card.title}
+                  </h3>
+                  <p className="mt-3 text-sm leading-7 text-dim group-hover:text-page group-hover:opacity-80">{card.desc}</p>
+                </div>
               </Link>
             </Reveal>
           ))}
         </div>
-      </Reveal>
+      </section>
 
-      <Reveal>
-        <h2 className="font-display text-4xl">{t.notesFeed}</h2>
-        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {home.notes.map((note) => (
+      <section>
+        <div className="mb-2 flex items-end justify-between gap-4">
+          <h2 className="font-display text-4xl font-bold leading-none md:text-6xl">{t.notesFeed}</h2>
+          <span className="font-mono text-xs text-dim">03</span>
+        </div>
+        <div>
+          {home.notes.map((note, index) => (
             <Link
               key={note.to}
               to={note.to}
-              className="rounded-2xl border border-line bg-surface/60 p-5 transition hover:border-gold"
+              className="group grid grid-cols-[2.5rem_minmax(0,1fr)_auto] items-baseline gap-3 border-b border-line py-5"
             >
-              <p className="text-[11px] tracking-[0.22em] text-gold">{note.tag}</p>
-              <h3 className="mt-2 font-display text-xl">{note.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-dim">{note.desc}</p>
+              <span className="font-mono text-xs text-gold">{pad(index)}</span>
+              <span className="min-w-0">
+                <span className="mb-1 block font-mono text-[10px] tracking-[0.16em] text-dim">{note.tag}</span>
+                <span className="block font-display text-2xl font-bold leading-tight transition group-hover:text-gold md:text-3xl">
+                  {note.title}
+                </span>
+                <span className="mt-1 block text-sm leading-6 text-dim">{note.desc}</span>
+              </span>
+              <span aria-hidden className="font-mono text-sm text-gold transition duration-300 group-hover:translate-x-1">
+                →
+              </span>
             </Link>
           ))}
         </div>
-      </Reveal>
+      </section>
 
-      <Reveal>
-        <h2 className="font-display text-4xl">{t.timeline}</h2>
-        <ol className="mt-8 space-y-0">
-          {home.timeline.map((item, index) => (
-            <li key={item.time} className="relative grid gap-4 border-l border-gold/40 pl-8 pb-10 md:grid-cols-[180px_1fr]">
-              <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-gold shadow-[0_0_12px_var(--glow)]" />
+      <section>
+        <div className="mb-2 flex items-end justify-between gap-4">
+          <h2 className="font-display text-4xl font-bold leading-none md:text-6xl">{t.timeline}</h2>
+          <span className="font-mono text-xs text-dim">04</span>
+        </div>
+        <ol>
+          {home.timeline.map((item) => (
+            <li key={item.time} className="grid gap-3 border-t border-line py-7 md:grid-cols-[11rem_minmax(0,0.9fr)_minmax(0,1.2fr)] md:gap-8">
+              <p className="font-mono text-sm text-gold">{item.time}</p>
               <div>
-                <p className="text-xs tracking-wide text-gold">{item.time}</p>
-                <p className="mt-2 font-display text-2xl">{item.company}</p>
+                <p className="font-display text-3xl font-bold leading-tight">{item.company}</p>
                 <p className="mt-1 text-sm text-dim">{item.pos}</p>
               </div>
-              <ul className="space-y-1 text-sm leading-7 text-ink/90">
+              <ul className="space-y-1 text-sm leading-7">
                 {item.items.map((line) => (
-                  <li key={line}>· {line}</li>
+                  <li key={line}>{line}</li>
                 ))}
               </ul>
-              <span className="sr-only">{index}</span>
             </li>
           ))}
         </ol>
-      </Reveal>
+      </section>
 
-      <section className="grid gap-6 lg:grid-cols-2">
+      <section className="grid items-start gap-12 lg:grid-cols-[1.45fr_0.75fr]">
         <Reveal>
-          <article className="h-full rounded-2xl border border-line bg-surface/70 p-7">
-            <h2 className="font-display text-3xl">{t.about}</h2>
-            <p className="mt-4 text-sm leading-7 text-dim">{home.quote}</p>
-            <p className="mt-4 text-sm leading-7 text-dim">{home.quoteAlt}</p>
-            <p className="mt-5 text-sm">{home.bio.school}</p>
-            <p className="mt-2 text-sm leading-7 text-dim">{home.bio.work}</p>
-            <div className="mt-5 flex flex-wrap gap-4 text-gold">
-              <a href={home.bio.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
-                <GitFork size={16} />
-                {home.bio.githubName}
-              </a>
-              <a href={home.bio.telegram} target="_blank" rel="noreferrer">
-                Telegram
-              </a>
-              <a href={home.bio.site} target="_blank" rel="noreferrer">
-                jizaoji.top
-              </a>
-            </div>
-          </article>
+          <p className="font-mono text-xs text-gold">05 — {t.about}</p>
+          <blockquote className="mt-4 font-display text-[clamp(1.8rem,4vw,3.4rem)] font-bold leading-[1.2]">
+            {home.quote}
+          </blockquote>
+          <p className="mt-6 max-w-xl text-base leading-8 text-dim">{home.quoteAlt}</p>
+          <p className="mt-8 font-mono text-xs tracking-[0.14em] text-gold">{home.role}</p>
+          <p className="mt-3 text-sm">{home.bio.school}</p>
+          <p className="mt-2 max-w-xl text-sm leading-7 text-dim">{home.bio.work}</p>
+          <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-display text-2xl">
+            <a href={home.bio.github} target="_blank" rel="noreferrer" className="link-draw">
+              {home.bio.githubName}
+            </a>
+            <a href={home.bio.telegram} target="_blank" rel="noreferrer" className="link-draw">
+              Telegram
+            </a>
+            <a href={home.bio.site} target="_blank" rel="noreferrer" className="link-draw">
+              jizaoji.top
+            </a>
+          </div>
         </Reveal>
-        <Reveal delay={0.08}>
-          <article className="h-full rounded-2xl border border-line bg-surface/70 p-7">
-            <h2 className="font-display text-3xl">{t.contact}</h2>
-            <ul className="mt-5 space-y-3 text-sm">
-              {home.contact.map((item) => (
-                <li key={item.label} className="flex justify-between gap-4 border-b border-line/60 py-2">
-                  <span className="text-dim">{item.label}</span>
-                  <span>{item.value}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+        <Reveal delay={0.06}>
+          <p className="font-mono text-xs text-gold">{t.contact}</p>
+          <ul className="mt-4">
+            {home.contact.map((item) => (
+              <li key={item.label} className="flex items-baseline justify-between gap-4 border-b border-line py-3">
+                <span className="text-sm text-dim">{item.label}</span>
+                <span className="text-right font-display text-xl">{item.value}</span>
+              </li>
+            ))}
+          </ul>
         </Reveal>
       </section>
 
-      <Reveal>
-        <h2 className="font-display text-3xl">{t.projects}</h2>
-        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <section>
+        <div className="mb-2 flex items-end justify-between gap-4">
+          <h2 className="font-display text-4xl font-bold leading-none md:text-6xl">{t.projects}</h2>
+          <span className="font-mono text-xs text-dim">06</span>
+        </div>
+        <div>
           {home.projects.map((project) => (
             <a
               key={project.href + project.name}
               href={project.href}
               target="_blank"
               rel="noreferrer"
-              className="rounded-xl border border-line px-4 py-4 text-sm transition hover:border-gold hover:text-gold hover:-translate-y-0.5"
+              className="group flex items-baseline justify-between gap-4 border-b border-line px-1 py-4 transition duration-300 hover:bg-ink hover:text-page"
             >
-              <span className="block">{project.name}</span>
-              <span className="mt-2 flex flex-wrap gap-1">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="text-[10px] tracking-wide text-dim">
-                    {tag}
-                  </span>
-                ))}
+              <span className="font-display text-2xl font-bold leading-tight md:text-3xl">{project.name}</span>
+              <span className="shrink-0 font-mono text-[10px] tracking-wide text-dim group-hover:text-page group-hover:opacity-70">
+                {project.tags.join(' · ')}
               </span>
             </a>
           ))}
         </div>
-      </Reveal>
+      </section>
 
-      <section className="grid gap-6 md:grid-cols-3">
-        <Reveal>
-          <article className="rounded-2xl border border-line bg-surface/60 p-6">
-            <h2 className="font-display text-2xl">{t.skills}</h2>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {home.skillChips.map((chip) => (
-                <span key={chip} className="rounded-full border border-line px-2.5 py-1 text-xs text-dim">
-                  {chip}
-                </span>
-              ))}
-            </div>
-          </article>
-        </Reveal>
-        <Reveal delay={0.06}>
-          <article className="rounded-2xl border border-line bg-surface/60 p-6">
-            <h2 className="font-display text-2xl">{t.tools}</h2>
+      <section className="grid gap-10 border-t border-line pt-10 md:grid-cols-[1.4fr_0.8fr]">
+        <div>
+          <h2 className="font-mono text-xs text-gold">{t.skills}</h2>
+          <p className="mt-4 font-display text-3xl font-bold leading-snug md:text-5xl">{home.skillChips.join(' / ')}</p>
+        </div>
+        <div className="space-y-8">
+          <div>
+            <h2 className="font-mono text-xs text-gold">{t.tools}</h2>
             <p className="mt-3 text-sm leading-7 text-dim">{home.tools}</p>
-          </article>
-        </Reveal>
-        <Reveal delay={0.12}>
-          <article className="rounded-2xl border border-line bg-surface/60 p-6">
-            <h2 className="font-display text-2xl">{t.archives}</h2>
-            <ul className="mt-3 flex flex-wrap gap-2">
-              {home.archives.map((item) => (
-                <li key={item} className="rounded-full border border-line px-3 py-1 text-xs text-dim">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </article>
-        </Reveal>
+          </div>
+          <div>
+            <h2 className="font-mono text-xs text-gold">{t.archives}</h2>
+            <p className="mt-3 font-display text-2xl leading-snug">{home.archives.join(' · ')}</p>
+          </div>
+        </div>
       </section>
     </div>
   )
