@@ -1,7 +1,7 @@
 export default {
-  quote: '我曾踏足山巅，也曾进入低谷，二者都让我受益良多。攀登虽然漫长，巅峰却值得；失败始终是最好的导师——掌控命运，否则命运将掌控你。',
-  quoteAlt: '世界经济史是一部基于假象和谎言的连续剧。要获得财富，做法就是认清其假象，投入其中，然后在假象被公众认识之前退出游戏。',
-  role: '全栈开发者 · 技术分享者 · 终身学习者',
+  quote: '我不是来布置样板间的。页面能读、项目能跑、坑能复盘——这三件比口号值钱。',
+  quoteAlt: '远程不是滤镜。时差、甲方、合约和提交记录，都摊在同一张桌上。',
+  role: '全栈。重庆。代码、笔记，偶尔接活。',
   bio: {
     school: '陕西科技大学 · 计算机系 · 物联网工程（2013–2017）',
     github: 'https://github.com/higherzhouhui',
@@ -11,10 +11,10 @@ export default {
     work: '上海博达 → 红星美凯龙设计云 → 华夏云融 → 重庆团望 → 极造极（合伙人）',
   },
   stats: [
-    { value: '8+', label: '年工程现场' },
-    { value: '10万+', label: '日活项目' },
-    { value: '25', label: '篇前线笔记' },
-    { value: '3', label: '套可切换主题' },
+    { value: '8+', label: '年，都在现场' },
+    { value: '10万+', label: '日活，上过线' },
+    { value: '25', label: '篇自己的笔记' },
+    { value: '3', label: '套主题，随手换' },
   ],
   tags: ['Web 前端', '8年+', '日活10w+', 'WEB3', '数字游民', 'Dapp', 'UniApp', '小程序', '全栈', '远程'],
   skillChips: [
@@ -90,12 +90,12 @@ export default {
     { label: 'Telegram', value: '@cloudljj' },
   ],
   cards: [
-    { key: 'html', to: '/html', tag: 'HTML5', title: '语义化是结构的第一口呼吸', desc: '正确的标签做正确的事。机器、爬虫与大模型都先读结构。' },
-    { key: 'js', to: '/js', tag: 'JavaScript', title: '语言仍是运行时的心脏', desc: '类型、闭包、事件循环与 WebSocket——生成代码之前，先能解释它。' },
-    { key: 'react', to: '/react', tag: 'React', title: '视图是函数，状态单向流动', desc: '从 class 走到 Hooks，再走到可中断的 Fiber。' },
-    { key: 'vue', to: '/vue', tag: 'Vue', title: '数据驱动，不必亲手搬 DOM', desc: 'MVVM 加上 Vite / Pinia / pnpm 这一整条生态。' },
-    { key: 'engineering', to: '/engineering', tag: '工程化', title: '从模块规范到 Actions', desc: 'Webpack 骨架、Prisma、微前端、一键部署。' },
-    { key: 'notes', to: '/notes', tag: '笔记', title: '前线笔记继续长', desc: '性能、SSL、事件循环、INP、无障碍，以及 30+ 的出路。' },
-    { key: 'diary', to: '/diary', tag: '日记', title: '不上锁就不打开的本子', desc: '只记当天真正占地方的事。认过一次，十天内不用再敲。' },
+    { key: 'html', to: '/html', tag: 'HTML5', title: '结构先站稳', desc: '对的标签做对的事。人和机器，都先读结构。' },
+    { key: 'js', to: '/js', tag: 'JavaScript', title: '运行时还是这门语言', desc: '闭包、事件循环、WebSocket。生成之前，先能讲明白。' },
+    { key: 'react', to: '/react', tag: 'React', title: '视图是函数', desc: '状态单向走。别跟 DOM 打架。' },
+    { key: 'vue', to: '/vue', tag: 'Vue', title: '数据动，界面跟着动', desc: 'Vite、Pinia、pnpm。我按这套干活。' },
+    { key: 'engineering', to: '/engineering', tag: '工程化', title: '从打包到上线', desc: '流水线不浪漫，但它让我能睡觉。' },
+    { key: 'notes', to: '/notes', tag: '笔记', title: '写给以后的自己', desc: '性能、部署、事件循环。三个月后还要看得懂。' },
+    { key: 'diary', to: '/diary', tag: '日记', title: '不上锁就不打开', desc: '只记当天真正占地方的事。认过一次，十天内不用再敲。' },
   ],
 }

@@ -1,5 +1,5 @@
 export default {
-  kicker: 'PROTOCOL  ·  BROWSER',
+  kicker: '问答',
   title: '常问面试题：从电文到像素',
   lead: '把网络、浏览器、TypeScript 摊在一张桌上。AI 能默写答案，面试仍在看你能不能把 304 和三次握手讲成一条因果链。',
   sections: [

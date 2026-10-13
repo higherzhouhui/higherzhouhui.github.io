@@ -1,5 +1,5 @@
 export default {
-  kicker: 'LAYOUT  ·  PAINT',
+  kicker: 'Paint',
   title: 'CSS selectors, boxes, layout',
   lead: 'A stylesheet is a protocol of space. Priority and the box model come before centering, BFC, and mobile fit. Generative UI still gets those two layers wrong.',
   sections: [

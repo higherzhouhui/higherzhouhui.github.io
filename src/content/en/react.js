@@ -1,5 +1,5 @@
 export default {
-  kicker: 'VIEW  ·  UNIDIRECTIONAL',
+  kicker: 'View',
   title: 'React: function views and interruptible render',
   lead: 'React owns the view. State flows down, events flow up. Hooks give functions memory; Fiber lets an update yield.',
   sections: [

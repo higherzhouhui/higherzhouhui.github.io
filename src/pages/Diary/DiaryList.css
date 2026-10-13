@@ -20,15 +20,15 @@
 .diary-kicker {
   margin: 0;
   font-size: 11px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.18em;
   color: var(--gold);
 }
 
 .diary-header h1 {
   margin: 0.5rem 0 0.4rem;
   font-family: var(--font-display);
-  font-size: 2.6rem;
-  font-weight: 500;
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  font-weight: 700;
   line-height: 1.1;
   color: var(--ink);
 }
@@ -55,7 +55,7 @@
 
 .btn-logout {
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   background: transparent;
   padding: 0.4rem 0.95rem;
   color: var(--ink);
@@ -110,7 +110,7 @@
   display: flex;
   gap: 1.15rem;
   border: 1px solid var(--line);
-  border-radius: 1.15rem;
+  border-radius: 0;
   background: color-mix(in oklab, var(--surface) 80%, transparent);
   padding: 1.1rem 1.2rem;
   transition: border-color 0.2s, transform 0.2s;

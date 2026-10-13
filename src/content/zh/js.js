@@ -1,5 +1,5 @@
 export default {
-  kicker: 'RUNTIME  ·  SINGLE THREAD',
+  kicker: '运行时',
   title: 'JavaScript 运行时笔记',
   lead: '生成代码很容易，解释一段闭包与一次事件循环更难。把类型、拷贝、this 与异步放回栈和堆上理解。',
   sections: [

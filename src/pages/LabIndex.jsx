@@ -1,4 +1,3 @@
-import { Droplets, Printer, Text } from 'lucide-react'
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Reveal from '../components/motion/Reveal.jsx'
@@ -12,30 +11,30 @@ export default function LabIndex() {
   }, [t])
 
   const labs = [
-    { to: '/lab/water', icon: Droplets, title: t.water, desc: t.waterDesc },
-    { to: '/lab/scroll', icon: Text, title: t.scroll, desc: t.scrollDesc },
-    { to: '/lab/printer', icon: Printer, title: t.printer, desc: t.printerDesc },
+    { to: '/lab/water', index: '01', title: t.water, desc: t.waterDesc },
+    { to: '/lab/scroll', index: '02', title: t.scroll, desc: t.scrollDesc },
+    { to: '/lab/printer', index: '03', title: t.printer, desc: t.printerDesc },
   ]
 
   return (
-    <Reveal>
-      <p className="text-[11px] tracking-[0.32em] text-gold">MOTION  ·  CSS LAB</p>
-      <h1 className="mt-3 font-display text-5xl md:text-6xl">{t.labTitle}</h1>
+    <div>
+      <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-gold">{t.labKicker}</p>
+      <h1 className="mt-3 font-display text-[clamp(3rem,8vw,6rem)] font-bold leading-[0.92]">{t.labTitle}</h1>
       <p className="mt-5 max-w-2xl text-lg leading-8 text-dim">{t.labLead}</p>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
+      <div className="mt-12 grid gap-4 md:grid-cols-3 md:items-start">
         {labs.map((lab, index) => (
-          <Reveal key={lab.to} delay={index * 0.08}>
+          <Reveal key={lab.to} delay={index * 0.06} className={index === 1 ? 'md:mt-10' : ''}>
             <Link
               to={lab.to}
-              className="block rounded-2xl border border-line bg-surface/70 p-6 transition hover:border-gold hover:-translate-y-1"
+              className="group block h-full border border-line p-6 transition duration-300 hover:bg-ink hover:text-page"
             >
-              <lab.icon className="text-gold" size={28} />
-              <h2 className="mt-4 font-display text-3xl">{lab.title}</h2>
-              <p className="mt-3 text-sm leading-7 text-dim">{lab.desc}</p>
+              <p className="font-mono text-xs text-gold">{lab.index}</p>
+              <h2 className="mt-8 font-display text-4xl font-bold">{lab.title}</h2>
+              <p className="mt-3 text-sm leading-7 text-dim group-hover:text-page group-hover:opacity-80">{lab.desc}</p>
             </Link>
           </Reveal>
         ))}
       </div>
-    </Reveal>
+    </div>
   )
 }

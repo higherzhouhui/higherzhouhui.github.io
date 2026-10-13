@@ -1,5 +1,5 @@
 export default {
-  kicker: 'SNIPPETS  ·  HAND TOOLS',
+  kicker: '手头',
   title: '常用函数抽屉',
   lead: '面试与业务里反复打开的小工具。复制前先看边界：正则会过时，算法要测空串。',
   sections: [

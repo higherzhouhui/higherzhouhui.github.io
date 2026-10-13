@@ -13,7 +13,7 @@
 .btn-back-header,
 .btn-back {
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: 0;
   background: transparent;
   padding: 0.4rem 1rem;
   color: var(--gold);
@@ -29,7 +29,7 @@
 .diary-article {
   margin-top: 1.25rem;
   border: 1px solid var(--line);
-  border-radius: 1.5rem;
+  border-radius: 0;
   background: color-mix(in oklab, var(--surface) 84%, transparent);
   padding: 2.25rem 1.75rem 2.5rem;
 }
@@ -43,15 +43,15 @@
 .diary-kicker {
   margin: 0;
   font-size: 11px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.18em;
   color: var(--gold);
 }
 
 .diary-article-header h1 {
   margin: 0.55rem 0 0.5rem;
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 4vw, 2.6rem);
-  font-weight: 500;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 700;
   line-height: 1.15;
   color: var(--ink);
 }
@@ -79,7 +79,7 @@
 }
 
 .diary-text {
-  color: #444;
+  color: var(--ink);
   font-size: 16px;
   line-height: 1.8;
   text-align: justify;
@@ -107,7 +107,7 @@
 .diary-images img {
   width: 100%;
   border: 1px solid var(--line);
-  border-radius: 0.85rem;
+  border-radius: 0;
 }
 
 @media (max-width: 768px) {
