@@ -83,5 +83,14 @@ export default {
         'TS 是 JS 的超集，编译期抓错。泛型是类型参数；接口约束对象、函数与类；never 表示不可达，void 表示无返回值但仍能结束。',
       ],
     },
+    {
+      id: 'perf',
+      title: '性能指标',
+      blocks: [
+        { type: 'callout', text: '从 myBlog《前端性能优化》：FCP / LCP / CLS / INP 仍是 2026 的共同语言。' },
+        { type: 'ul', items: ['FP / FCP：首次有像素、有内容', 'LCP：最大内容绘制', 'CLS：布局漂移', 'INP：交互延迟'] },
+        '拆包、现代图片、缓存头、关键 CSS、SSR/流式、少长任务。模型生成的页最容易在 LCP 与 CLS 翻车。',
+      ],
+    },
   ],
 }

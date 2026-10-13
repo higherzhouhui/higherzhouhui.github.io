@@ -63,5 +63,14 @@ export default {
       title: 'Vuex',
       blocks: ['State、Getter、Mutation（同步唯一改状态）、Action（可异步）、Module。大型应用的公共数据总线。'],
     },
+    {
+      id: 'eco',
+      title: '2024 生态怎么配',
+      blocks: [
+        { type: 'callout', text: '从 myBlog《Vue 生态工具推荐》：把选择钉死，才把时间还给业务。' },
+        { type: 'ul', items: ['pnpm', 'Vite', 'TypeScript', 'Pinia', 'Vant / Element Plus', 'UnoCSS'] },
+        '移动端模板（vue3-vant-mobile 一类）的价值是文件路由、自动引入、PWA、vw 适配先焊好。',
+      ],
+    },
   ],
 }

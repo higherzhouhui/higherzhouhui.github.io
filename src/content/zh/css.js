@@ -100,5 +100,24 @@ export default {
         'Sass 变量 $，Less 变量 @，Stylus 更自由。三者都有嵌套、运算、混入与继承；Stylus 还有循环与判断。',
       ],
     },
+    {
+      id: 'loading',
+      title: '纯 CSS Loading',
+      blocks: [
+        { type: 'callout', text: '从 myBlog 的 117 个 Loading 里抽出最小单元：圆环 + @keyframes。' },
+        {
+          type: 'code',
+          lang: 'css',
+          code: `.loading {
+  width: 30px; height: 30px;
+  border: 2px solid var(--gold);
+  border-top-color: transparent;
+  border-radius: 100%;
+  animation: spin 0.75s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }`,
+        },
+      ],
+    },
   ],
 }

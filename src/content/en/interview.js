@@ -62,5 +62,13 @@ export default {
       title: 'TypeScript',
       blocks: ['A typed superset. Generics are type parameters. never is unreachable; void is “returns nothing” but still finishes.'],
     },
+    {
+      id: 'perf',
+      title: 'Vitals',
+      blocks: [
+        { type: 'ul', items: ['FP / FCP', 'LCP', 'CLS', 'INP'] },
+        'Split bundles, modern images, cache headers, critical CSS, SSR/streaming. Generated pages fail LCP and CLS first.',
+      ],
+    },
   ],
 }

@@ -78,5 +78,22 @@ export default {
       title: 'Preprocessors',
       blocks: ['Sass uses $, Less uses @, Stylus is looser. Nesting, mixins, and inheritance are shared; Stylus adds loops and branches.'],
     },
+    {
+      id: 'loading',
+      title: 'A CSS loader',
+      blocks: [
+        {
+          type: 'code',
+          lang: 'css',
+          code: `.loading {
+  width: 30px; height: 30px;
+  border: 2px solid var(--gold);
+  border-top-color: transparent;
+  border-radius: 100%;
+  animation: spin 0.75s linear infinite;
+}`,
+        },
+      ],
+    },
   ],
 }

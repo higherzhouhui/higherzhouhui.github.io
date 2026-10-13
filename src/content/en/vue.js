@@ -51,5 +51,13 @@ export default {
       title: 'Vuex',
       blocks: ['State, getters, synchronous mutations, async actions, modules — a bus for large apps.'],
     },
+    {
+      id: 'eco',
+      title: 'A 2024 Vue toolchain',
+      blocks: [
+        { type: 'ul', items: ['pnpm', 'Vite', 'TypeScript', 'Pinia', 'Vant / Element Plus', 'UnoCSS'] },
+        'Templates earn their keep by welding file routes, auto-import, PWA, and vw layout first.',
+      ],
+    },
   ],
 }

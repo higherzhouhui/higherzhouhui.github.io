@@ -126,6 +126,22 @@ console.log('end')
       blocks: [
         { type: 'ul', items: ['forEach', 'map', 'push / pop', 'shift / unshift', 'splice', 'reverse'] },
         'Deduplicate with Set or filter + indexOf.',
+        { type: 'ul', items: ['filter / find / some / every', 'reduce', 'slice vs splice', 'flat / flatMap', 'sort needs a numeric comparator'] },
+      ],
+    },
+    {
+      id: 'ws',
+      title: 'WebSocket',
+      blocks: [
+        { type: 'callout', text: 'From myBlog: live and collab cannot live on polling alone.' },
+        'Upgrade over HTTP, then 101, then full-duplex frames. Add heartbeats and backoff in production.',
+      ],
+    },
+    {
+      id: 'jsons',
+      title: 'JSON.stringify extras',
+      blocks: [
+        'Second argument is a whitelist or replacer; third is indent. toJSON is honored; cycles throw.',
       ],
     },
   ],

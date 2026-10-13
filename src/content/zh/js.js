@@ -135,6 +135,36 @@ console.log('end')
       blocks: [
         { type: 'ul', items: ['forEach 遍历', 'map 映射新数组', 'push / pop 尾部增删', 'shift / unshift 头部增删', 'splice 删除或替换', 'reverse 反转'] },
         '去重可用 Set + Array.from，或 filter + indexOf。',
+        { type: 'h', text: '再记一批面试爱问的' },
+        { type: 'ul', items: ['filter / find / some / every', 'reduce 折叠', 'slice 浅拷贝片段、splice 改原数组', 'includes / indexOf', 'flat / flatMap', 'sort 默认按字符串，数字要自己写比较器'] },
+      ],
+    },
+    {
+      id: 'ws',
+      title: 'WebSocket',
+      blocks: [
+        { type: 'callout', text: '从 myBlog《十分钟学会 WebSocket》迁入：直播与协同不能只靠轮询。' },
+        '握手是一次 HTTP Upgrade，101 之后变成全双工帧。比短轮询少延迟、少报文头。生产要心跳、退避重连，并把二进制与 JSON 分开。',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `const ws = new WebSocket('wss://example.com/live')
+ws.onopen = () => ws.send('hello')
+ws.onmessage = (e) => console.log(e.data)`,
+        },
+      ],
+    },
+    {
+      id: 'jsons',
+      title: 'JSON.stringify 的隐藏参数',
+      blocks: [
+        '第二参可以是白名单或 replacer，第三参是缩进。对象上的 toJSON 会被调用。循环引用会抛错。',
+        {
+          type: 'code',
+          lang: 'js',
+          code: `JSON.stringify(user, ['id', 'name'], 2)
+JSON.stringify(data, (k, v) => (k === 'password' ? undefined : v))`,
+        },
       ],
     },
   ],

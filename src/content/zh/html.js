@@ -42,7 +42,7 @@ export default {
             'History API',
             'requestAnimationFrame',
             'Geolocation',
-            'WebSocket',
+            'WebSocket（全双工，见 JS 笔记）',
             'Web 存储：localStorage、sessionStorage',
             '表单控件：date、email、url、search 等',
           ],

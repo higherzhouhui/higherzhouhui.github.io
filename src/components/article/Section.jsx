@@ -1,3 +1,4 @@
+import Reveal from '../motion/Reveal.jsx'
 import CodeBlock from './CodeBlock.jsx'
 
 function Block({ block }) {
@@ -38,11 +39,14 @@ function Block({ block }) {
 
 export default function Section({ section }) {
   return (
-    <article id={section.id} className="scroll-mt-28 space-y-4 border-b border-line/70 py-10 last:border-b-0">
-      <h2 className="font-display text-3xl text-ink md:text-4xl">{section.title}</h2>
-      {section.blocks.map((block, index) => (
-        <Block key={index} block={block} />
-      ))}
-    </article>
+    <Reveal>
+      <article id={section.id} className="scroll-mt-28 space-y-4 border-b border-line/70 py-10 last:border-b-0">
+        <h2 className="font-display text-3xl text-ink md:text-4xl">{section.title}</h2>
+        <div className="h-px w-16 bg-gold/70" />
+        {section.blocks.map((block, index) => (
+          <Block key={index} block={block} />
+        ))}
+      </article>
+    </Reveal>
   )
 }

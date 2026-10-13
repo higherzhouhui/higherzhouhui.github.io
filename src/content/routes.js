@@ -8,6 +8,7 @@ export const NAV_ITEMS = [
   { to: '/interview', key: 'interview' },
   { to: '/utils', key: 'utils' },
   { to: '/engineering', key: 'engineering' },
+  { to: '/notes', key: 'notes' },
   { to: '/lab', key: 'lab' },
 ]
 
@@ -21,4 +22,5 @@ export const ARTICLE_PAGES = [
   { pageKey: 'interview', paths: ['/interview', '/pages/searchWork.html'] },
   { pageKey: 'utils', paths: ['/utils', '/pages/workhelp.html'] },
   { pageKey: 'engineering', paths: ['/engineering', '/pages/engineering.html'] },
+  { pageKey: 'notes', paths: ['/notes'] },
 ]

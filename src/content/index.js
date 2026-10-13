@@ -5,6 +5,7 @@ import homeEn from './en/home.js'
 import htmlEn from './en/html.js'
 import interviewEn from './en/interview.js'
 import jsEn from './en/js.js'
+import notesEn from './en/notes.js'
 import reactEn from './en/react.js'
 import utilsEn from './en/utils.js'
 import vueEn from './en/vue.js'
@@ -15,6 +16,7 @@ import homeZh from './zh/home.js'
 import htmlZh from './zh/html.js'
 import interviewZh from './zh/interview.js'
 import jsZh from './zh/js.js'
+import notesZh from './zh/notes.js'
 import reactZh from './zh/react.js'
 import utilsZh from './zh/utils.js'
 import vueZh from './zh/vue.js'
@@ -31,6 +33,7 @@ const catalog = {
     interview: interviewZh,
     utils: utilsZh,
     engineering: engineeringZh,
+    notes: notesZh,
   },
   en: {
     home: homeEn,
@@ -43,6 +46,7 @@ const catalog = {
     interview: interviewEn,
     utils: utilsEn,
     engineering: engineeringEn,
+    notes: notesEn,
   },
 }
 
