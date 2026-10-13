@@ -111,8 +111,8 @@ export default function DiaryDetail({ password }) {
           <section className="diary-section">
             <h2>👤 用户画像</h2>
             <div className="diary-text">
-              {diary.userProfile.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
+              {diary.userProfile.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
               ))}
             </div>
           </section>
@@ -120,8 +120,8 @@ export default function DiaryDetail({ password }) {
           <section className="diary-section">
             <h2>📝 今天的重要事项</h2>
             <div className="diary-text">
-              {diary.events.split('\n').map((line, i) => (
-                <p key={i}>{line}</p>
+              {diary.events.split('\n\n').map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
               ))}
             </div>
           </section>

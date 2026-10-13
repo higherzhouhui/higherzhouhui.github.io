@@ -87,14 +87,20 @@
   color: #444;
   font-size: 16px;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .diary-text p {
-  margin: 0 0 12px 0;
+  margin: 0 0 16px 0;
+  text-indent: 0;
 }
 
 .diary-text p:last-child {
   margin-bottom: 0;
+}
+
+.diary-text p:empty {
+  margin: 0;
 }
 
 .diary-images {
