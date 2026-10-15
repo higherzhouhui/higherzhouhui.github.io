@@ -31,23 +31,26 @@ export default function DiaryDetail({ password }) {
       const diaryData = JSON.parse(decryptedText)
       setDiary(diaryData)
 
+      const loadedImages = []
       if (diaryData.images?.length) {
-        const loadedImages = []
-        for (const imageName of diaryData.images) {
+        for (const item of diaryData.images) {
+          const imageName = typeof item === 'string' ? item : item?.name
+          const caption = typeof item === 'string' ? '' : (item?.caption || '')
+          if (!imageName) continue
           try {
             const imgResponse = await fetch(`/diary/images/${imageName}`)
             if (imgResponse.ok) {
               const imgData = await imgResponse.json()
               const decryptedImageBuffer = await decryptImage(imgData.encrypted, password)
               const blob = new Blob([decryptedImageBuffer])
-              loadedImages.push(URL.createObjectURL(blob))
+              loadedImages.push({ url: URL.createObjectURL(blob), caption })
             }
           } catch (err) {
             console.error('加载图片失败:', imageName, err)
           }
         }
-        setImages(loadedImages)
       }
+      setImages(loadedImages)
     } catch (err) {
       setError(err.message || copy.missing)
     } finally {
@@ -118,8 +121,11 @@ export default function DiaryDetail({ password }) {
           <section className="diary-section">
             <h2>{copy.photos}</h2>
             <div className="diary-images">
-              {images.map((url, i) => (
-                <img key={url} src={url} alt="" />
+              {images.map((image) => (
+                <figure key={image.url}>
+                  <img src={image.url} alt={image.caption} />
+                  {image.caption ? <figcaption>{image.caption}</figcaption> : null}
+                </figure>
               ))}
             </div>
           </section>

@@ -1,6 +1,11 @@
 {
   "entries": [
     {
+      "date": "2026-10-14",
+      "file": "2026-10-14.json",
+      "encrypted": true
+    },
+    {
       "date": "2026-10-13",
       "file": "2026-10-13.json",
       "encrypted": true
