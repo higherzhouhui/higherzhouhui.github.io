@@ -1,5 +1,7 @@
 /**
- * 生成初始示例日记（非交互式）
+ * 生成初始示例日记（非交互式）。
+ * 明文必须有 title、location、weather；索引必须有 title、excerpt。
+ * 新日记请用 scripts/add-diary.js。列表读索引，详情页显示地点和天气。
  */
 
 import crypto from 'crypto';
@@ -38,6 +40,8 @@ const date = '2026-10-13';
 const diaryData = {
   date,
   title: '把博客重新当成屋子来住',
+  location: '马来西亚 · 吉隆坡',
+  weather: '湿热，傍晚雷雨 · 约 24–33°C',
   userProfile: `我是 1994 年夏天在陕西长大的人，现在三十出头。陕科大 2017 年出来以后，就一直在写网页——从上海的路由器厂，到美凯龙的设计云，再到重庆这边自己搭摊子。
 
 身高体重这些数字会变。晚上还是会把没做完的事先在脑子里过一遍，这一点没变。`,

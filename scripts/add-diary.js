@@ -106,6 +106,17 @@ async function readLine(prompt) {
 }
 
 /**
+ * 必填短句。明文要有 title / location / weather，索引要有 excerpt。
+ */
+async function readRequired(prompt) {
+  while (true) {
+    const answer = (await readLine(prompt)).trim();
+    if (answer) return answer;
+    console.log('这一项要写，不能空着。');
+  }
+}
+
+/**
  * 主函数
  */
 async function main() {
@@ -117,6 +128,12 @@ async function main() {
   // 读取日期
   const today = new Date().toISOString().split('T')[0];
   const date = await readLine(`日期 (YYYY-MM-DD，默认今天 ${today}): `) || today;
+
+  // 明文必填：标题、地点、天气。索引另要一句摘要，列表页不解密正文。
+  const title = await readRequired('\n标题（详情页大标题，也写入索引）: ');
+  const location = await readRequired('地点（如「马来西亚 · 吉隆坡」）: ');
+  const weather = await readRequired('天气（短句；没有把握就别写精确气温）: ');
+  const excerpt = await readRequired('列表摘要（一两句，别剧透太长）: ');
   
   // 读取用户画像
   const userProfile = await readMultiline('\n请输入用户画像描述:');
@@ -149,6 +166,9 @@ async function main() {
   // 构建日记数据
   const diaryData = {
     date,
+    title,
+    location,
+    weather,
     userProfile,
     events,
     images: images.map(img => img.name)
@@ -193,20 +213,19 @@ async function main() {
   }
   
   // 检查日期是否已存在
+  const entry = {
+    date,
+    file: `${date}.json`,
+    encrypted: true,
+    title,
+    excerpt
+  };
   const existingIndex = index.entries.findIndex(e => e.date === date);
   if (existingIndex >= 0) {
-    index.entries[existingIndex] = {
-      date,
-      file: `${date}.json`,
-      encrypted: true
-    };
+    index.entries[existingIndex] = entry;
     console.log(`\n✓ 已更新现有日期 ${date} 的日记`);
   } else {
-    index.entries.push({
-      date,
-      file: `${date}.json`,
-      encrypted: true
-    });
+    index.entries.push(entry);
     // 按日期降序排序
     index.entries.sort((a, b) => b.date.localeCompare(a.date));
     console.log(`\n✓ 已添加新日记到索引`);
