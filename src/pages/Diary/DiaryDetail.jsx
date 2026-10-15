@@ -96,7 +96,11 @@ export default function DiaryDetail({ password }) {
         <header className="diary-article-header">
           <p className="diary-kicker">{copy.kicker}</p>
           <h1>{diary.title || copy.theDay}</h1>
-          <time>{formatDate(diary.date)}</time>
+          <p className="diary-article-meta">
+            <time dateTime={diary.date}>{formatDate(diary.date)}</time>
+            {diary.location ? <span>{diary.location}</span> : null}
+            {diary.weather ? <span>{diary.weather}</span> : null}
+          </p>
         </header>
 
         <section className="diary-section">
