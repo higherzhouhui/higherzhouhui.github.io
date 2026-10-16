@@ -19,7 +19,7 @@ export default function DiaryLogin({ onLoginSuccess, passwordTest }) {
     try {
       const isValid = await verifyPassword(password, passwordTest)
       if (isValid) {
-        saveAuth(password)
+        saveAuth()
         onLoginSuccess(password)
       } else {
         setError(copy.errorPwd)

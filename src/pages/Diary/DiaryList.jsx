@@ -8,9 +8,9 @@ export default function DiaryList({ entries }) {
   const copy = t.diary
   const remainingDays = getRemainingDays()
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     if (confirm(copy.logoutConfirm)) {
-      clearAuth()
+      await clearAuth()
       window.location.reload()
     }
   }
