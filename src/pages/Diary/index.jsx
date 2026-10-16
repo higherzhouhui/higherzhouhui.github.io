@@ -3,7 +3,8 @@ import { Routes, Route } from 'react-router-dom'
 import DiaryLogin from './DiaryLogin'
 import DiaryList from './DiaryList'
 import DiaryDetail from './DiaryDetail'
-import { isAuthValid, getSavedPassword } from '../../utils/auth'
+import { isAuthValid, migrateLegacyAuthIfNeeded, clearAuth } from '../../utils/auth'
+import { getCachedKey } from '../../utils/crypto'
 import { useI18n } from '../../i18n/I18nProvider.jsx'
 
 export default function DiaryIndex() {
@@ -24,11 +25,13 @@ export default function DiaryIndex() {
       setIndexData(data)
 
       if (isAuthValid()) {
-        const savedPassword = getSavedPassword()
-        if (savedPassword) {
-          setPassword(savedPassword)
+        await migrateLegacyAuthIfNeeded()
+        const key = await getCachedKey()
+        if (key) {
           setAuthenticated(true)
         }
+      } else {
+        await clearAuth()
       }
     } catch (err) {
       console.error('加载日记索引失败:', err)
