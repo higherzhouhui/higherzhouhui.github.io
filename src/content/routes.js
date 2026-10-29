@@ -13,6 +13,7 @@ export const COLUMN_ITEMS = [
 
 export const PRIMARY_NAV = [
   { to: '/diary', key: 'diary' },
+  { to: '/learn', key: 'learn' },
   { to: '/lab', key: 'lab' },
 ]
 

@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-29",
+  "day": 1,
+  "title": "日常开场",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "schedule",
+      "meaning": "日程安排",
+      "example": "What's your schedule today?",
+      "speak": "schedule"
+    },
+    {
+      "term": "habit",
+      "meaning": "习惯",
+      "example": "I'm trying to build a daily habit.",
+      "speak": "habit"
+    },
+    {
+      "term": "progress",
+      "meaning": "进展",
+      "example": "How's your progress?",
+      "speak": "progress"
+    },
+    {
+      "term": "focus",
+      "meaning": "专注",
+      "example": "I can focus for twenty minutes.",
+      "speak": "focus"
+    },
+    {
+      "term": "practice",
+      "meaning": "练习",
+      "example": "Let's practice for twenty minutes.",
+      "speak": "practice"
+    },
+    {
+      "term": "improve",
+      "meaning": "提高",
+      "example": "I want to improve a little every day.",
+      "speak": "improve"
+    },
+    {
+      "term": "goal",
+      "meaning": "目标",
+      "example": "My goal is one short lesson a day.",
+      "speak": "goal"
+    },
+    {
+      "term": "routine",
+      "meaning": "日常安排",
+      "example": "This routine takes twenty minutes.",
+      "speak": "routine"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "What's your schedule today?",
+      "zh": "你今天日程怎么安排？",
+      "speak": "What's your schedule today?"
+    },
+    {
+      "en": "I'm trying to build a daily habit.",
+      "zh": "我在试着养成一个每天的习惯。",
+      "speak": "I'm trying to build a daily habit."
+    },
+    {
+      "en": "How's your progress?",
+      "zh": "你的进展怎么样？",
+      "speak": "How's your progress?"
+    },
+    {
+      "en": "Let's practice for twenty minutes.",
+      "zh": "我们练二十分钟吧。",
+      "speak": "Let's practice for twenty minutes."
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}

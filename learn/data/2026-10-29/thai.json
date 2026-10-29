@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-29",
+  "day": 1,
+  "title": "基础招呼",
+  "minutes": 20,
+  "lang": "th-TH",
+  "tip": "泰语有声调，同样音节调不同意思就变。今天慢一点，跟准再求快。",
+  "items": [
+    { "th": "สวัสดี", "roman": "sa-wat-dee", "zh": "你好", "speak": "สวัสดี" },
+    { "th": "ขอบคุณ", "roman": "khop-khun", "zh": "谢谢", "speak": "ขอบคุณ" },
+    { "th": "ใช่", "roman": "chai", "zh": "是", "speak": "ใช่" },
+    { "th": "ไม่", "roman": "mâi", "zh": "不", "speak": "ไม่" },
+    { "th": "สบายดีไหม", "roman": "sa-bai-dee mái", "zh": "你好吗", "speak": "สบายดีไหม" },
+    { "th": "สบายดี", "roman": "sa-bai-dee", "zh": "我很好", "speak": "สบายดี" }
+  ],
+  "scenes": [
+    { "th": "สวัสดีครับ", "roman": "sa-wat-dee khrap", "zh": "你好（男）", "speak": "สวัสดีครับ" },
+    { "th": "สวัสดีค่ะ", "roman": "sa-wat-dee kha", "zh": "你好（女）", "speak": "สวัสดีค่ะ" },
+    { "th": "สบายดีไหม", "roman": "sa-bai-dee mái", "zh": "你好吗", "speak": "สบายดีไหม" },
+    { "th": "สบายดี ขอบคุณ", "roman": "sa-bai-dee khop-khun", "zh": "我很好，谢谢", "speak": "สบายดี ขอบคุณ" }
+  ],
+  "task": "三句连说两遍，录一条给自己听"
+}

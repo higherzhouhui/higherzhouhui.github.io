@@ -13,6 +13,7 @@
   --font-sans: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", sans-serif;
   --font-display: "Noto Serif SC", "Songti SC", "STSong", "Source Han Serif SC", "Noto Serif CJK SC", "Instrument Serif", serif;
   --font-latin: "Instrument Serif", "Noto Serif SC", "Songti SC", serif;
+  --font-thai: "Noto Sans Thai", "Leelawadee UI", "Thonburi", "Sukhumvit Set", "Noto Sans SC", sans-serif;
   --font-mono: "IBM Plex Mono", "WenQuanYi Micro Hei Mono", ui-monospace, monospace;
 }
 
