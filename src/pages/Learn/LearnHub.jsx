@@ -55,7 +55,7 @@ export default function LearnHub() {
       {status === 'ready' ? (
         <>
           {!todayEntry ? <p className="mt-4 text-sm text-dim">{copy.missingToday}</p> : null}
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
+          <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
             {SUBJECTS.map((subject, index) => {
               const meta = todayEntry?.subjects?.[subject]
               return (
@@ -90,7 +90,7 @@ export default function LearnHub() {
                       <h3 className="font-display text-2xl font-bold">{formatShortDate(entry.date, lang)}</h3>
                       {entry.day ? <span className="font-mono text-xs text-dim">{fill(copy.dayN, { n: entry.day })}</span> : null}
                     </div>
-                    <div className="mt-3 grid grid-cols-3 gap-2">
+                    <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-4">
                       {SUBJECTS.map((subject) => (
                         <Link
                           key={subject}

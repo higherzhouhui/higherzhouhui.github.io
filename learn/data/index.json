@@ -6,7 +6,8 @@
       "subjects": {
         "business": { "title": "街边奶茶店", "minutes": 20 },
         "english": { "title": "日常开场", "minutes": 20 },
-        "thai": { "title": "基础招呼", "minutes": 20 }
+        "thai": { "title": "基础招呼", "minutes": 20 },
+        "grow": { "title": "先交得出去", "minutes": 10 }
       }
     }
   ]
