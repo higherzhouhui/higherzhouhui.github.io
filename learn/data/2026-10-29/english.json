@@ -76,5 +76,43 @@
       "speak": "Let's practice for twenty minutes."
     }
   ],
+  "scenarios": [
+    {
+      "title": "早会上问同事日程",
+      "setting": "周一早会，你挨着同事坐下。先问他今天怎么排，再问做到哪了。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "What's your schedule today?",
+          "zh": "你今天日程怎么安排？",
+          "speak": "What's your schedule today?"
+        },
+        {
+          "role": "同事",
+          "en": "Two meetings, then I focus. How's your progress?",
+          "zh": "两个会，然后我专注做事。你进展怎么样？",
+          "speak": "Two meetings, then I focus. How's your progress?"
+        }
+      ]
+    },
+    {
+      "title": "约朋友一起练二十分钟",
+      "setting": "晚上你想把英语练短一点、练稳一点，约朋友一起开口。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Let's practice for twenty minutes.",
+          "zh": "我们练二十分钟吧。",
+          "speak": "Let's practice for twenty minutes."
+        },
+        {
+          "role": "朋友",
+          "en": "Good. I'm trying to build a daily habit.",
+          "zh": "好。我在养成一个每天的习惯。",
+          "speak": "Good. I'm trying to build a daily habit."
+        }
+      ]
+    }
+  ],
   "task": "把上面 4 句连着说一遍并录音自听"
 }

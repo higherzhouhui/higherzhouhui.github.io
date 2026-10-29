@@ -3,7 +3,7 @@ import { useI18n } from '../../i18n/I18nProvider.jsx'
 import { collectLines, lessonLang } from './learn.js'
 import { useSpeech } from './useSpeech.js'
 
-function SpeakRow({ id, text, roman, meaning, kind, lang, active, speakLabel, playingLabel, onSpeak }) {
+function SpeakRow({ id, text, roman, meaning, kind, kicker, lang, active, speakLabel, playingLabel, onSpeak }) {
   const playing = active === id
   const foreignClass =
     kind === 'thai'
@@ -18,6 +18,9 @@ function SpeakRow({ id, text, roman, meaning, kind, lang, active, speakLabel, pl
       className={`flex scroll-my-28 border-l-[3px] ${playing ? 'border-gold bg-elevated' : 'border-transparent'}`}
     >
       <button type="button" onClick={() => onSpeak(text, lang, id)} className="min-h-16 flex-1 px-4 py-4 text-left">
+        {kicker ? (
+          <span className="mb-1 block font-mono text-[11px] tracking-[0.16em] text-gold">{kicker}</span>
+        ) : null}
         <span className={`block break-words ${foreignClass}`}>{text}</span>
         {roman ? <span className="mt-1 block font-mono text-sm tracking-wide text-dim">{roman}</span> : null}
         {meaning ? <span className="mt-1 block text-sm leading-6 text-dim">{meaning}</span> : null}
@@ -47,12 +50,53 @@ function Block({ children }) {
   return <article className="overflow-hidden border border-line">{children}</article>
 }
 
+function Scenarios({ scenarios, kind, lang, activeId, speak, copy }) {
+  if (!scenarios?.length) return null
+  const foreignKey = kind === 'thai' ? 'th' : 'en'
+  return (
+    <section className="grid gap-4">
+      <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold">{copy.scenarios}</h2>
+      {scenarios.map((scenario, scenarioIndex) => (
+        <article key={`${scenario.title}-${scenarioIndex}`} className="overflow-hidden border border-line">
+          <header className="border-b border-line bg-elevated px-4 py-4">
+            <h3 className="font-display text-2xl font-bold leading-snug">{scenario.title}</h3>
+            {scenario.setting ? <p className="mt-2 text-sm leading-7 text-dim">{scenario.setting}</p> : null}
+          </header>
+          {(scenario.lines ?? []).map((line, lineIndex) => {
+            const id = `scenario-${scenarioIndex}-${lineIndex}`
+            const text = line[foreignKey]
+            const spoken = line.speak || text
+            if (!text) return null
+            return (
+              <div key={id} className={lineIndex > 0 ? 'border-t border-line' : ''}>
+                <SpeakRow
+                  id={id}
+                  text={text}
+                  roman={line.roman}
+                  meaning={line.zh}
+                  kicker={line.role}
+                  kind={kind}
+                  lang={lang}
+                  active={activeId}
+                  speakLabel={`${copy.speak} ${spoken}`}
+                  playingLabel={copy.playing}
+                  onSpeak={() => speak(spoken, lang, id)}
+                />
+              </div>
+            )
+          })}
+        </article>
+      ))}
+    </section>
+  )
+}
+
 export default function LanguageLesson({ subject, lesson }) {
   const { t } = useI18n()
   const copy = t.learn
   const lang = lessonLang(subject, lesson)
   const lines = collectLines(subject, lesson)
-  const speech = useSpeech({ unsupported: copy.unsupported, speakFail: copy.speakFail })
+  const speech = useSpeech({ playbackFail: copy.playbackFail })
   const { activeId, playingAll, toast, speak, playAll, stop } = speech
 
   useEffect(() => () => stop(), [stop])
@@ -161,6 +205,14 @@ export default function LanguageLesson({ subject, lesson }) {
               ))}
             </section>
           ) : null}
+          <Scenarios
+            scenarios={lesson.scenarios}
+            kind="say"
+            lang={lang}
+            activeId={activeId}
+            speak={speak}
+            copy={copy}
+          />
         </div>
       ) : (
         <div className="mt-8 grid gap-8">
@@ -185,28 +237,14 @@ export default function LanguageLesson({ subject, lesson }) {
               ))}
             </section>
           ) : null}
-
-          {(lesson.scenes ?? []).length > 0 ? (
-            <section className="grid gap-3">
-              <h2 className="font-mono text-[11px] uppercase tracking-[0.18em] text-gold">{copy.scenes}</h2>
-              {(lesson.scenes ?? []).map((scene, index) => (
-                <Block key={`${scene.th}-${index}`}>
-                  <SpeakRow
-                    id={`scene-${index}`}
-                    text={scene.th}
-                    roman={scene.roman}
-                    meaning={scene.zh}
-                    kind="thai"
-                    lang={lang}
-                    active={activeId}
-                    speakLabel={`${copy.speak} ${scene.speak || scene.th}`}
-                    playingLabel={copy.playing}
-                    onSpeak={() => speak(scene.speak || scene.th, lang, `scene-${index}`)}
-                  />
-                </Block>
-              ))}
-            </section>
-          ) : null}
+          <Scenarios
+            scenarios={lesson.scenarios}
+            kind="thai"
+            lang={lang}
+            activeId={activeId}
+            speak={speak}
+            copy={copy}
+          />
         </div>
       )}
 

@@ -61,7 +61,9 @@
 
 ## english.json
 
-`lang` 固定 `en-US`。喇叭朗读 `speak`；例句按钮朗读 `example`。意思用短中文，别写成词表说明。朗读走浏览器的 Web Speech API。手机没有对应语音，或浏览器不让网页出声时，页面会提示一声，课文照常能看。
+`lang` 固定 `en-US`。喇叭朗读 `speak`；例句按钮朗读 `example`。意思用短中文，别写成词表说明。
+
+喇叭先用手机自带语音（有对应 `en` / `th` 嗓音时）。没有嗓音，或朗读报错、有声无音时，改播在线音频：泰语按百度 → 有道 → 谷歌，英语按有道 → 百度 → 谷歌。都失败会提示「暂时播不了，请检查网络或稍后重试」。
 
 ```json
 {
@@ -85,6 +87,20 @@
       "speak": "What's your schedule today?"
     }
   ],
+  "scenarios": [
+    {
+      "title": "早会上问同事日程",
+      "setting": "在哪里、跟谁、干什么。一两句中文。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "What's your schedule today?",
+          "zh": "你今天日程怎么安排？",
+          "speak": "What's your schedule today?"
+        }
+      ]
+    }
+  ],
   "task": "把上面 4 句连着说一遍并录音自听"
 }
 ```
@@ -104,14 +120,26 @@
   "items": [
     { "th": "สวัสดี", "roman": "sa-wat-dee", "zh": "你好", "speak": "สวัสดี" }
   ],
-  "scenes": [
-    { "th": "สวัสดีครับ", "roman": "sa-wat-dee khrap", "zh": "你好（男）", "speak": "สวัสดีครับ" }
+  "scenarios": [
+    {
+      "title": "进店打招呼",
+      "setting": "在哪里、跟谁、干什么。一两句中文。",
+      "lines": [
+        {
+          "role": "你（男）",
+          "th": "สวัสดีครับ",
+          "roman": "sa-wat-dee khrap",
+          "zh": "你好（男）",
+          "speak": "สวัสดีครับ"
+        }
+      ]
+    }
   ],
   "task": "三句连说两遍，录一条给自己听"
 }
 ```
 
-`ครับ` 和 `ค่ะ` 要分成两条，喇叭才能读准。
+英语和泰语都用 `scenarios`，不再单写 `scenes`。一句一个 `speak`。`ครับ` 和 `ค่ะ` 要分成两条，喇叭才能读准。泰语行用 `th` `roman` `zh` `speak` `role`，不要用 `en`。
 
 ## 字段别写丢
 
@@ -120,5 +148,7 @@
 | 索引一条 | `date` `day` `subjects` |
 | 一门 | `date` `day` `title` `minutes` |
 | 商业 | `case.background` `case.howMoney` `case.keyCosts` `case.keyRisks` `case.questions` |
-| 英语 | `lang` `words[]`（`term` `meaning` `example` `speak`）`sentences[]`（`en` `zh` `speak`）`task` |
-| 泰语 | `lang` `tip` `items[]`（`th` `roman` `zh` `speak`）`scenes[]`（同样四个字段）`task` |
+| 英语 | `lang` `words[]`（`term` `meaning` `example` `speak`）`sentences[]`（`en` `zh` `speak`）`scenarios[]` `task` |
+| 泰语 | `lang` `tip` `items[]`（`th` `roman` `zh` `speak`）`scenarios[]` `task` |
+
+`scenarios[]` 每条要有 `title`、`setting`、`lines`。英语对白行是 `role` `en` `zh` `speak`。泰语对白行是 `role` `th` `roman` `zh` `speak`。

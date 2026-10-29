@@ -79,6 +79,15 @@ export function lessonLang(subject, lesson) {
   return 'en-US'
 }
 
+function pushScenarios(lines, scenarios, foreignKey) {
+  ;(scenarios ?? []).forEach((scenario, scenarioIndex) => {
+    ;(scenario.lines ?? []).forEach((line, lineIndex) => {
+      const text = line.speak || line[foreignKey]
+      if (text) lines.push({ id: `scenario-${scenarioIndex}-${lineIndex}`, text })
+    })
+  })
+}
+
 export function collectLines(subject, lesson) {
   const lines = []
   if (subject === 'english') {
@@ -91,16 +100,14 @@ export function collectLines(subject, lesson) {
       const text = sentence.speak || sentence.en
       if (text) lines.push({ id: `sentence-${index}`, text })
     })
+    pushScenarios(lines, lesson.scenarios, 'en')
   }
   if (subject === 'thai') {
     ;(lesson.items ?? []).forEach((item, index) => {
       const text = item.speak || item.th
       if (text) lines.push({ id: `item-${index}`, text })
     })
-    ;(lesson.scenes ?? []).forEach((scene, index) => {
-      const text = scene.speak || scene.th
-      if (text) lines.push({ id: `scene-${index}`, text })
-    })
+    pushScenarios(lines, lesson.scenarios, 'th')
   }
   return lines
 }
