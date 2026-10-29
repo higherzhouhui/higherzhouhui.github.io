@@ -13,11 +13,54 @@
     { "th": "สบายดีไหม", "roman": "sa-bai-dee mái", "zh": "你好吗", "speak": "สบายดีไหม" },
     { "th": "สบายดี", "roman": "sa-bai-dee", "zh": "我很好", "speak": "สบายดี" }
   ],
-  "scenes": [
-    { "th": "สวัสดีครับ", "roman": "sa-wat-dee khrap", "zh": "你好（男）", "speak": "สวัสดีครับ" },
-    { "th": "สวัสดีค่ะ", "roman": "sa-wat-dee kha", "zh": "你好（女）", "speak": "สวัสดีค่ะ" },
-    { "th": "สบายดีไหม", "roman": "sa-bai-dee mái", "zh": "你好吗", "speak": "สบายดีไหม" },
-    { "th": "สบายดี ขอบคุณ", "roman": "sa-bai-dee khop-khun", "zh": "我很好，谢谢", "speak": "สบายดี ขอบคุณ" }
+  "scenarios": [
+    {
+      "title": "进店打招呼",
+      "setting": "你推门进一家小店，店员先开口。回礼时男声用ครับ，女声用ค่ะ，挑一句跟着说。",
+      "lines": [
+        {
+          "role": "店员",
+          "th": "สวัสดีค่ะ",
+          "roman": "sa-wat-dee kha",
+          "zh": "你好（女）",
+          "speak": "สวัสดีค่ะ"
+        },
+        {
+          "role": "你（男）",
+          "th": "สวัสดีครับ",
+          "roman": "sa-wat-dee khrap",
+          "zh": "你好（男）",
+          "speak": "สวัสดีครับ"
+        },
+        {
+          "role": "你（女）",
+          "th": "สวัสดีค่ะ",
+          "roman": "sa-wat-dee kha",
+          "zh": "你好（女）",
+          "speak": "สวัสดีค่ะ"
+        }
+      ]
+    },
+    {
+      "title": "被问你好吗",
+      "setting": "路上碰见熟人，对方问你还好吗。先答我很好，再补一句谢谢。",
+      "lines": [
+        {
+          "role": "对方",
+          "th": "สบายดีไหม",
+          "roman": "sa-bai-dee mái",
+          "zh": "你好吗",
+          "speak": "สบายดีไหม"
+        },
+        {
+          "role": "你",
+          "th": "สบายดี ขอบคุณ",
+          "roman": "sa-bai-dee khop-khun",
+          "zh": "我很好，谢谢",
+          "speak": "สบายดี ขอบคุณ"
+        }
+      ]
+    }
   ],
   "task": "三句连说两遍，录一条给自己听"
 }
