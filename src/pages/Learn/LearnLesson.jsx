@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink, useParams } from 'react-router-dom'
 import { useI18n } from '../../i18n/I18nProvider.jsx'
 import BusinessLesson from './BusinessLesson.jsx'
+import GrowLesson from './GrowLesson.jsx'
 import LanguageLesson from './LanguageLesson.jsx'
 import {
   SUBJECTS,
@@ -79,13 +80,13 @@ export default function LearnLesson() {
       </Link>
 
       {knownSubject && knownDate ? (
-        <nav className="mt-5 grid grid-cols-3 border border-line" aria-label={copy.title}>
+        <nav className="mt-5 grid grid-cols-4 border border-line" aria-label={copy.title}>
           {SUBJECTS.map((item) => (
             <NavLink
               key={item}
               to={`/learn/${item}/${date}`}
               className={({ isActive }) =>
-                `min-h-12 px-2 py-3 text-center font-display text-lg leading-none ${
+                `flex min-h-12 items-center justify-center px-1 py-3 text-center font-display text-sm leading-tight sm:text-lg sm:leading-none ${
                   isActive ? 'bg-ink text-page' : 'text-dim'
                 }`
               }
@@ -114,6 +115,8 @@ export default function LearnLesson() {
           <div className="mt-8">
             {subject === 'business' ? (
               <BusinessLesson lesson={lesson} />
+            ) : subject === 'grow' ? (
+              <GrowLesson lesson={lesson} />
             ) : (
               <LanguageLesson key={`${subject}-${date}`} subject={subject} lesson={lesson} />
             )}

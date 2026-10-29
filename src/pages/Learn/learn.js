@@ -1,4 +1,4 @@
-export const SUBJECTS = ['business', 'english', 'thai']
+export const SUBJECTS = ['business', 'english', 'thai', 'grow']
 
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/
 
