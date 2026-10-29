@@ -6,6 +6,7 @@ import ArticlePage from './pages/ArticlePage.jsx'
 import Home from './pages/Home.jsx'
 import LabIndex from './pages/LabIndex.jsx'
 import DiaryIndex from './pages/Diary/index.jsx'
+import LearnIndex from './pages/Learn/index.jsx'
 import LabPrinter from './pages/LabPrinter.jsx'
 import LabScroll from './pages/LabScroll.jsx'
 import LabWater from './pages/LabWater.jsx'
@@ -26,6 +27,7 @@ export default function App() {
                 )),
               )}
               <Route path="/diary/*" element={<DiaryIndex />} />
+              <Route path="/learn/*" element={<LearnIndex />} />
               <Route path="/lab" element={<LabIndex />} />
               <Route path="/pages/cssanimation.html" element={<LabIndex />} />
               <Route path="/lab/water" element={<LabWater />} />
