@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-30",
+  "day": 2,
+  "title": "谈钱与开销",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "budget",
+      "meaning": "预算",
+      "example": "I keep a monthly budget.",
+      "speak": "budget"
+    },
+    {
+      "term": "expense",
+      "meaning": "开支",
+      "example": "That expense is optional.",
+      "speak": "expense"
+    },
+    {
+      "term": "save",
+      "meaning": "存钱",
+      "example": "I want to save more this year.",
+      "speak": "save"
+    },
+    {
+      "term": "cost",
+      "meaning": "成本/花费",
+      "example": "What's the cost per month?",
+      "speak": "cost"
+    },
+    {
+      "term": "worth",
+      "meaning": "值得",
+      "example": "Is it worth the money?",
+      "speak": "worth"
+    },
+    {
+      "term": "afford",
+      "meaning": "负担得起",
+      "example": "I can afford a small trial.",
+      "speak": "afford"
+    },
+    {
+      "term": "invest",
+      "meaning": "投资",
+      "example": "Don't invest money you need soon.",
+      "speak": "invest"
+    },
+    {
+      "term": "cut",
+      "meaning": "削减",
+      "example": "Let's cut one unused subscription.",
+      "speak": "cut"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I keep a monthly budget.",
+      "zh": "我每月都做预算。",
+      "speak": "I keep a monthly budget."
+    },
+    {
+      "en": "That expense is optional.",
+      "zh": "那笔开支可有可无。",
+      "speak": "That expense is optional."
+    },
+    {
+      "en": "Is it worth the money?",
+      "zh": "这笔钱花得值吗？",
+      "speak": "Is it worth the money?"
+    },
+    {
+      "en": "Let's cut one unused subscription.",
+      "zh": "我们砍掉一个没用的订阅吧。",
+      "speak": "Let's cut one unused subscription."
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "和朋友聊要不要续订阅",
+      "setting": "周末聊天，朋友问你一个会员要不要继续付。你先说预算，再问值不值。",
+      "lines": [
+        {
+          "role": "朋友",
+          "en": "Should I keep this subscription?",
+          "zh": "这个订阅我还要续吗？",
+          "speak": "Should I keep this subscription?"
+        },
+        {
+          "role": "你",
+          "en": "I keep a monthly budget. Is it worth the money?",
+          "zh": "我每月做预算。这笔钱花得值吗？",
+          "speak": "I keep a monthly budget. Is it worth the money?"
+        }
+      ]
+    },
+    {
+      "title": "晚饭后盘点开支",
+      "setting": "你和伴侣对着手机账单，想砍掉一笔可有可无的钱。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "That expense is optional.",
+          "zh": "那笔开支可有可无。",
+          "speak": "That expense is optional."
+        },
+        {
+          "role": "对方",
+          "en": "Let's cut one unused subscription.",
+          "zh": "我们砍掉一个没用的订阅吧。",
+          "speak": "Let's cut one unused subscription."
+        },
+        {
+          "role": "你",
+          "en": "Good. I want to save more this year.",
+          "zh": "好。我今年想多存一点。",
+          "speak": "Good. I want to save more this year."
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}

@@ -4,10 +4,44 @@
       "date": "2026-10-29",
       "day": 1,
       "subjects": {
-        "business": { "title": "街边奶茶店", "minutes": 20 },
-        "english": { "title": "日常开场", "minutes": 20 },
-        "thai": { "title": "基础招呼", "minutes": 20 },
-        "grow": { "title": "先交得出去", "minutes": 10 }
+        "business": {
+          "title": "街边奶茶店",
+          "minutes": 20
+        },
+        "english": {
+          "title": "日常开场",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "基础招呼",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "先交得出去",
+          "minutes": 10
+        }
+      }
+    },
+    {
+      "date": "2026-10-30",
+      "day": 2,
+      "subjects": {
+        "business": {
+          "title": "小区菜鸟驿站",
+          "minutes": 20
+        },
+        "english": {
+          "title": "谈钱与开销",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "数字与价钱",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "先算清楚再动钱",
+          "minutes": 10
+        }
       }
     }
   ]
