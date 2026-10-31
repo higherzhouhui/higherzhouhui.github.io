@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-31",
+  "day": 3,
+  "title": "约时间与改期",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "available",
+      "meaning": "有空的",
+      "example": "Are you available tomorrow?",
+      "speak": "available"
+    },
+    {
+      "term": "reschedule",
+      "meaning": "改期",
+      "example": "Can we reschedule the call?",
+      "speak": "reschedule"
+    },
+    {
+      "term": "confirm",
+      "meaning": "确认",
+      "example": "Please confirm the time.",
+      "speak": "confirm"
+    },
+    {
+      "term": "delay",
+      "meaning": "推迟/延误",
+      "example": "Sorry for the delay.",
+      "speak": "delay"
+    },
+    {
+      "term": "free",
+      "meaning": "空闲的",
+      "example": "I'm free after 7.",
+      "speak": "free"
+    },
+    {
+      "term": "meet",
+      "meaning": "见面/开会",
+      "example": "Let's meet at 3.",
+      "speak": "meet"
+    },
+    {
+      "term": "convenient",
+      "meaning": "方便的",
+      "example": "Is 8pm convenient for you?",
+      "speak": "convenient"
+    },
+    {
+      "term": "asap",
+      "meaning": "尽快",
+      "example": "Please reply ASAP.",
+      "speak": "asap"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Are you available tomorrow evening?",
+      "zh": "你明天晚上有空吗？",
+      "speak": "Are you available tomorrow evening?"
+    },
+    {
+      "en": "Can we reschedule the call?",
+      "zh": "我们能改一下电话时间吗？",
+      "speak": "Can we reschedule the call?"
+    },
+    {
+      "en": "Is 8pm convenient for you?",
+      "zh": "晚上八点你方便吗？",
+      "speak": "Is 8pm convenient for you?"
+    },
+    {
+      "en": "Please confirm the time.",
+      "zh": "请确认一下时间。",
+      "speak": "Please confirm the time."
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "和客户约晚上通话",
+      "setting": "你想兼职接一个小外包，对方问什么时候方便聊需求。你先问对方晚上有没有空，再给出自己的时间。",
+      "lines": [
+        {
+          "role": "客户",
+          "en": "When can we talk about the project?",
+          "zh": "我们什么时候能聊这个项目？",
+          "speak": "When can we talk about the project?"
+        },
+        {
+          "role": "你",
+          "en": "Are you available tomorrow evening?",
+          "zh": "你明天晚上有空吗？",
+          "speak": "Are you available tomorrow evening?"
+        },
+        {
+          "role": "你",
+          "en": "Is 8pm convenient for you?",
+          "zh": "晚上八点你方便吗？",
+          "speak": "Is 8pm convenient for you?"
+        }
+      ]
+    },
+    {
+      "title": "临时改期",
+      "setting": "原定通话撞上加班，你发消息请求改期，并请对方确认新时间。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Sorry for the delay. Can we reschedule the call?",
+          "zh": "抱歉耽误了。我们能改一下电话时间吗？",
+          "speak": "Sorry for the delay. Can we reschedule the call?"
+        },
+        {
+          "role": "对方",
+          "en": "I'm free after 7.",
+          "zh": "我七点后有空。",
+          "speak": "I'm free after 7."
+        },
+        {
+          "role": "你",
+          "en": "Great. Please confirm the time.",
+          "zh": "好。请确认一下时间。",
+          "speak": "Great. Please confirm the time."
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}
