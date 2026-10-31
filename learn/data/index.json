@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-10-31",
+      "day": 3,
+      "subjects": {
+        "business": {
+          "title": "社区团购团长",
+          "minutes": 20
+        },
+        "english": {
+          "title": "约时间与改期",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "点餐与要不要",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "先小试，再加码",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-10-29",
       "day": 1,
       "subjects": {
