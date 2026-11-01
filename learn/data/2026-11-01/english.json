@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-01",
+  "day": 4,
+  "title": "购物与退换",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "size",
+      "meaning": "尺码/大小",
+      "example": "Do you have a larger size?",
+      "speak": "size"
+    },
+    {
+      "term": "receipt",
+      "meaning": "收据",
+      "example": "Can I have the receipt?",
+      "speak": "receipt"
+    },
+    {
+      "term": "return",
+      "meaning": "退货",
+      "example": "I'd like to return this.",
+      "speak": "return"
+    },
+    {
+      "term": "exchange",
+      "meaning": "换货",
+      "example": "Can I exchange it for another color?",
+      "speak": "exchange"
+    },
+    {
+      "term": "refund",
+      "meaning": "退款",
+      "example": "I need a refund, please.",
+      "speak": "refund"
+    },
+    {
+      "term": "try on",
+      "meaning": "试穿",
+      "example": "Can I try this on?",
+      "speak": "try on"
+    },
+    {
+      "term": "discount",
+      "meaning": "折扣",
+      "example": "Is there a discount today?",
+      "speak": "discount"
+    },
+    {
+      "term": "fit",
+      "meaning": "合身/合适",
+      "example": "It doesn't fit me.",
+      "speak": "fit"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Can I try this on?",
+      "zh": "我能试一下吗？",
+      "speak": "Can I try this on?"
+    },
+    {
+      "en": "Do you have a larger size?",
+      "zh": "有大一号的吗？",
+      "speak": "Do you have a larger size?"
+    },
+    {
+      "en": "I'd like to return this.",
+      "zh": "我想退这个。",
+      "speak": "I'd like to return this."
+    },
+    {
+      "en": "Can I have the receipt?",
+      "zh": "能给我收据吗？",
+      "speak": "Can I have the receipt?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "店里试穿换尺码",
+      "setting": "你在商场买衣服，想先试穿；偏小了，问店员有没有大一号，并确认今天有没有折扣。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Can I try this on?",
+          "zh": "我能试一下吗？",
+          "speak": "Can I try this on?"
+        },
+        {
+          "role": "你",
+          "en": "It doesn't fit me. Do you have a larger size?",
+          "zh": "不合身。有大一号的吗？",
+          "speak": "It doesn't fit me. Do you have a larger size?"
+        },
+        {
+          "role": "店员",
+          "en": "Yes. Is there anything else?",
+          "zh": "有。还需要别的吗？",
+          "speak": "Yes. Is there anything else?"
+        },
+        {
+          "role": "你",
+          "en": "Is there a discount today?",
+          "zh": "今天有折扣吗？",
+          "speak": "Is there a discount today?"
+        }
+      ]
+    },
+    {
+      "title": "网购售后要退换",
+      "setting": "快递到了，颜色不对。你联系客服，先说要退货，再问能否换色或退款，并留好收据信息。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "I'd like to return this.",
+          "zh": "我想退这个。",
+          "speak": "I'd like to return this."
+        },
+        {
+          "role": "客服",
+          "en": "Do you want an exchange or a refund?",
+          "zh": "你要换货还是退款？",
+          "speak": "Do you want an exchange or a refund?"
+        },
+        {
+          "role": "你",
+          "en": "Can I exchange it for another color?",
+          "zh": "能换成别的颜色吗？",
+          "speak": "Can I exchange it for another color?"
+        },
+        {
+          "role": "你",
+          "en": "Can I have the receipt?",
+          "zh": "能给我收据吗？",
+          "speak": "Can I have the receipt?"
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}

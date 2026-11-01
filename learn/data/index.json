@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-01",
+      "day": 4,
+      "subjects": {
+        "business": {
+          "title": "小区自助售货机",
+          "minutes": 20
+        },
+        "english": {
+          "title": "购物与退换",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "问路与厕所",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "账比感觉准",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-10-31",
       "day": 3,
       "subjects": {
