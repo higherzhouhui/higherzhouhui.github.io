@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-02",
+      "day": 5,
+      "subjects": {
+        "business": {
+          "title": "闲鱼数码转卖",
+          "minutes": 20
+        },
+        "english": {
+          "title": "点餐与外卖",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "买票与坐车",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "试水钱和生活费分开",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-01",
       "day": 4,
       "subjects": {
