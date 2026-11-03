@@ -1,0 +1,142 @@
+{
+  "date": "2026-11-03",
+  "day": 6,
+  "title": "问路与交通",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "directions",
+      "meaning": "路线指引",
+      "example": "Can you give me directions?",
+      "speak": "directions"
+    },
+    {
+      "term": "straight",
+      "meaning": "一直走",
+      "example": "Go straight for two blocks.",
+      "speak": "straight"
+    },
+    {
+      "term": "turn",
+      "meaning": "转弯",
+      "example": "Turn left at the light.",
+      "speak": "turn"
+    },
+    {
+      "term": "station",
+      "meaning": "车站",
+      "example": "Where is the subway station?",
+      "speak": "station"
+    },
+    {
+      "term": "far",
+      "meaning": "远",
+      "example": "Is it far from here?",
+      "speak": "far"
+    },
+    {
+      "term": "walk",
+      "meaning": "步行",
+      "example": "It's a ten-minute walk.",
+      "speak": "walk"
+    },
+    {
+      "term": "miss",
+      "meaning": "错过",
+      "example": "Don't miss the stop.",
+      "speak": "miss"
+    },
+    {
+      "term": "nearby",
+      "meaning": "附近",
+      "example": "Is there a cafe nearby?",
+      "speak": "nearby"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Excuse me, where is the subway station?",
+      "zh": "劳驾，地铁站在哪？",
+      "speak": "Excuse me, where is the subway station?"
+    },
+    {
+      "en": "Is it far from here?",
+      "zh": "离这儿远吗？",
+      "speak": "Is it far from here?"
+    },
+    {
+      "en": "Go straight and turn left.",
+      "zh": "一直走，然后左转。",
+      "speak": "Go straight and turn left."
+    },
+    {
+      "en": "It's a ten-minute walk.",
+      "zh": "步行大约十分钟。",
+      "speak": "It's a ten-minute walk."
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "街上问路",
+      "setting": "你在陌生街区找地铁站，向路人问路，确认距离和怎么走。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Excuse me, where is the subway station?",
+          "zh": "劳驾，地铁站在哪？",
+          "speak": "Excuse me, where is the subway station?"
+        },
+        {
+          "role": "路人",
+          "en": "Go straight and turn left at the light.",
+          "zh": "一直走，到红绿灯左转。",
+          "speak": "Go straight and turn left at the light."
+        },
+        {
+          "role": "你",
+          "en": "Is it far from here?",
+          "zh": "离这儿远吗？",
+          "speak": "Is it far from here?"
+        },
+        {
+          "role": "路人",
+          "en": "No. It's a ten-minute walk.",
+          "zh": "不远，步行大约十分钟。",
+          "speak": "No. It's a ten-minute walk."
+        }
+      ]
+    },
+    {
+      "title": "找附近便利店",
+      "setting": "你下车后想找附近咖啡或便利店，先问有没有，再确认别走过站。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Is there a cafe nearby?",
+          "zh": "附近有咖啡店吗？",
+          "speak": "Is there a cafe nearby?"
+        },
+        {
+          "role": "店员",
+          "en": "Yes, two blocks straight ahead.",
+          "zh": "有，一直走两个街区。",
+          "speak": "Yes, two blocks straight ahead."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. Don't miss the stop — got it.",
+          "zh": "谢谢。别走过站——明白了。",
+          "speak": "Thanks. Don't miss the stop. Got it."
+        },
+        {
+          "role": "你",
+          "en": "Can you give me directions once more?",
+          "zh": "能再给我说一遍怎么走吗？",
+          "speak": "Can you give me directions once more?"
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}
