@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-03",
+      "day": 6,
+      "subjects": {
+        "business": {
+          "title": "微信社群代购",
+          "minutes": 20
+        },
+        "english": {
+          "title": "问路与交通",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "酒店与入住",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "先验证需求再备货",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-02",
       "day": 5,
       "subjects": {
