@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-04",
+  "day": 7,
+  "title": "酒店入住与退房",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "reservation",
+      "meaning": "预订",
+      "example": "I have a reservation under Wang.",
+      "speak": "reservation"
+    },
+    {
+      "term": "check in",
+      "meaning": "办理入住",
+      "example": "I'd like to check in, please.",
+      "speak": "check in"
+    },
+    {
+      "term": "check out",
+      "meaning": "办理退房",
+      "example": "What time is check-out?",
+      "speak": "check out"
+    },
+    {
+      "term": "passport",
+      "meaning": "护照",
+      "example": "Here's my passport.",
+      "speak": "passport"
+    },
+    {
+      "term": "key card",
+      "meaning": "房卡",
+      "example": "Here's your key card.",
+      "speak": "key card"
+    },
+    {
+      "term": "wifi",
+      "meaning": "无线网络",
+      "example": "What's the wifi password?",
+      "speak": "wifi"
+    },
+    {
+      "term": "luggage",
+      "meaning": "行李",
+      "example": "Can you hold my luggage?",
+      "speak": "luggage"
+    },
+    {
+      "term": "receipt",
+      "meaning": "收据/发票",
+      "example": "Could I have a receipt, please?",
+      "speak": "receipt"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I'd like to check in, please.",
+      "zh": "我想办理入住。",
+      "speak": "I'd like to check in, please."
+    },
+    {
+      "en": "I have a reservation under Wang.",
+      "zh": "我用王这个姓预订过了。",
+      "speak": "I have a reservation under Wang."
+    },
+    {
+      "en": "What time is check-out?",
+      "zh": "退房时间是几点？",
+      "speak": "What time is check-out?"
+    },
+    {
+      "en": "Could I have a receipt, please?",
+      "zh": "能给我一张收据吗？",
+      "speak": "Could I have a receipt, please?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "前台办理入住",
+      "setting": "你到酒店前台，报预订姓氏、交护照，问 Wi‑Fi 和房卡。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "I'd like to check in, please.",
+          "zh": "我想办理入住。",
+          "speak": "I'd like to check in, please."
+        },
+        {
+          "role": "前台",
+          "en": "Sure. Do you have a reservation?",
+          "zh": "好的。您有预订吗？",
+          "speak": "Sure. Do you have a reservation?"
+        },
+        {
+          "role": "你",
+          "en": "Yes. I have a reservation under Wang. Here's my passport.",
+          "zh": "有，预订姓王。这是我的护照。",
+          "speak": "Yes. I have a reservation under Wang. Here's my passport."
+        },
+        {
+          "role": "前台",
+          "en": "Here's your key card. Enjoy your stay.",
+          "zh": "这是您的房卡。祝您入住愉快。",
+          "speak": "Here's your key card. Enjoy your stay."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. What's the wifi password?",
+          "zh": "谢谢。Wi‑Fi 密码是多少？",
+          "speak": "Thanks. What's the wifi password?"
+        }
+      ]
+    },
+    {
+      "title": "退房并寄存行李",
+      "setting": "你早上退房，确认退房时间，要收据，并请前台暂时寄存行李。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "I'd like to check out, please.",
+          "zh": "我想办理退房。",
+          "speak": "I'd like to check out, please."
+        },
+        {
+          "role": "你",
+          "en": "What time is check-out?",
+          "zh": "退房时间是几点？",
+          "speak": "What time is check-out?"
+        },
+        {
+          "role": "前台",
+          "en": "Check-out is at eleven.",
+          "zh": "退房是十一点。",
+          "speak": "Check-out is at eleven."
+        },
+        {
+          "role": "你",
+          "en": "Can you hold my luggage until three?",
+          "zh": "能帮我把行李存到三点吗？",
+          "speak": "Can you hold my luggage until three?"
+        },
+        {
+          "role": "你",
+          "en": "Could I have a receipt, please?",
+          "zh": "能给我一张收据吗？",
+          "speak": "Could I have a receipt, please?"
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}

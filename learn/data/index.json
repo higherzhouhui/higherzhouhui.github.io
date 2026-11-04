@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-04",
+      "day": 7,
+      "subjects": {
+        "business": {
+          "title": "贝佐斯与客户飞轮",
+          "minutes": 20
+        },
+        "english": {
+          "title": "酒店入住与退房",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "购物与砍价",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "慎独：无人看见时也不放纵",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-03",
       "day": 6,
       "subjects": {
