@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-05",
+      "day": 8,
+      "subjects": {
+        "business": {
+          "title": "乔布斯与极致产品",
+          "minutes": 20
+        },
+        "english": {
+          "title": "机场安检与登机",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "时间与预约",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "知行合一：懂了就要去做",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-04",
       "day": 7,
       "subjects": {

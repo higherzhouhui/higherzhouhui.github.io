@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-05",
+  "day": 8,
+  "title": "机场安检与登机",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "flight",
+      "meaning": "航班",
+      "example": "Where is my flight?",
+      "speak": "flight"
+    },
+    {
+      "term": "boarding pass",
+      "meaning": "登机牌",
+      "example": "Here's my boarding pass.",
+      "speak": "boarding pass"
+    },
+    {
+      "term": "gate",
+      "meaning": "登机口",
+      "example": "Which gate is it?",
+      "speak": "gate"
+    },
+    {
+      "term": "security",
+      "meaning": "安检",
+      "example": "Where is security?",
+      "speak": "security"
+    },
+    {
+      "term": "passport",
+      "meaning": "护照",
+      "example": "Please show your passport.",
+      "speak": "passport"
+    },
+    {
+      "term": "delay",
+      "meaning": "延误",
+      "example": "Is the flight delayed?",
+      "speak": "delay"
+    },
+    {
+      "term": "boarding",
+      "meaning": "登机",
+      "example": "Boarding starts at two.",
+      "speak": "boarding"
+    },
+    {
+      "term": "carry-on",
+      "meaning": "随身行李",
+      "example": "Is this carry-on OK?",
+      "speak": "carry-on"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Where is security?",
+      "zh": "安检在哪？",
+      "speak": "Where is security?"
+    },
+    {
+      "en": "Which gate is Flight CA981?",
+      "zh": "CA981 航班的登机口是几号？",
+      "speak": "Which gate is Flight CA981?"
+    },
+    {
+      "en": "Is the flight delayed?",
+      "zh": "航班延误了吗？",
+      "speak": "Is the flight delayed?"
+    },
+    {
+      "en": "When does boarding start?",
+      "zh": "什么时候开始登机？",
+      "speak": "When does boarding start?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "问安检与登机口",
+      "setting": "你到机场，手里有登机牌，先找安检，再确认登机口。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Excuse me, where is security?",
+          "zh": "劳驾，安检在哪？",
+          "speak": "Excuse me, where is security?"
+        },
+        {
+          "role": "工作人员",
+          "en": "Straight ahead, then turn left.",
+          "zh": "一直走，然后左转。",
+          "speak": "Straight ahead, then turn left."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. Which gate is Flight CA981?",
+          "zh": "谢谢。CA981 的登机口是几号？",
+          "speak": "Thanks. Which gate is Flight CA981?"
+        },
+        {
+          "role": "工作人员",
+          "en": "Gate B12. Here's the screen.",
+          "zh": "B12 登机口。屏幕在这儿。",
+          "speak": "Gate B12. Here's the screen."
+        },
+        {
+          "role": "你",
+          "en": "Got it. Here's my boarding pass.",
+          "zh": "明白了。这是我的登机牌。",
+          "speak": "Got it. Here's my boarding pass."
+        }
+      ]
+    },
+    {
+      "title": "确认延误与登机时间",
+      "setting": "你在登机口附近，屏幕显示 Delayed，你向柜台确认起飞和登机时间，并问随身行李是否可以。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Is the flight delayed?",
+          "zh": "航班延误了吗？",
+          "speak": "Is the flight delayed?"
+        },
+        {
+          "role": "柜台",
+          "en": "Yes, about forty minutes.",
+          "zh": "是的，大约延误四十分钟。",
+          "speak": "Yes, about forty minutes."
+        },
+        {
+          "role": "你",
+          "en": "When does boarding start?",
+          "zh": "什么时候开始登机？",
+          "speak": "When does boarding start?"
+        },
+        {
+          "role": "柜台",
+          "en": "Boarding starts at three thirty.",
+          "zh": "三点半开始登机。",
+          "speak": "Boarding starts at three thirty."
+        },
+        {
+          "role": "你",
+          "en": "Is this carry-on OK?",
+          "zh": "这个随身行李可以吗？",
+          "speak": "Is this carry-on OK?"
+        }
+      ]
+    }
+  ],
+  "task": "把上面 4 句连着说一遍并录音自听"
+}
