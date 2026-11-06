@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-06",
+      "day": 9,
+      "subjects": {
+        "business": {
+          "title": "巴菲特与护城河",
+          "minutes": 20
+        },
+        "english": {
+          "title": "银行与换钱",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "天气与出行",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "诚意正心：不自欺",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-05",
       "day": 8,
       "subjects": {
