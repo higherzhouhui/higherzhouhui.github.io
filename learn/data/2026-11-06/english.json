@@ -1,0 +1,154 @@
+{
+  "date": "2026-11-06",
+  "day": 9,
+  "title": "银行与换钱",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "exchange",
+      "meaning": "兑换（货币）",
+      "example": "I'd like to exchange some dollars.",
+      "speak": "exchange"
+    },
+    {
+      "term": "currency",
+      "meaning": "货币",
+      "example": "What's the currency here?",
+      "speak": "currency"
+    },
+    {
+      "term": "rate",
+      "meaning": "汇率",
+      "example": "What's the exchange rate today?",
+      "speak": "rate"
+    },
+    {
+      "term": "withdraw",
+      "meaning": "取款",
+      "example": "I need to withdraw some cash.",
+      "speak": "withdraw"
+    },
+    {
+      "term": "deposit",
+      "meaning": "存款",
+      "example": "I'd like to make a deposit.",
+      "speak": "deposit"
+    },
+    {
+      "term": "ATM",
+      "meaning": "自动取款机",
+      "example": "Is there an ATM nearby?",
+      "speak": "ATM"
+    },
+    {
+      "term": "receipt",
+      "meaning": "收据",
+      "example": "Can I have a receipt, please?",
+      "speak": "receipt"
+    },
+    {
+      "term": "account",
+      "meaning": "账户",
+      "example": "I have an account at this bank.",
+      "speak": "account"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I'd like to exchange some dollars for local currency.",
+      "zh": "我想把一些美元换成当地货币。",
+      "speak": "I'd like to exchange some dollars for local currency."
+    },
+    {
+      "en": "What's the exchange rate today?",
+      "zh": "今天的汇率是多少？",
+      "speak": "What's the exchange rate today?"
+    },
+    {
+      "en": "I need to withdraw two hundred dollars.",
+      "zh": "我需要取两百美元。",
+      "speak": "I need to withdraw two hundred dollars."
+    },
+    {
+      "en": "Is there an ATM nearby?",
+      "zh": "附近有自动取款机吗？",
+      "speak": "Is there an ATM nearby?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "柜台换钱",
+      "setting": "你在银行柜台，想把美元换成当地货币，并确认汇率和收据。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Excuse me, I'd like to exchange some dollars.",
+          "zh": "不好意思，我想兑换一些美元。",
+          "speak": "Excuse me, I'd like to exchange some dollars."
+        },
+        {
+          "role": "柜员",
+          "en": "Sure. How much would you like to exchange?",
+          "zh": "好的。您想换多少？",
+          "speak": "Sure. How much would you like to exchange?"
+        },
+        {
+          "role": "你",
+          "en": "Three hundred dollars. What's the rate today?",
+          "zh": "三百美元。今天汇率多少？",
+          "speak": "Three hundred dollars. What's the rate today?"
+        },
+        {
+          "role": "柜员",
+          "en": "It's thirty-two point five. May I see your passport?",
+          "zh": "是三十二点五。可以看一下您的护照吗？",
+          "speak": "It's thirty-two point five. May I see your passport?"
+        },
+        {
+          "role": "你",
+          "en": "Here you are. And can I have a receipt, please?",
+          "zh": "给您。另外请给我一张收据。",
+          "speak": "Here you are. And can I have a receipt, please?"
+        }
+      ]
+    },
+    {
+      "title": "找 ATM 取现",
+      "setting": "你现金不够，向路人或店员打听附近的 ATM，并确认能否用卡取款。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Is there an ATM nearby?",
+          "zh": "附近有自动取款机吗？",
+          "speak": "Is there an ATM nearby?"
+        },
+        {
+          "role": "路人",
+          "en": "Yes, there's one next to the convenience store.",
+          "zh": "有，便利店旁边就有一台。",
+          "speak": "Yes, there's one next to the convenience store."
+        },
+        {
+          "role": "你",
+          "en": "Can I withdraw cash with a foreign card?",
+          "zh": "外卡可以在那里取现吗？",
+          "speak": "Can I withdraw cash with a foreign card?"
+        },
+        {
+          "role": "路人",
+          "en": "I think so, but there might be a fee.",
+          "zh": "应该可以，不过可能有手续费。",
+          "speak": "I think so, but there might be a fee."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. I'll try to withdraw a hundred first.",
+          "zh": "谢谢。我先试着取一百。",
+          "speak": "Thanks. I'll try to withdraw a hundred first."
+        }
+      ]
+    }
+  ],
+  "task": "把「换钱四句」和「找 ATM 三句」各连说两遍，录音听自己的 rate / withdraw 是否清楚。"
+}
