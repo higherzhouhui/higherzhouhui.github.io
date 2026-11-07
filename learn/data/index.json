@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-07",
+      "day": 10,
+      "subjects": {
+        "business": {
+          "title": "李嘉诚与现金流底线",
+          "minutes": 20
+        },
+        "english": {
+          "title": "药店与小病",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "颜色与尺寸",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "见贤思齐：向好样学",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-06",
       "day": 9,
       "subjects": {

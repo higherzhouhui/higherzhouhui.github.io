@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-07",
+  "day": 10,
+  "title": "药店与小病",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "pharmacy",
+      "meaning": "药店",
+      "example": "Is there a pharmacy nearby?",
+      "speak": "pharmacy"
+    },
+    {
+      "term": "prescription",
+      "meaning": "处方",
+      "example": "Do I need a prescription for this?",
+      "speak": "prescription"
+    },
+    {
+      "term": "medicine",
+      "meaning": "药",
+      "example": "I need some medicine for a cold.",
+      "speak": "medicine"
+    },
+    {
+      "term": "fever",
+      "meaning": "发烧",
+      "example": "I have a fever.",
+      "speak": "fever"
+    },
+    {
+      "term": "cough",
+      "meaning": "咳嗽",
+      "example": "I have a bad cough.",
+      "speak": "cough"
+    },
+    {
+      "term": "allergy",
+      "meaning": "过敏",
+      "example": "I have an allergy to peanuts.",
+      "speak": "allergy"
+    },
+    {
+      "term": "painkiller",
+      "meaning": "止痛药",
+      "example": "Do you have any painkillers?",
+      "speak": "painkiller"
+    },
+    {
+      "term": "dosage",
+      "meaning": "剂量/用法用量",
+      "example": "What's the dosage?",
+      "speak": "dosage"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Is there a pharmacy nearby?",
+      "zh": "附近有药店吗？",
+      "speak": "Is there a pharmacy nearby?"
+    },
+    {
+      "en": "I have a sore throat and a mild fever.",
+      "zh": "我嗓子疼，还有点低烧。",
+      "speak": "I have a sore throat and a mild fever."
+    },
+    {
+      "en": "Do I need a prescription for this?",
+      "zh": "这个需要处方吗？",
+      "speak": "Do I need a prescription for this?"
+    },
+    {
+      "en": "What's the dosage for adults?",
+      "zh": "成人用法用量是怎样的？",
+      "speak": "What's the dosage for adults?"
+    },
+    {
+      "en": "I'm allergic to penicillin.",
+      "zh": "我对青霉素过敏。",
+      "speak": "I'm allergic to penicillin."
+    },
+    {
+      "en": "Can I take this with food?",
+      "zh": "这个可以和食物一起吃吗？",
+      "speak": "Can I take this with food?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "问路找药店",
+      "setting": "在街上找药店买感冒药，向路人打听。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Excuse me, is there a pharmacy nearby?",
+          "zh": "不好意思，附近有药店吗？",
+          "speak": "Excuse me, is there a pharmacy nearby?"
+        },
+        {
+          "role": "路人",
+          "en": "Yes, there's one two blocks down on the left.",
+          "zh": "有，往前走两个街区，左边那家。",
+          "speak": "Yes, there's one two blocks down on the left."
+        },
+        {
+          "role": "你",
+          "en": "Thanks a lot.",
+          "zh": "多谢。",
+          "speak": "Thanks a lot."
+        }
+      ]
+    },
+    {
+      "title": "跟店员说明症状",
+      "setting": "进药店后向药剂师描述轻微感冒症状，询问非处方药。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "I have a sore throat and a mild fever.",
+          "zh": "我嗓子疼，还有点低烧。",
+          "speak": "I have a sore throat and a mild fever."
+        },
+        {
+          "role": "店员",
+          "en": "How long have you had these symptoms?",
+          "zh": "这些症状有多久了？",
+          "speak": "How long have you had these symptoms?"
+        },
+        {
+          "role": "你",
+          "en": "Since yesterday. Do I need a prescription?",
+          "zh": "从昨天开始。需要处方吗？",
+          "speak": "Since yesterday. Do I need a prescription?"
+        },
+        {
+          "role": "店员",
+          "en": "No. This cold medicine should help. Take it with food.",
+          "zh": "不用。这个感冒药应该有用。随餐服用。",
+          "speak": "No. This cold medicine should help. Take it with food."
+        },
+        {
+          "role": "你",
+          "en": "What's the dosage for adults?",
+          "zh": "成人用法用量是怎样的？",
+          "speak": "What's the dosage for adults?"
+        },
+        {
+          "role": "店员",
+          "en": "One tablet every six hours. Don't take more than four a day.",
+          "zh": "每六小时一片，一天不超过四片。",
+          "speak": "One tablet every six hours. Don't take more than four a day."
+        }
+      ]
+    }
+  ],
+  "task": "把「找药店 + 说症状 + 问剂量」六句连说两遍并录音自听"
+}
