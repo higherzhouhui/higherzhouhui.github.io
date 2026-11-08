@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-08",
+      "day": 11,
+      "subjects": {
+        "business": {
+          "title": "任正非与压强原则",
+          "minutes": 20
+        },
+        "english": {
+          "title": "快递与收件",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "味道与辣不辣",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "过则勿惮改：错了就改",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-07",
       "day": 10,
       "subjects": {

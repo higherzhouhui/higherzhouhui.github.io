@@ -1,0 +1,158 @@
+{
+  "date": "2026-11-08",
+  "day": 11,
+  "title": "快递与收件",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "package",
+      "meaning": "包裹",
+      "example": "I have a package to pick up.",
+      "speak": "package"
+    },
+    {
+      "term": "delivery",
+      "meaning": "配送/送达",
+      "example": "When will the delivery arrive?",
+      "speak": "delivery"
+    },
+    {
+      "term": "courier",
+      "meaning": "快递员",
+      "example": "The courier just called me.",
+      "speak": "courier"
+    },
+    {
+      "term": "tracking number",
+      "meaning": "快递单号",
+      "example": "What's the tracking number?",
+      "speak": "tracking number"
+    },
+    {
+      "term": "signature",
+      "meaning": "签名",
+      "example": "Do I need to leave a signature?",
+      "speak": "signature"
+    },
+    {
+      "term": "pickup",
+      "meaning": "取件",
+      "example": "Can I schedule a pickup tomorrow?",
+      "speak": "pickup"
+    },
+    {
+      "term": "locker",
+      "meaning": "快递柜",
+      "example": "Please put it in the parcel locker.",
+      "speak": "locker"
+    },
+    {
+      "term": "damaged",
+      "meaning": "破损的",
+      "example": "The box looks damaged.",
+      "speak": "damaged"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I have a package to pick up.",
+      "zh": "我有一个包裹要取。",
+      "speak": "I have a package to pick up."
+    },
+    {
+      "en": "What's the tracking number?",
+      "zh": "快递单号是多少？",
+      "speak": "What's the tracking number?"
+    },
+    {
+      "en": "When will it be delivered?",
+      "zh": "什么时候能送到？",
+      "speak": "When will it be delivered?"
+    },
+    {
+      "en": "Could you leave it at the front desk?",
+      "zh": "可以放到前台吗？",
+      "speak": "Could you leave it at the front desk?"
+    },
+    {
+      "en": "Do I need to sign for it?",
+      "zh": "需要我签收吗？",
+      "speak": "Do I need to sign for it?"
+    },
+    {
+      "en": "The box is damaged.",
+      "zh": "箱子破了。",
+      "speak": "The box is damaged."
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "跟快递员改放到前台",
+      "setting": "你不在家，快递员来电，你希望把包裹放在前台。",
+      "lines": [
+        {
+          "role": "快递员",
+          "en": "Hi, I have a package for you. Are you home?",
+          "zh": "你好，有你的包裹。你在家吗？",
+          "speak": "Hi, I have a package for you. Are you home?"
+        },
+        {
+          "role": "你",
+          "en": "I'm not home right now. Could you leave it at the front desk?",
+          "zh": "我现在不在家。可以放到前台吗？",
+          "speak": "I'm not home right now. Could you leave it at the front desk?"
+        },
+        {
+          "role": "快递员",
+          "en": "Sure. Do I need a signature?",
+          "zh": "可以。需要签名吗？",
+          "speak": "Sure. Do I need a signature?"
+        },
+        {
+          "role": "你",
+          "en": "No, just leave it with the receptionist. Thanks.",
+          "zh": "不用，交给前台就行。谢谢。",
+          "speak": "No, just leave it with the receptionist. Thanks."
+        }
+      ]
+    },
+    {
+      "title": "前台取件发现破损",
+      "setting": "你到前台取包裹，发现外箱有破损，向工作人员说明。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "I have a package to pick up. The name is Zhou.",
+          "zh": "我有一个包裹要取，名字是 Zhou。",
+          "speak": "I have a package to pick up. The name is Zhou."
+        },
+        {
+          "role": "前台",
+          "en": "Here it is. Please sign here.",
+          "zh": "在这里。请在这里签字。",
+          "speak": "Here it is. Please sign here."
+        },
+        {
+          "role": "你",
+          "en": "The box is damaged. Can I check it first?",
+          "zh": "箱子破了。我可以先打开看一下吗？",
+          "speak": "The box is damaged. Can I check it first?"
+        },
+        {
+          "role": "前台",
+          "en": "Of course. If something is missing, we can help you report it.",
+          "zh": "当然。如果少了东西，我们可以帮你报备。",
+          "speak": "Of course. If something is missing, we can help you report it."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. What's the tracking number, just in case?",
+          "zh": "谢谢。以防万一，单号是多少？",
+          "speak": "Thanks. What's the tracking number, just in case?"
+        }
+      ]
+    }
+  ],
+  "task": "把「改送到前台 + 发现破损」六句连说两遍并录音自听"
+}
