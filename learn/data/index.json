@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-09",
+      "day": 12,
+      "subjects": {
+        "business": {
+          "title": "雷军与性价比铁三角",
+          "minutes": 20
+        },
+        "english": {
+          "title": "租房与看房",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "数字与讲价",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "不迁怒：别把火撒给无辜的人",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-08",
       "day": 11,
       "subjects": {
