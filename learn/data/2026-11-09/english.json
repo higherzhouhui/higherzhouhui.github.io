@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-09",
+  "day": 12,
+  "title": "租房与看房",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "rent",
+      "meaning": "租金/租",
+      "example": "How much is the rent per month?",
+      "speak": "rent"
+    },
+    {
+      "term": "landlord",
+      "meaning": "房东",
+      "example": "The landlord is very friendly.",
+      "speak": "landlord"
+    },
+    {
+      "term": "tenant",
+      "meaning": "租客",
+      "example": "I'm a new tenant here.",
+      "speak": "tenant"
+    },
+    {
+      "term": "deposit",
+      "meaning": "押金",
+      "example": "How much is the deposit?",
+      "speak": "deposit"
+    },
+    {
+      "term": "lease",
+      "meaning": "租约",
+      "example": "How long is the lease?",
+      "speak": "lease"
+    },
+    {
+      "term": "furnished",
+      "meaning": "带家具的",
+      "example": "Is the apartment furnished?",
+      "speak": "furnished"
+    },
+    {
+      "term": "utilities",
+      "meaning": "水电燃气费",
+      "example": "Are utilities included?",
+      "speak": "utilities"
+    },
+    {
+      "term": "neighborhood",
+      "meaning": "小区/街区",
+      "example": "It's a quiet neighborhood.",
+      "speak": "neighborhood"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I'm interested in the apartment.",
+      "zh": "我对这套公寓有兴趣。",
+      "speak": "I'm interested in the apartment."
+    },
+    {
+      "en": "How much is the rent per month?",
+      "zh": "月租多少？",
+      "speak": "How much is the rent per month?"
+    },
+    {
+      "en": "Is the deposit refundable?",
+      "zh": "押金可以退吗？",
+      "speak": "Is the deposit refundable?"
+    },
+    {
+      "en": "Are utilities included in the rent?",
+      "zh": "房租包含水电费吗？",
+      "speak": "Are utilities included in the rent?"
+    },
+    {
+      "en": "Can I see the apartment this weekend?",
+      "zh": "这个周末我可以看房吗？",
+      "speak": "Can I see the apartment this weekend?"
+    },
+    {
+      "en": "How long is the lease?",
+      "zh": "租期多久？",
+      "speak": "How long is the lease?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "电话约看房",
+      "setting": "你在网上看到一套出租公寓，打电话给房东约时间。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Hi, I'm interested in the apartment you posted online.",
+          "zh": "你好，我对你发布的那套公寓有兴趣。",
+          "speak": "Hi, I'm interested in the apartment you posted online."
+        },
+        {
+          "role": "房东",
+          "en": "Sure. Would you like to see it?",
+          "zh": "好的，你想看房吗？",
+          "speak": "Sure. Would you like to see it?"
+        },
+        {
+          "role": "你",
+          "en": "Yes. Can I see it this weekend?",
+          "zh": "是的，这个周末可以吗？",
+          "speak": "Yes. Can I see it this weekend?"
+        },
+        {
+          "role": "房东",
+          "en": "How about Saturday at ten?",
+          "zh": "周六十点怎么样？",
+          "speak": "How about Saturday at ten?"
+        },
+        {
+          "role": "你",
+          "en": "That works for me. See you then.",
+          "zh": "可以，到时见。",
+          "speak": "That works for me. See you then."
+        }
+      ]
+    },
+    {
+      "title": "看房时问租金和押金",
+      "setting": "你在现场看房，向房东确认费用和租期。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "How much is the rent per month?",
+          "zh": "月租多少？",
+          "speak": "How much is the rent per month?"
+        },
+        {
+          "role": "房东",
+          "en": "It's three thousand yuan, and utilities are not included.",
+          "zh": "三千元，不含水电。",
+          "speak": "It's three thousand yuan, and utilities are not included."
+        },
+        {
+          "role": "你",
+          "en": "How much is the deposit, and is it refundable?",
+          "zh": "押金多少，可以退吗？",
+          "speak": "How much is the deposit, and is it refundable?"
+        },
+        {
+          "role": "房东",
+          "en": "One month's rent. You'll get it back when you move out.",
+          "zh": "一个月房租，退租时会退还。",
+          "speak": "One month's rent. You'll get it back when you move out."
+        },
+        {
+          "role": "你",
+          "en": "How long is the lease? I'd like to think about it.",
+          "zh": "租期多久？我想考虑一下。",
+          "speak": "How long is the lease? I'd like to think about it."
+        }
+      ]
+    }
+  ],
+  "task": "把「电话约看房 + 问租金押金」两段对话连说两遍并录音自听"
+}
