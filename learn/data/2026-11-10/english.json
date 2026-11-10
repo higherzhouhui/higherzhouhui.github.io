@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-10",
+  "day": 13,
+  "title": "健身房与运动",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "gym",
+      "meaning": "健身房",
+      "example": "I usually go to the gym after work.",
+      "speak": "gym"
+    },
+    {
+      "term": "membership",
+      "meaning": "会员资格",
+      "example": "I'd like to get a membership.",
+      "speak": "membership"
+    },
+    {
+      "term": "workout",
+      "meaning": "锻炼",
+      "example": "I need a short workout today.",
+      "speak": "workout"
+    },
+    {
+      "term": "treadmill",
+      "meaning": "跑步机",
+      "example": "Is this treadmill free?",
+      "speak": "treadmill"
+    },
+    {
+      "term": "trainer",
+      "meaning": "教练",
+      "example": "The trainer is very helpful.",
+      "speak": "trainer"
+    },
+    {
+      "term": "stretch",
+      "meaning": "拉伸",
+      "example": "You should stretch first.",
+      "speak": "stretch"
+    },
+    {
+      "term": "locker",
+      "meaning": "储物柜",
+      "example": "Where is the locker room?",
+      "speak": "locker"
+    },
+    {
+      "term": "trial",
+      "meaning": "体验/试课",
+      "example": "Is there a free trial?",
+      "speak": "trial"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I'd like to get a membership.",
+      "zh": "我想办一张会员卡。",
+      "speak": "I'd like to get a membership."
+    },
+    {
+      "en": "Is there a free trial?",
+      "zh": "有免费体验吗？",
+      "speak": "Is there a free trial?"
+    },
+    {
+      "en": "How much is a monthly pass?",
+      "zh": "月卡多少钱？",
+      "speak": "How much is a monthly pass?"
+    },
+    {
+      "en": "Can I book a class for tonight?",
+      "zh": "今晚的课还可以预约吗？",
+      "speak": "Can I book a class for tonight?"
+    },
+    {
+      "en": "Where is the locker room?",
+      "zh": "更衣室在哪里？",
+      "speak": "Where is the locker room?"
+    },
+    {
+      "en": "Could you show me how to use this machine?",
+      "zh": "能教我怎么用这台器械吗？",
+      "speak": "Could you show me how to use this machine?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "前台办卡",
+      "setting": "下班后你走进附近健身房，向柜台询问体验和月卡价格。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Hi, I'd like to get a membership.",
+          "zh": "你好，我想办一张会员卡。",
+          "speak": "Hi, I'd like to get a membership."
+        },
+        {
+          "role": "前台",
+          "en": "Sure. Is there a plan you're interested in?",
+          "zh": "好的，你想看哪种套餐？",
+          "speak": "Sure. Is there a plan you're interested in?"
+        },
+        {
+          "role": "你",
+          "en": "Is there a free trial first?",
+          "zh": "可以先免费体验吗？",
+          "speak": "Is there a free trial first?"
+        },
+        {
+          "role": "前台",
+          "en": "Yes, you can try it today. A monthly pass is sixty dollars.",
+          "zh": "可以，今天就能体验。月卡六十美元。",
+          "speak": "Yes, you can try it today. A monthly pass is sixty dollars."
+        },
+        {
+          "role": "你",
+          "en": "That sounds good. Where is the locker room?",
+          "zh": "听起来不错。更衣室在哪？",
+          "speak": "That sounds good. Where is the locker room?"
+        }
+      ]
+    },
+    {
+      "title": "向教练请教",
+      "setting": "你想跑步并预约团课，向教练确认器械用法和今晚是否还有名额。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Excuse me, is this treadmill free?",
+          "zh": "不好意思，这台跑步机有人用吗？",
+          "speak": "Excuse me, is this treadmill free?"
+        },
+        {
+          "role": "教练",
+          "en": "Yes, it is. You should stretch first.",
+          "zh": "没人用。你先拉伸一下。",
+          "speak": "Yes, it is. You should stretch first."
+        },
+        {
+          "role": "你",
+          "en": "Could you show me how to use this machine?",
+          "zh": "能教我怎么用这台器械吗？",
+          "speak": "Could you show me how to use this machine?"
+        },
+        {
+          "role": "教练",
+          "en": "Of course. Start slow, then speed up.",
+          "zh": "当然。先慢一点，再加速。",
+          "speak": "Of course. Start slow, then speed up."
+        },
+        {
+          "role": "你",
+          "en": "Thanks. Can I book a class for tonight?",
+          "zh": "谢谢。今晚的课还可以预约吗？",
+          "speak": "Thanks. Can I book a class for tonight?"
+        }
+      ]
+    }
+  ],
+  "task": "把办卡和请教教练两段对话连着说一遍并录音自听"
+}
