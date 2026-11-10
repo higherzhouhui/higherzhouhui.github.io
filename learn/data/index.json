@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-10",
+      "day": 13,
+      "subjects": {
+        "business": {
+          "title": "马云与信任平台",
+          "minutes": 20
+        },
+        "english": {
+          "title": "健身房与运动",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "点饮料：冰热与甜度",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "恕：己所不欲，勿施于人",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-09",
       "day": 12,
       "subjects": {
