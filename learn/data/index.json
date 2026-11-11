@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-11",
+      "day": 14,
+      "subjects": {
+        "business": {
+          "title": "黄仁勋与生态卡位",
+          "minutes": 20
+        },
+        "english": {
+          "title": "理发与预约",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "付款：现金、扫码与刷卡",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "反求诸己：事先别向外推",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-10",
       "day": 13,
       "subjects": {

@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-11",
+  "day": 14,
+  "title": "理发与预约",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "haircut",
+      "meaning": "理发",
+      "example": "I'd like a haircut, please.",
+      "speak": "haircut"
+    },
+    {
+      "term": "salon",
+      "meaning": "美发店",
+      "example": "This salon is close to my office.",
+      "speak": "salon"
+    },
+    {
+      "term": "appointment",
+      "meaning": "预约",
+      "example": "I'd like to book an appointment for Saturday.",
+      "speak": "appointment"
+    },
+    {
+      "term": "trim",
+      "meaning": "修剪",
+      "example": "Just a trim, not too short.",
+      "speak": "trim"
+    },
+    {
+      "term": "bangs",
+      "meaning": "刘海",
+      "example": "Can you cut my bangs a little?",
+      "speak": "bangs"
+    },
+    {
+      "term": "stylist",
+      "meaning": "造型师",
+      "example": "The stylist is with another client.",
+      "speak": "stylist"
+    },
+    {
+      "term": "wash",
+      "meaning": "洗头",
+      "example": "Do you want a wash first?",
+      "speak": "wash"
+    },
+    {
+      "term": "walk-in",
+      "meaning": "未经预约直接到店",
+      "example": "Do you take walk-ins?",
+      "speak": "walk-in"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "I'd like a haircut, please.",
+      "zh": "我想理个发。",
+      "speak": "I'd like a haircut, please."
+    },
+    {
+      "en": "Do you take walk-ins?",
+      "zh": "不预约直接剪可以吗？",
+      "speak": "Do you take walk-ins?"
+    },
+    {
+      "en": "I'd like to book an appointment for Saturday.",
+      "zh": "我想预约周六。",
+      "speak": "I'd like to book an appointment for Saturday."
+    },
+    {
+      "en": "Just a trim, not too short.",
+      "zh": "稍微修一下，别剪太短。",
+      "speak": "Just a trim, not too short."
+    },
+    {
+      "en": "Can you cut my bangs a little?",
+      "zh": "能把刘海剪短一点吗？",
+      "speak": "Can you cut my bangs a little?"
+    },
+    {
+      "en": "How long will it take?",
+      "zh": "大概需要多久？",
+      "speak": "How long will it take?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "电话预约理发",
+      "setting": "周六你想去附近美发店理发，先打电话问能不能预约。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Hi, I'd like to book an appointment for Saturday.",
+          "zh": "你好，我想预约周六。",
+          "speak": "Hi, I'd like to book an appointment for Saturday."
+        },
+        {
+          "role": "店员",
+          "en": "Sure. Afternoon or morning?",
+          "zh": "好的。下午还是上午？",
+          "speak": "Sure. Afternoon or morning?"
+        },
+        {
+          "role": "你",
+          "en": "Afternoon, please. I'd like a haircut.",
+          "zh": "下午吧。我想理个发。",
+          "speak": "Afternoon, please. I'd like a haircut."
+        },
+        {
+          "role": "店员",
+          "en": "We have a stylist at three. It will take about forty minutes.",
+          "zh": "三点有造型师。大概需要四十分钟。",
+          "speak": "We have a stylist at three. It will take about forty minutes."
+        },
+        {
+          "role": "你",
+          "en": "That works. Thank you.",
+          "zh": "可以，谢谢。",
+          "speak": "That works. Thank you."
+        }
+      ]
+    },
+    {
+      "title": "到店说明怎么剪",
+      "setting": "你没预约直接进店，向造型师说明只想修一修，刘海剪短一点。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Hi, do you take walk-ins?",
+          "zh": "你好，不预约直接剪可以吗？",
+          "speak": "Hi, do you take walk-ins?"
+        },
+        {
+          "role": "造型师",
+          "en": "Yes, I can take you now. Do you want a wash first?",
+          "zh": "可以，现在就能剪。要先洗头吗？",
+          "speak": "Yes, I can take you now. Do you want a wash first?"
+        },
+        {
+          "role": "你",
+          "en": "Yes, please. Just a trim, not too short.",
+          "zh": "要的。稍微修一下，别剪太短。",
+          "speak": "Yes, please. Just a trim, not too short."
+        },
+        {
+          "role": "造型师",
+          "en": "Got it. Anything else?",
+          "zh": "好的。还有别的吗？",
+          "speak": "Got it. Anything else?"
+        },
+        {
+          "role": "你",
+          "en": "Can you cut my bangs a little?",
+          "zh": "能把刘海剪短一点吗？",
+          "speak": "Can you cut my bangs a little?"
+        }
+      ]
+    }
+  ],
+  "task": "把上面预约和到店说明的句子连着说一遍，录下来自己听"
+}
