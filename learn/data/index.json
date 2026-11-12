@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-12",
+      "day": 15,
+      "subjects": {
+        "business": {
+          "title": "张一鸣与推荐分发",
+          "minutes": 20
+        },
+        "english": {
+          "title": "周末邀约与见面",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "不舒服与买药",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "欲速则不达：先把这一步做对",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-11",
       "day": 14,
       "subjects": {
