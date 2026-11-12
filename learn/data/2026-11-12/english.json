@@ -1,0 +1,164 @@
+{
+  "date": "2026-11-12",
+  "day": 15,
+  "title": "周末邀约与见面",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {
+      "term": "weekend",
+      "meaning": "周末",
+      "example": "Are you free this weekend?",
+      "speak": "weekend"
+    },
+    {
+      "term": "free",
+      "meaning": "有空的",
+      "example": "I'm free on Saturday afternoon.",
+      "speak": "free"
+    },
+    {
+      "term": "catch up",
+      "meaning": "见面聊聊",
+      "example": "We should catch up sometime.",
+      "speak": "catch up"
+    },
+    {
+      "term": "maybe",
+      "meaning": "也许",
+      "example": "Maybe we can grab dinner.",
+      "speak": "maybe"
+    },
+    {
+      "term": "around",
+      "meaning": "大约/左右",
+      "example": "How about around seven?",
+      "speak": "around"
+    },
+    {
+      "term": "meet up",
+      "meaning": "见面",
+      "example": "Let's meet up near the subway.",
+      "speak": "meet up"
+    },
+    {
+      "term": "cancel",
+      "meaning": "取消",
+      "example": "Sorry, I have to cancel tonight.",
+      "speak": "cancel"
+    },
+    {
+      "term": "instead",
+      "meaning": "改成……吧",
+      "example": "Can we do Sunday instead?",
+      "speak": "instead"
+    }
+  ],
+  "sentences": [
+    {
+      "en": "Are you free this weekend?",
+      "zh": "你这周末有空吗？",
+      "speak": "Are you free this weekend?"
+    },
+    {
+      "en": "Do you want to grab dinner on Saturday?",
+      "zh": "周六一起吃个饭吗？",
+      "speak": "Do you want to grab dinner on Saturday?"
+    },
+    {
+      "en": "Let's meet up at seven near the subway.",
+      "zh": "我们七点在地铁口见。",
+      "speak": "Let's meet up at seven near the subway."
+    },
+    {
+      "en": "How about around seven?",
+      "zh": "七点左右怎么样？",
+      "speak": "How about around seven?"
+    },
+    {
+      "en": "Sorry, I have to cancel tonight.",
+      "zh": "抱歉，今晚我得取消。",
+      "speak": "Sorry, I have to cancel tonight."
+    },
+    {
+      "en": "Can we do Sunday instead?",
+      "zh": "改成周日可以吗？",
+      "speak": "Can we do Sunday instead?"
+    }
+  ],
+  "scenarios": [
+    {
+      "title": "约朋友周六吃饭",
+      "setting": "周四晚上，你想约同事周六一起吃饭，先问他周末有没有空。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Hey, are you free this weekend?",
+          "zh": "嘿，你这周末有空吗？",
+          "speak": "Hey, are you free this weekend?"
+        },
+        {
+          "role": "同事",
+          "en": "I think so. What's up?",
+          "zh": "应该有。怎么了？",
+          "speak": "I think so. What's up?"
+        },
+        {
+          "role": "你",
+          "en": "Do you want to grab dinner on Saturday? We should catch up.",
+          "zh": "周六一起吃个饭吗？好久没聊了。",
+          "speak": "Do you want to grab dinner on Saturday? We should catch up."
+        },
+        {
+          "role": "同事",
+          "en": "Sounds good. What time?",
+          "zh": "好啊。几点？",
+          "speak": "Sounds good. What time?"
+        },
+        {
+          "role": "你",
+          "en": "How about around seven? Let's meet up near the subway.",
+          "zh": "七点左右怎么样？我们在地铁口见。",
+          "speak": "How about around seven? Let's meet up near the subway."
+        }
+      ]
+    },
+    {
+      "title": "临时改期再约时间",
+      "setting": "周六下午你突然有事，要取消晚上的饭局，并改约到周日。",
+      "lines": [
+        {
+          "role": "你",
+          "en": "Sorry, I have to cancel tonight.",
+          "zh": "抱歉，今晚我得取消。",
+          "speak": "Sorry, I have to cancel tonight."
+        },
+        {
+          "role": "同事",
+          "en": "No problem. Are you okay?",
+          "zh": "没关系。你还好吗？",
+          "speak": "No problem. Are you okay?"
+        },
+        {
+          "role": "你",
+          "en": "Yes, something came up at work. Can we do Sunday instead?",
+          "zh": "还好，工作上临时有点事。改成周日可以吗？",
+          "speak": "Yes, something came up at work. Can we do Sunday instead?"
+        },
+        {
+          "role": "同事",
+          "en": "Sunday works. Same place?",
+          "zh": "周日可以。还是老地方？",
+          "speak": "Sunday works. Same place?"
+        },
+        {
+          "role": "你",
+          "en": "Yes. Let's meet up at seven near the subway.",
+          "zh": "对。还是七点在地铁口见。",
+          "speak": "Yes. Let's meet up at seven near the subway."
+        }
+      ]
+    }
+  ],
+  "task": "把上面邀约和改期的句子连着说一遍，录下来自己听"
+}
