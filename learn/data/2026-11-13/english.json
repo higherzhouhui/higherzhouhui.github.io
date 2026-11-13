@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-13",
+  "day": 16,
+  "title": "天气与出门",
+  "minutes": 20,
+  "lang": "en-US",
+  "words": [
+    {"term": "weather", "meaning": "天气", "example": "What's the weather like today?", "speak": "weather"},
+    {"term": "sunny", "meaning": "晴朗的", "example": "It's sunny this morning.", "speak": "sunny"},
+    {"term": "rainy", "meaning": "下雨的", "example": "It looks rainy this afternoon.", "speak": "rainy"},
+    {"term": "cloudy", "meaning": "多云的", "example": "It's cloudy but warm.", "speak": "cloudy"},
+    {"term": "forecast", "meaning": "天气预报", "example": "Did you check the forecast?", "speak": "forecast"},
+    {"term": "umbrella", "meaning": "伞", "example": "Don't forget your umbrella.", "speak": "umbrella"},
+    {"term": "jacket", "meaning": "外套", "example": "You might need a jacket.", "speak": "jacket"},
+    {"term": "bring", "meaning": "带上", "example": "I'll bring a jacket just in case.", "speak": "bring"}
+  ],
+  "sentences": [
+    {"en": "What's the weather like today?", "zh": "今天天气怎么样？", "speak": "What's the weather like today?"},
+    {"en": "It's sunny this morning.", "zh": "今天早上是晴天。", "speak": "It's sunny this morning."},
+    {"en": "It looks rainy this afternoon.", "zh": "今天下午看起来要下雨。", "speak": "It looks rainy this afternoon."},
+    {"en": "Did you check the forecast?", "zh": "你看天气预报了吗？", "speak": "Did you check the forecast?"},
+    {"en": "Don't forget your umbrella.", "zh": "别忘了带伞。", "speak": "Don't forget your umbrella."},
+    {"en": "I'll bring a jacket just in case.", "zh": "我还是带件外套以防万一。", "speak": "I'll bring a jacket just in case."}
+  ],
+  "scenarios": [
+    {
+      "title": "出门前问今天天气",
+      "setting": "早上要出门，你在门口问同事或室友今天天气怎么样，要不要带外套。",
+      "lines": [
+        {"role": "你", "en": "What's the weather like today?", "zh": "今天天气怎么样？", "speak": "What's the weather like today?"},
+        {"role": "同事", "en": "It's sunny this morning.", "zh": "今天早上是晴天。", "speak": "It's sunny this morning."},
+        {"role": "你", "en": "Did you check the forecast?", "zh": "你看天气预报了吗？", "speak": "Did you check the forecast?"},
+        {"role": "同事", "en": "Yes. It looks rainy this afternoon.", "zh": "看了。今天下午看起来要下雨。", "speak": "Yes. It looks rainy this afternoon."},
+        {"role": "你", "en": "Thanks. I'll bring a jacket just in case.", "zh": "谢谢。我还是带件外套以防万一。", "speak": "Thanks. I'll bring a jacket just in case."}
+      ]
+    },
+    {
+      "title": "要下雨，临走被提醒带伞",
+      "setting": "你正要出门，同事看了看天，提醒你下午可能下雨，让你别忘了带伞。",
+      "lines": [
+        {"role": "同事", "en": "Are you leaving now? It looks rainy this afternoon.", "zh": "你现在要走吗？今天下午看起来要下雨。", "speak": "Are you leaving now? It looks rainy this afternoon."},
+        {"role": "你", "en": "Really? I thought it was sunny.", "zh": "真的吗？我还以为是晴天。", "speak": "Really? I thought it was sunny."},
+        {"role": "同事", "en": "It is sunny now, but don't forget your umbrella.", "zh": "现在是晴天，但别忘了带伞。", "speak": "It is sunny now, but don't forget your umbrella."},
+        {"role": "你", "en": "Good call. I'll bring a jacket just in case, too.", "zh": "说得对。外套我也带上以防万一。", "speak": "Good call. I'll bring a jacket just in case, too."},
+        {"role": "同事", "en": "You might need a jacket. It's cloudy and a bit windy.", "zh": "你可能需要外套。现在多云，还有点风。", "speak": "You might need a jacket. It's cloudy and a bit windy."}
+      ]
+    }
+  ],
+  "task": "把问天气、看预报和临走带伞这几句连着说一遍，录下来自己听"
+}
