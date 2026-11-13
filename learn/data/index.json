@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-13",
+      "day": 16,
+      "subjects": {
+        "business": {
+          "title": "比尔·盖茨与软件平台",
+          "minutes": 20
+        },
+        "english": {
+          "title": "天气与出门",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "营业时间与还开着吗",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "和而不同：和谐不必附和",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-12",
       "day": 15,
       "subjects": {

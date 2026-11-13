@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-13",
+  "day": 16,
+  "title": "营业时间与还开着吗",
+  "minutes": 20,
+  "lang": "th-TH",
+  "tip": "在泰国路过一家店，先会问「还开着吗」「开到几点」「明天几点开」。ครับ 和 ค่ะ 仍分条朗读，不要写进同一条 speak。",
+  "items": [
+    {"th": "เปิด", "roman": "bpert", "zh": "开（营业）", "speak": "เปิด"},
+    {"th": "ปิด", "roman": "pit", "zh": "关（打烏）", "speak": "ปิด"},
+    {"th": "เปิดอยู่", "roman": "bpert-yuu", "zh": "开着", "speak": "เปิดอยู่"},
+    {"th": "ปิดแล้ว", "roman": "pit-laew", "zh": "已经关了", "speak": "ปิดแล้ว"},
+    {"th": "ยังเปิดอยู่ไหม", "roman": "yang-bpert-yuu-mai", "zh": "还开着吗", "speak": "ยังเปิดอยู่ไหม"},
+    {"th": "เปิดกี่โมง", "roman": "bpert-gii-mohng", "zh": "几点开门", "speak": "เปิดกี่โมง"},
+    {"th": "ปิดกี่โมง", "roman": "pit-gii-mohng", "zh": "几点关门", "speak": "ปิดกี่โมง"},
+    {"th": "ถึงกี่โมง", "roman": "theung-gii-mohng", "zh": "到几点", "speak": "ถึงกี่โมง"},
+    {"th": "วันนี้", "roman": "wan-nee", "zh": "今天", "speak": "วันนี้"},
+    {"th": "พรุ่งนี้", "roman": "phrung-nee", "zh": "明天", "speak": "พรุ่งนี้"},
+    {"th": "วันอาทิตย์", "roman": "wan-aa-thit", "zh": "星期日", "speak": "วันอาทิตย์"},
+    {"th": "ร้านนี้", "roman": "raan-nee", "zh": "这家店", "speak": "ร้านนี้"},
+    {"th": "ยุด", "roman": "yut", "zh": "休息/停业", "speak": "ยุด"}
+  ],
+  "scenarios": [
+    {
+      "title": "问附近餐馆还开着吗",
+      "setting": "傍晚你路过一家餐馆，不确定还开不开，先向门口的人打听，并问开到几点。",
+      "lines": [
+        {"role": "你（男）", "th": "ร้านนี้ยังเปิดอยู่ไหมครับ", "roman": "raan-nee yang-bpert-yuu-mai khrap", "zh": "这家店还开着吗？（男）", "speak": "ร้านนี้ยังเปิดอยู่ไหมครับ"},
+        {"role": "店员", "th": "เปิดอยู่ค่ะ", "roman": "bpert-yuu kha", "zh": "开着。", "speak": "เปิดอยู่ค่ะ"},
+        {"role": "你（男）", "th": "ปิดกี่โมงครับ", "roman": "pit-gii-mohng khrap", "zh": "几点关门？（男）", "speak": "ปิดกี่โมงครับ"},
+        {"role": "店员", "th": "เปิดถึงสองทุ่มค่ะ", "roman": "bpert-theung song-thum kha", "zh": "开到晚上八点。", "speak": "เปิดถึงสองทุ่มค่ะ"},
+        {"role": "你（男）", "th": "วันนี้ยุดไหมครับ", "roman": "wan-nee yut-mai khrap", "zh": "今天休息吗？（男）", "speak": "วันนี้ยุดไหมครับ"},
+        {"role": "店员", "th": "ไม่ยุดค่ะ เปิดอยู่", "roman": "mai-yut kha bpert-yuu", "zh": "不休息，开着。", "speak": "ไม่ยุดค่ะ เปิดอยู่"}
+      ]
+    },
+    {
+      "title": "店已打烏，问明天几点开",
+      "setting": "你到了一家小店，门已经关了。你问旁边的人明天几点开，周日开不开。",
+      "lines": [
+        {"role": "路人", "th": "ปิดแล้วค่ะ", "roman": "pit-laew kha", "zh": "已经关了。", "speak": "ปิดแล้วค่ะ"},
+        {"role": "你（男）", "th": "พรุ่งนี้เปิดกี่โมงครับ", "roman": "phrung-nee bpert-gii-mohng khrap", "zh": "明天几点开门？（男）", "speak": "พรุ่งนี้เปิดกี่โมงครับ"},
+        {"role": "路人", "th": "เปิดเก้าโมงค่ะ", "roman": "bpert gao-mohng kha", "zh": "九点开。", "speak": "เปิดเก้าโมงค่ะ"},
+        {"role": "你（男）", "th": "วันอาทิตย์เปิดไหมครับ", "roman": "wan-aa-thit bpert-mai khrap", "zh": "星期天开吗？（男）", "speak": "วันอาทิตย์เปิดไหมครับ"},
+        {"role": "路人", "th": "เปิดค่ะ แต่ปิดเร็ว", "roman": "bpert kha tae pit-reo", "zh": "开，但关得早。", "speak": "เปิดค่ะ แต่ปิดเร็ว"},
+        {"role": "你（男）", "th": "ปิดกี่โมงครับ", "roman": "pit-gii-mohng khrap", "zh": "几点关门？（男）", "speak": "ปิดกี่โมงครับ"},
+        {"role": "路人", "th": "ปิดห้าโมงค่ะ", "roman": "pit haa-mohng kha", "zh": "五点关。", "speak": "ปิดห้าโมงค่ะ"}
+      ]
+    }
+  ],
+  "task": "把「还开着吗」「开到几点」「明天几点开」这几句连说两遍，录一条给自己听"
+}
