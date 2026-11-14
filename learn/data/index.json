@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "date": "2026-11-14",
+      "day": 17,
+      "subjects": {
+        "business": {
+          "title": "霍华德·舒尔茨与第三空间",
+          "minutes": 20
+        },
+        "english": {
+          "title": "餐厅预订",
+          "minutes": 20
+        },
+        "thai": {
+          "title": "几位与等位",
+          "minutes": 20
+        },
+        "grow": {
+          "title": "闻过则喜：把批评当镜子",
+          "minutes": 10
+        }
+      }
+    },
+    {
       "date": "2026-11-13",
       "day": 16,
       "subjects": {
